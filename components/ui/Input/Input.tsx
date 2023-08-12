@@ -58,10 +58,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     radius,
     disabled,
     required,
-    ...props }) => {
+    ...props },
+    ref) => {
 
     return (
       <input
+        ref={ref}
         disabled={disabled}
         required={required}
         className={cn(inputVariants({ variant, size, radius, className }))}

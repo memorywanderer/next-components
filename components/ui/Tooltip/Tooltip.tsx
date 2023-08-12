@@ -1,7 +1,7 @@
 'use client'
 import { cva } from "class-variance-authority"
 import { forwardRef, useState, useMemo, useEffect, MouseEvent, useRef } from 'react'
-import { Button } from '../Button/Button'
+import { Button } from '../button/button'
 
 export enum TooltipBehavior {
   CLICK = 'click',

@@ -9,14 +9,14 @@ const cardVariants = cva(
     variants: {
       variant: {
         default:
-          'overflow-hidden bg-slate-900 text-white dark:bg-gray-900 dark:text-gray-50',
+          'flex flex-col overflow-hidden bg-slate-900 text-white dark:bg-gray-900 dark:text-gray-50',
         destructive:
-          'bg-red-500 text-white  dark:hover:bg-red-600',
+          'bg-red-500 text-white dark:hover:bg-red-600',
       },
       size: {
         default: 'w-fit h-fit',
-        sm: ' rounded-md',
-        lg: ' rounded-md',
+        sm: 'rounded-md',
+        lg: 'rounded-md',
       },
       border: {
         default: '',
@@ -24,6 +24,11 @@ const cardVariants = cva(
         md: 'rounded-md',
         lg: 'rounded-lg',
       },
+      hover: {
+        default: '',
+        shadow: 'transition-shadow hover:shadow-md hover:shadow-cyan-500/50',
+        size: 'transition-transform hover:scale-[1.01]'
+      }
     },
     defaultVariants: {
       variant: 'default',
@@ -40,22 +45,24 @@ export interface CardProps
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, children, variant, border, size, href, ...props }, ref) => {
+  ({ className, children, variant, border, size, hover, href, ...props }, ref) => {
     if (href) {
-      <Link
-        href={href}
-        className={cn(cardVariants({ variant, size, border, className }))}
-      >
-        {children}
-      </Link>
+
+      return (
+        <Link
+          href={href}
+          className={cn(cardVariants({ variant, size, border, hover, className }))}
+        >
+          {children}
+        </Link >
+      )
     }
     return (
       <article
         ref={ref}
-        className={cn(cardVariants({ variant, size, border, className }))}
+        className={cn(cardVariants({ variant, size, border, hover, className }))}
         {...props}
       >
-        <div className="bg-slate-600 "></div>
         {children}
       </article>
     )

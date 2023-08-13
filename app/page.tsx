@@ -8,15 +8,64 @@ import Image from "next/image"
 import img from '@/public/artur-stanulevich-F_zWvxrQeCk-unsplash.jpg'
 export default function Home() {
   return (
-    <main>
-      <Card href="/" border='lg' className="max-w-sm">
+    <main className="flex gap-2">
+      <Card href="/about" border='lg' hover='size' className="max-w-xs">
         <CardHeader className="m-0 mb-1">
           <Image
             src={img}
             alt="Test img"
             style={{
               width: '100%',
-              height: 'auto'
+              height: '240px',
+              objectFit: 'cover'
+            }}
+          />
+        </CardHeader>
+        <CardBody className="p-4">
+          <Typography tag="h1" size='xxl' weight='bold'>
+            Huawei p smart
+          </Typography>
+          <Typography weight='light'>
+            My card body
+          </Typography>
+        </CardBody>
+        <CardFooter className="p-4 pt-0">
+          <Button>Buy</Button>
+        </CardFooter>
+      </Card>
+      <Card href="/about" border='lg' hover='size' className="max-w-xs">
+        <CardHeader className="m-0 mb-1">
+          <Image
+            src={img}
+            alt="Test img"
+            style={{
+              width: '100%',
+              height: '240px',
+              objectFit: 'cover'
+            }}
+          />
+        </CardHeader>
+        <CardBody className="p-4">
+          <Typography tag="h1" size='xxl' weight='bold'>
+            Huawei p smart
+          </Typography>
+          <Typography weight='light'>
+            My card body
+          </Typography>
+        </CardBody>
+        <CardFooter className="p-4 pt-0">
+          <Button>Buy</Button>
+        </CardFooter>
+      </Card>
+      <Card href="/about" border='lg' hover='size' className="max-w-xs">
+        <CardHeader className="m-0 mb-1">
+          <Image
+            src={img}
+            alt="Test img"
+            style={{
+              width: '100%',
+              height: '240px',
+              objectFit: 'cover'
             }}
           />
         </CardHeader>

@@ -1,6 +1,8 @@
+import AccordionDemo from '@/components/ui/accordion/accordion-radix'
+
 const About = () => {
   return (
-    <div>page</div>
+    <AccordionDemo />
   )
 }
 

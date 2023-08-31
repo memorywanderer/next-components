@@ -1,45 +1,18 @@
 'use client'
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuIndicator
-} from '@/components/ui/navigation/navigation'
+
+import { Checkbox } from "@/components/ui/checkbox/checkbox"
 
 
 export default function Home() {
 
   return (
     <main className="w-screen h-screen flex items-center justify-center p-4">
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>
-              Learn
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <p className='sm:w-[500px]'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, distinctio. Quibusdam reprehenderit error tenetur consectetur veritatis neque. Similique repudiandae error facilis cum numquam distinctio deleniti minima deserunt, sunt corporis necessitatibus!
-              </p>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>
-              Learn
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <p className='sm:w-[500px]'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, distinctio. Quibusdam reprehenderit error tenetur consectetur veritatis neque. Similique repudiandae error facilis cum numquam distinctio deleniti minima deserunt, sunt corporis necessitatibus!
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, distinctio. Quibusdam reprehenderit error tenetur consectetur veritatis neque. Similique repudiandae error facilis cum numquam distinctio deleniti minima deserunt, sunt corporis necessitatibus!
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, distinctio. Quibusdam reprehenderit error tenetur consectetur veritatis neque. Similique repudiandae error facilis cum numquam distinctio deleniti minima deserunt, sunt corporis necessitatibus!
-              </p>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuIndicator />
-        </NavigationMenuList>
-      </NavigationMenu>
+      <>
+        <Checkbox id="c1" defaultChecked />
+        <label className="pl-[15px] cursor-pointer leading-none " htmlFor="c1">
+          Accept terms and conditions.
+        </label>
+      </>
     </main>
   )
 }

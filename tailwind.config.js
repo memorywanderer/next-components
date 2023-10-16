@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin')
 module.exports = {
+  darkMode: ["class"],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,11 +12,25 @@ module.exports = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))"
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
         accent: "hsl(var(--accent))",
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))'
-        }
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        ring: "hsl(var(--ring))",
+        border: "hsl(var(--border))",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -56,8 +71,6 @@ module.exports = {
           from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
           to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
         },
-
-
       }
     },
   },

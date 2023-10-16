@@ -41,11 +41,24 @@
     --muted-foreground: 240 5% 64.9%;
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    /* --destructive: 0 62.8% 39.6%; */
+    --destructive: 3 93% 63%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
+    /* --ring: 233 77% 33%; */
     --ring: 240 4.9% 83.9%;
+    --dfdf: hsl(3, 93%, 63%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
@@ -60,29 +73,10 @@
 
 }
 
-:root {
-  --foreground-rgb: 0 0 0;
-  --background-start-rgb: 214 219 220;
-  --background-end-rgb: 255 255 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background: hsl(240 5.9% 10%);
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }

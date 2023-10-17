@@ -1,35 +1,40 @@
 'use client'
 
+import { Icons } from "@/components/icons"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog/alert-dialog"
 import { AspectRatio } from "@/components/ui/aspect-ratio/aspect-ratio"
 import { Button } from "@/components/ui/button/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card/card"
 import Image from "next/image"
 
-
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center w-screen h-screen p-4 ">
+    <main className="flex flex-col items-center justify-center w-screen p-4 ">
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-        <Card className="h-full overflow-hidden rounded-sm">
-          <CardHeader>
+        <Card className="h-full overflow-hidden max-w-[270px]" border="lg">
+          <CardHeader className="py-4">
             <AspectRatio ratio={4 / 3}>
-              <Image
-                className="object-cover"
-                src="/viacheslav-kvaratskheliia-939ZR0Q3rq8-unsplash.jpg"
-                alt="artur-stanulevich-F_zWvxrQeCk-unsplash"
-                sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
-                fill
-                loading="lazy"
-              />
+              <div
+                aria-label="Placeholder"
+                role="img"
+                aria-roledescription="placeholder"
+                className="flex h-full w-full items-center justify-center bg- "
+              >
+                <Icons.placeholder
+                  className="h-9 w-9 text-muted-foreground"
+                  aria-hidden="true"
+                />
+              </div>
+              {/* <img src="/228942_1.jpg" className="object-cover w-full h-full" alt="dsd" /> */}
             </AspectRatio>
           </CardHeader>
           <CardContent>
-            <CardTitle>Title</CardTitle>
-            <CardDescription>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia veniam maiores, voluptatem quasi id nihil neque illo, dolore eligendi cupiditate in odio blanditiis? Dolore nam aliquid quaerat. Officiis, sed autem!</CardDescription>
+            <CardTitle className="mb-4">Смартфон Apple iPhone 11 128GB Black</CardTitle>
+            <CardDescription className="text-xl font-bold text-card-foreground">314 990 ₸</CardDescription>
           </CardContent>
           <CardFooter>
-            <Button>Buy</Button>
+            <Button className='w-full mr-2'>В корзину</Button>
+            <Button className='w-6'>1</Button>
           </CardFooter>
         </Card>
       </div>

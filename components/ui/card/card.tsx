@@ -9,13 +9,13 @@ const cardVariants = cva(
     variants: {
       variant: {
         default:
-          'border shadow bg-card text-card-foreground',
+          'border bg-card text-card-foreground',
       },
       size: {
         default: 'w-fit h-fit',
       },
       border: {
-        default: 'rounded-sm',
+        default: 'rounded-lg',
         sm: 'rounded-sm',
         md: 'rounded-md',
         lg: 'rounded-lg',
@@ -73,7 +73,7 @@ const CardContent = React.forwardRef<
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('p-6', className)}
+      className={cn('p-2', className)}
       {...props}
     />
   ))
@@ -101,7 +101,7 @@ const CardFooter = React.forwardRef<
   ({ className, ...props }, ref) => (
     <footer
       ref={ref}
-      className={cn('flex items-center', className)}
+      className={cn('flex items-center px-2 pb-2', className)}
       {...props}
     />
   ))

@@ -29,7 +29,12 @@ module.exports = {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
         ring: "hsl(var(--ring))",
+        input: "hsl(var(--input))",
         border: "hsl(var(--border))",
       },
       backgroundImage: {

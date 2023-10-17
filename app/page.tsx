@@ -1,13 +1,38 @@
 'use client'
 
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog/alert-dialog"
+import { AspectRatio } from "@/components/ui/aspect-ratio/aspect-ratio"
 import { Button } from "@/components/ui/button/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card/card"
 import Image from "next/image"
 
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center w-screen h-screen p-4 ">
+      <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+        <Card className="h-full overflow-hidden rounded-sm">
+          <CardHeader>
+            <AspectRatio ratio={4 / 3}>
+              <Image
+                className="object-cover"
+                src="/viacheslav-kvaratskheliia-939ZR0Q3rq8-unsplash.jpg"
+                alt="artur-stanulevich-F_zWvxrQeCk-unsplash"
+                sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
+                fill
+                loading="lazy"
+              />
+            </AspectRatio>
+          </CardHeader>
+          <CardContent>
+            <CardTitle>Title</CardTitle>
+            <CardDescription>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia veniam maiores, voluptatem quasi id nihil neque illo, dolore eligendi cupiditate in odio blanditiis? Dolore nam aliquid quaerat. Officiis, sed autem!</CardDescription>
+          </CardContent>
+          <CardFooter>
+            <Button>Buy</Button>
+          </CardFooter>
+        </Card>
+      </div>
       <div>
         <Image
           src='/viacheslav-kvaratskheliia-939ZR0Q3rq8-unsplash.jpg'
@@ -21,7 +46,7 @@ export default function Home() {
         <AlertDialogTrigger
           asChild
         >
-          <Button variant="default">Delete account</Button>
+          <Button variant="outline">Delete account</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogTitle>

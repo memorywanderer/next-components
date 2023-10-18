@@ -10,10 +10,9 @@ const DialogTrigger = DialogPrimitive.Trigger
 DialogTrigger.displayName = DialogPrimitive.Trigger.displayName
 
 const DialogPortal = ({
-  className, children, ...props
+  children, ...props
 }: DialogPrimitive.DialogPortalProps) => (
   <DialogPrimitive.Portal
-    className={cn(className)}
     {...props}
   >
     <div className='fixed inset-0 z-50 flex items-start justify-center sm:items-center'>
@@ -31,7 +30,7 @@ const DialogOverlay = forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      'fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity animate-in',
+      'fixed inset-0 z-50 bg-black/30 backdrop-blur-md transition-opacity animate-in',
       className
     )}
     {...props}
@@ -51,8 +50,7 @@ const DialogContent = forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        'fixed z-50 grid w-full scale-100 gap-4 bg-white p-6 opacity-100 animate-in fade-in-90 slide-in-from-bottom-10 sm:max-w-lg sm:rounded-lg sm:zoom-in-90 sm:slide-in-from-bottom-0',
-        'dark:bg-slate-900',
+        'fixed z-50 grid w-full scale-100 gap-4 bg-background p-6 opacity-100 animate-in fade-in-90 slide-in-from-bottom-10 sm:max-w-lg sm:rounded-lg sm:zoom-in-90 sm:slide-in-from-bottom-0',
         className
       )}
       {...props}
@@ -103,8 +101,7 @@ const DialogTitle = forwardRef<
   <DialogPrimitive.Title
     ref={ref}
     className={cn(
-      'text-lg font-semibold text-slate-900',
-      'dark:text-slate-50',
+      'text-lg font-semibol',
       className
     )}
     {...props}
@@ -118,7 +115,10 @@ const DialogDescription = forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-slate-500', 'dark:text-slate-400', className)}
+    className={cn(
+      'text-sm text-muted-foreground',
+      className
+    )}
     {...props}
   />
 ))

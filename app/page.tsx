@@ -6,11 +6,33 @@ import { AspectRatio } from "@/components/ui/aspect-ratio/aspect-ratio"
 import { Button } from "@/components/ui/button/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card/card"
 import { Checkbox } from "@/components/ui/checkbox/checkbox"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog/dialog"
 import Image from "next/image"
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center w-screen p-4">
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button>Show dialog</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <AspectRatio ratio={4 / 3}>
+              <Image
+                src='/artur-stanulevich-F_zWvxrQeCk-unsplash.jpg'
+                alt="lighting strike in the night sky"
+                fill
+                className="object-cover"
+              />
+            </AspectRatio>
+          </DialogHeader>
+          <DialogTitle>Welcome back!</DialogTitle>
+          <DialogDescription>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vel autem quae repellendus molestias eaque sit ea tenetur vitae aliquid?
+          </DialogDescription>
+        </DialogContent>
+      </Dialog>
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
         <Card className="h-full overflow-hidden max-w-[270px]" border="lg">
           <CardHeader className="py-4">

@@ -119,11 +119,7 @@ const AlertDialogAction = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AlertDialogPrimitive.Action
     ref={ref}
-    className={cn(
-      // 'inline-flex h-10 items-center justify-center rounded-md py-2 px-4 text-sm font-semibold border transition-colors  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 ',
-      // 'bg-background text-destructive border-border enabled:hover:bg-destructive enabled:hover:text-foreground enabled:hover:border-destructive',
-      className
-    )}
+    className={cn(className)}
     asChild
     {...props}
   >

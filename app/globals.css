@@ -4,7 +4,6 @@
 
 @layer base {
   :root {
-    /* #cdb4db */
     --background: 0 0% 91%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -80,6 +79,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+
 }

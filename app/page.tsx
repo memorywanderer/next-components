@@ -1,6 +1,7 @@
 'use client'
 
 import { Icons } from "@/components/icons"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion/accordion"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog/alert-dialog"
 import { AspectRatio } from "@/components/ui/aspect-ratio/aspect-ratio"
 import { Button } from "@/components/ui/button/button"
@@ -11,7 +12,31 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center w-screen p-4">
+    <main className="w-screen p-4">
+      <Accordion
+        className="bg-background"
+        type="single"
+        defaultValue='item-1'
+        collapsible
+      >
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Click me</AccordionTrigger>
+          <AccordionContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. A non dolores, nostrum debitis consequatur voluptas, esse vitae sunt maiores magni aliquid minima id deserunt temporibus eligendi numquam qui assumenda at.</AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>I'm behind</AccordionTrigger>
+          <AccordionContent>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum laudantium voluptate voluptas laboriosam nobis! Ratione eum, dicta, asperiores mollitia perspiciatis, nulla velit id aut neque ad nesciunt. Amet, quam earum!</AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>
+            Stay close
+          </AccordionTrigger>
+          <AccordionContent>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, eos aut delectus eum consequatur aliquam, quasi quaerat alias veritatis repellat nesciunt consectetur, odit unde id necessitatibus quis ab et harum!
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+
       <Dialog>
         <DialogTrigger asChild>
           <Button>Show dialog</Button>

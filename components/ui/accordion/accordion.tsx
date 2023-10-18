@@ -10,12 +10,11 @@ const AccordionTrigger = forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className='flex'>
-
+  <AccordionPrimitive.Header className='flex transition-transform'>
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        'text-gray-50 shadow-gray-600 hover:bg-slate-500 group flex h-[45px] flex-1 cursor-pointer items-center justify-between bg-gray-900 px-5 text-[15px] leading-none shadow-[0_1px_0] outline-none',
+        'group flex h-[45px] flex-1 cursor-pointer items-center justify-between px-5 text-[15px] leading-none outline-none [&[data-state=open]>svg]:rotate-180',
         className
       )}
       {...props}
@@ -39,7 +38,7 @@ const AccordionItem = forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      'focus-within:shadow-blue-900 mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 focus-within:shadow-[0_0_0_2px]',
+      'focus-within:shadow-ring mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 focus-within:shadow-[0_0_0_2px]',
       className
     )}
     {...props}
@@ -58,7 +57,7 @@ const AccordionContent = forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={cn(
-      'text-white bg-gray-900 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]',
+      'data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]',
       className
     )}
     {...props}

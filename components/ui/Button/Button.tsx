@@ -18,7 +18,7 @@ const buttonVariants = cva(
           'bg-transparent border border-input shadow-sm duration-300 hover:bg-primary  hover:border-primary hover:text-primary-foreground',
         ghost:
           'bg-transparent',
-        link: 'p-0 relative before:absolute before:origin-top-left before:-bottom-1 before:h-[2px] before:w-full before:bg-accent before:transition-transform before:scale-0 hover:before:scale-100 underline-offset-[7px] ',
+        link: 'relative before:absolute before:origin-top-left before:duration-500 before:-bottom-1 before:h-[3px] before:w-full before:bg-accent before:transition-transform before:scale-0 hover:before:scale-100 underline-offset-[7px] ',
       },
       size: {
         default: 'h-9 py-2 px-4',

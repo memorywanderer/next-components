@@ -9,20 +9,23 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-accent text-primary-foreground shadow hover:bg-accent/90',
+          'bg-primary text-primary-foreground hover:bg-primary/90',
+        secondary:
+          'bg-secondary text-secondary-foreground hover:bg-secondary-darker dark:hover:bg-secondary/80',
         destructive:
-          'bg-secondary text-destructive hover:bg-destructive hover:text-foreground',
+          'bg-secondary text-destructive hover:bg-destructive hover:text-background',
         outline:
-          'bg-transparent border border-input shadow-sm hover:bg-accent hover:text-accent-background',
+          'bg-transparent border border-input shadow-sm duration-300 hover:bg-primary  hover:border-primary hover:text-primary-foreground',
         ghost:
-          'bg-transparent dark:bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-100 dark:hover:text-slate-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent',
-        link: 'bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-300 hover:bg-transparent dark:hover:bg-transparent',
+          'bg-transparent',
+        link: 'p-0 relative before:absolute before:origin-top-left before:-bottom-1 before:h-[2px] before:w-full before:bg-accent before:transition-transform before:scale-0 hover:before:scale-100 underline-offset-[7px] ',
       },
       size: {
         default: 'h-9 py-2 px-4',
         sm: 'h-9 px-2 rounded-md',
         lg: 'h-11 px-8 rounded-md',
-        icon: 'h-9 w-9'
+        icon: 'h-9 w-9',
+        link: 'py-0'
       },
     },
     defaultVariants: {

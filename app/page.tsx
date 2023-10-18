@@ -9,7 +9,7 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center w-screen p-4 ">
+    <main className="flex flex-col items-center justify-center w-screen p-4">
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
         <Card className="h-full overflow-hidden max-w-[270px]" border="lg">
           <CardHeader className="py-4">
@@ -25,7 +25,6 @@ export default function Home() {
                   aria-hidden="true"
                 />
               </div>
-              {/* <img src="/228942_1.jpg" className="object-cover w-full h-full" alt="dsd" /> */}
             </AspectRatio>
           </CardHeader>
           <CardContent>
@@ -33,8 +32,8 @@ export default function Home() {
             <CardDescription className="text-xl font-bold text-card-foreground">314 990 ₸</CardDescription>
           </CardContent>
           <CardFooter>
-            <Button className='w-full mr-2'>В корзину</Button>
-            <Button className='w-6'>1</Button>
+            <Button className='mr-2' >В корзину</Button>
+            <Button className='' variant='link' size='link'>Secondary</Button>
           </CardFooter>
         </Card>
       </div>
@@ -51,7 +50,7 @@ export default function Home() {
         <AlertDialogTrigger
           asChild
         >
-          <Button variant="outline">Delete account</Button>
+          <Button variant="destructive">Delete account</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogTitle>

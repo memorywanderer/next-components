@@ -145,7 +145,7 @@ const AlertDialogCancel = React.forwardRef<
     asChild
     {...props}
   >
-    <Button variant='outline'>{children}</Button>
+    <Button variant='secondary'>{children}</Button>
   </AlertDialogPrimitive.Cancel>
 ))
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName

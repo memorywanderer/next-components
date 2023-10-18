@@ -5,6 +5,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { AspectRatio } from "@/components/ui/aspect-ratio/aspect-ratio"
 import { Button } from "@/components/ui/button/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card/card"
+import { Checkbox } from "@/components/ui/checkbox/checkbox"
 import Image from "next/image"
 
 export default function Home() {
@@ -31,9 +32,17 @@ export default function Home() {
             <CardTitle className="mb-4">Смартфон Apple iPhone 11 128GB Black</CardTitle>
             <CardDescription className="text-xl font-bold text-card-foreground">314 990 ₸</CardDescription>
           </CardContent>
-          <CardFooter>
-            <Button className='mr-2' >В корзину</Button>
-            <Button className='' variant='link' size='link'>Secondary</Button>
+          <CardFooter className="flex flex-col">
+            <div className='flex items-center mb-2'>
+              <Checkbox id="c1" />
+              <label className="pl-[15px] text-[15px] leading-none text-foreground cursor-pointer" htmlFor="c1">
+                Accept terms and conditions.
+              </label>
+            </div>
+            <div className='flex items-center mb-2'>
+              <Button className='mr-2' >В корзину</Button>
+              <Button href="/" variant='link' size='link'>Перейти в магазин</Button>
+            </div>
           </CardFooter>
         </Card>
       </div>

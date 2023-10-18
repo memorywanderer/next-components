@@ -8,11 +8,22 @@ import { Button } from "@/components/ui/button/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card/card"
 import { Checkbox } from "@/components/ui/checkbox/checkbox"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog/dialog"
+import { Input } from "@/components/ui/input/Input"
 import Image from "next/image"
 
 export default function Home() {
   return (
     <main className="w-screen p-4">
+      <form>
+        <label htmlFor="surname">
+          Name
+          <Input name="surname" placeholder="Your surname" radius='lg' />
+        </label>
+        <label htmlFor="name">
+          Name
+          <Input name="name" placeholder="Your name" radius='lg' disabled />
+        </label>
+      </form>
       <Accordion
         className="bg-background"
         type="single"

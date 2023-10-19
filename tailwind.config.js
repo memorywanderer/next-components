@@ -10,7 +10,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "hsl(var(--background))",
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          secondary: "hsl(var(--background-secondary))"
+        },
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -34,6 +37,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))"
+        },
         ring: "hsl(var(--ring))",
         input: "hsl(var(--input))",
         border: "hsl(var(--border))",
@@ -46,8 +53,8 @@ module.exports = {
       animation: {
         in: 'in 300ms ease-in-out',
         out: 'out 300ms ease-in-out',
-        slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
-        slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        "accordion-down": 'accordionDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        "accordion-up": 'accordionUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
 
@@ -61,11 +68,11 @@ module.exports = {
           '0%': { opacity: '100%' },
           '100%': { opacity: '0%' },
         },
-        slideDown: {
+        accordionUp: {
           from: { height: 0 },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
-        slideUp: {
+        accordionDown: {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },

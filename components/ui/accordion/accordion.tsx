@@ -57,7 +57,7 @@ const AccordionContent = forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={cn(
-      'data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]',
+      'data-[state=open]:animate-accordion-up data-[state=closed]:animate-accordion-down overflow-hidden text-[15px]',
       className
     )}
     {...props}

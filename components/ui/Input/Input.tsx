@@ -3,15 +3,15 @@ import { cn } from "@/lib/utils"
 import { VariantProps, cva } from "class-variance-authority"
 
 const inputVariants = cva(
-  'w-full h-6 px-4 py-6',
+  'w-full text-xl font-medium',
   {
     variants: {
       variant: {
         default:
-          'bg-primary-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground',
+          'bg-input placeholder:text-md placeholder:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:bg-input/50 disabled:text-muted-foreground',
       },
       size: {
-        default: 'h-10 py-2 px-4',
+        default: 'min-h-[50px] py-2 px-4',
         sm: 'h-9 px-2',
         lg: 'h-11 px-8',
       },

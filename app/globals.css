@@ -6,11 +6,6 @@
 Vars
 */
 
-:root {
-  --grad: linear-gradient(137deg, #fee487, #d8a93e 52%, #d0952c 92%);
-}
-
-
 @layer base {
   .light {
     --background-primary: 0, 0%, 97%;
@@ -28,130 +23,85 @@ Vars
     --surface-negative-hover: 5, 28%, 92%;
     --surface-accent: 0, 0%, 10%;
     --opacity-surface-disabled: 0.02;
-    --surface-disabled: rgba(0, 0, 0, var(--opacity-surface-disabled));
+    --surface-disabled: hsla(0, 0%, 0%, var(--opacity-surface-disabled));
     --opacity-surface-top: 0.5;
-    --surface-top: rgba(0, 0, 0, var(--opacity-surface-top));
-    --surface-award: linear-gradient(137deg, #fee487, #d8a93e 52%, #d0952c 92%);
-    --surface-award-hover: linear-gradient(137deg, #feeaa0, #f2c45c 52%, #ebb049 92%);
+    --surface-top: hsla(0, 0%, 0%, var(--opacity-surface-top));
+
     /* outline colors */
-    --outline-primary: 0, 0, 0;
-    --outline-secondary: 0, 0, 0;
-    --outline-hover: 77, 77, 77;
-    --outline-placeholder: 128, 128, 128;
-    --outline-initial: 166, 166, 166;
+    --outline-primary: 0, 0%, 0%;
+    --outline-secondary: 0, 0%, 0%;
+    --outline-hover: 0, 0%, 30%;
+    --outline-placeholder: 0, 0%, 50%;
+    --outline-initial: 0, 0%, 65%;
     --opacity-outline-disabled: 0.3;
     --outline-disabled: rgba(0, 0, 0, var(--opacity-outline-disabled));
     --opacity-outline-faint-disabled: 0.05;
-    --outline-faint: 204, 204, 204;
-    --outline-faint-hover: 179, 179, 179;
+    --outline-faint: 0, 0%, 80%;
+    --outline-faint-hover: 0, 0%, 70%;
     --outline-faint-disabled: rgba(0, 0, 0, var(--opacity-outline-faint-disabled));
-    --outline-slight: 229, 229, 229;
-    --outline-slight-hover: 209, 209, 209;
+    --outline-slight: 0, 0%, 90%;
+    --outline-slight-hover: 0, 0%, 82%;
     --opacity-outline-slight-disabled: 0.05;
     --outline-slight-disabled: rgba(0, 0, 0, var(--opacity-outline-slight-disabled));
-    --outline-focus: 138, 138, 229;
-    --outline-interactive: 20, 20, 204;
-    --outline-interactive-hover: 1, 1, 160;
-    --outline-positive: 0, 132, 34;
-    --outline-positive-hover: 31, 102, 48;
+    --outline-focus: 239, 70%, 65%;
+    --outline-interactive: 236, 90%, 42%;
+    --outline-interactive-hover: 235, 99%, 40%;
+    --outline-positive: 123, 100%, 26%;
+    --outline-positive-hover: 140, 58%, 33%;
     --opacity-outline-positive-disabled: 0.1;
     --outline-positive-disabled: rgba(2, 131, 35, var(--opacity-outline-positive-disabled));
-    --outline-warning: 182, 87, 0;
-    --outline-warning-hover: 128, 53, 0;
+    --outline-warning: 30, 100%, 36%;
+    --outline-warning-hover: 25, 100%, 25%;
     --opacity-outline-warning-disabled: 0.1;
     --outline-warning-disabled: rgba(209, 70, 0, var(--opacity-outline-warning-disabled));
-    --outline-negative: 219, 33, 19;
-    --outline-negative-hover: 153, 25, 15;
+    --outline-negative: 5, 84%, 47%;
+    --outline-negative-hover: 3, 85%, 31%;
     --opacity-outline-negative-disabled: 0.1;
     --outline-negative-disabled: rgba(219, 33, 19, var(--opacity-outline-negative-disabled));
-    --outline-inversed: 255, 255, 255;
-    --outline-positive-accent: 109, 208, 120;
-    --outline-negative-accent: 208, 116, 118;
-    --outline-dark-static: 0, 0, 0;
-    --outline-light-static: 255, 255, 255;
-    --outline-award: linear-gradient(137deg, #fee487, #d8a93e 52%, #d0952c 92%);
-    --opacity-fill-disabled: 0.3;
+    --outline-inversed: 0, 0%, 100%;
+    --outline-positive-accent: 123, 72%, 61%;
+    --outline-negative-accent: 5, 66%, 61%;
+    --outline-dark-static: 0, 0%, 0%;
+    --outline-light-static: 0, 0%, 100%;
+
     /* fill */
+    --opacity-fill-disabled: 0.3;
     --fill-disabled: rgba(0, 0, 0, var(--opacity-fill-disabled));
-    --fill-highlight: 255, 238, 164;
-    --fill-primary: 51, 51, 51;
-    --fill-primary-hover: 3, 3, 3;
-    --fill-secondary: 234, 234, 234;
-    --fill-secondary-hover: 219, 219, 219;
-    --fill-interactive: 46, 46, 229;
-    --fill-interactive-hover: 0, 0, 178;
-    --fill-additional: 0, 206, 51;
-    --fill-additional-hover: 43, 217, 87;
-    --fill-positive: 33, 158, 85;
-    --fill-positive-hover: 12, 131, 56;
-    --fill-warning: 175, 95, 55;
-    --fill-warning-hover: 153, 71, 31;
-    --fill-negative: 212, 59, 45;
-    --fill-negative-hover: 189, 30, 19;
+    --fill-highlight: 52, 100%, 76%;
+    --fill-primary: 0, 0%, 20%;
+    --fill-primary-hover: 0, 0%, 1%;
+    --fill-secondary: 0, 0%, 92%;
+    --fill-secondary-hover: 0, 0%, 86%;
+    --fill-interactive: 236, 80%, 49%;
+    --fill-interactive-hover: 239, 100%, 44%;
+    --fill-additional: 120, 100%, 40%;
+    --fill-additional-hover: 134, 100%, 51%;
+    --fill-positive: 141, 66%, 40%;
+    --fill-positive-hover: 125, 83%, 33%;
+    --fill-warning: 22, 52%, 45%;
+    --fill-warning-hover: 20, 66%, 40%;
+    --fill-negative: 7, 65%, 49%;
+    --fill-negative-hover: 8, 81%, 42%;
     --opacity-link-border: 0.3;
     --opacity-link-border-hover: 0.7;
+
     /* on surface */
-    --surface-on-primary: 0, 0, 0;
-    --surface-on-secondary: 0, 0, 0;
-    --surface-on-interactive: 20, 20, 204;
-    --surface-on-positive: 2, 131, 35;
-    --surface-on-warning: 188, 90, 0;
-    --surface-on-negative: 235, 16, 0;
-    --surface-on-static: 0, 0, 0;
-    --surface-on-award: linear-gradient(137deg, #fee487, #d8a93e 52%, #d0952c 92%);
-    --surface-on-accent-positive: 132, 255, 143;
-    --surface-on-accent-negative: 255, 140, 140;
-    --surface-on-disabled: rgba(0, 0, 0, var(--opacity-surface-on-disabled));
-    --surface-on-initial: 166, 166, 166;
-    --surface-on-placeholder: 128, 128, 128;
-    --surface-on-hover: 77, 77, 77;
-    /* interactive */
-    --interactive-accent: 46, 46, 229;
-    --interactive-accent-hover: 0, 0, 178;
-    --interactive-positive: 77, 153, 108;
-    --interactive-positive-hover: 20, 102, 48;
-    --interactive-negative: 242, 69, 53;
-    --interactive-negative-hover: 189, 30, 19;
-    --interactive-warning: 204, 123, 82;
-    --interactive-warning-hover: 153, 71, 31;
-    --interactive-additional: 0, 206, 51;
-    --interactive-additional-hover: 43, 217, 87;
-    --interactive-on-primary: 255, 255, 255;
-    --interactive-on-secondary: 0, 0, 0;
-    /* border */
-    --border-surface: 237, 237, 237;
-    --border-separator: 229, 229, 229;
-    --border-initial: 204, 204, 204;
-    --border-hover: 179, 179, 179;
-    --border-surface-secondary-hover: 209, 209, 209;
-    --border-focus: 138, 138, 229;
-    --border-interactive-positive: 49, 155, 76;
-    --border-interactive-positive-disabled: 2, 131, 35;
-    --border-interactive-positive-hover: 31, 102, 48;
-    --border-interactive-warning: 188, 90, 0;
-    --border-interactive-warning-disabled: 209, 70, 0;
-    --border-interactive-warning-hover: 128, 53, 0;
-    --border-interactive-negative: 239, 61, 48;
-    --border-interactive-negative-disabled: 235, 16, 0;
-    --border-interactive-negative-hover: 153, 25, 15;
-
-    --control-initial: 128, 128, 128;
-    --control-hover: 77, 77, 77;
-
-    /* buttons */
-    --button-primary: 51, 51, 51;
-    --button-primary-hover: 3, 3, 3;
-    --button-secondary: 234, 234, 234;
-    --button-secondary-hover: 219, 219, 219;
-    --button-tertiary: 179, 179, 179;
-    --button-tertiary-hover: 77, 77, 77;
-    --color-neutral-primary-on: 255, 255, 255;
-    --color-neutral-primary-on-inverted: 0, 0, 0;
-    --color-highlight: #ffeea4;
-    --color-highlight-on: #000;
+    --on-surface-primary: 0, 0%, 0%;
+    --on-surface-secondary: 0, 0%, 0%;
+    --on-surface-interactive: 234, 100%, 40%;
+    --on-surface-positive: 118, 98%, 27%;
+    --on-surface-warning: 31, 100%, 37%;
+    --on-surface-negative: 4, 100%, 46%;
+    --on-surface-static: 0, 0%, 0%;
+    --on-surface-accent-positive: 125, 100%, 72%;
+    --on-surface-accent-negative: 0, 100%, 70%;
+    --on-surface-disabled: rgba(0, 0, 0, var(--opacity-on-surface-disabled));
+    --on-surface-initial: 0, 0%, 65%;
+    --on-surface-placeholder: 0, 0%, 50%;
+    --on-surface-hover: 0, 0%, 30%;
 
     /* opacity */
-    --opacity-surface-on-disabled: 0.3;
+    --opacity-on-surface-disabled: 0.3;
     --opacity-interactive-disabled: 0.3;
     --opacity-border-disabled: 0.05;
     --opacity-border-interactive-disabled: 0.1;
@@ -363,11 +313,11 @@ Vars
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-outline;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background;
   }
 }
 

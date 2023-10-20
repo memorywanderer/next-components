@@ -156,7 +156,7 @@ export default function Home() {
                 aria-label="Placeholder"
                 role="img"
                 aria-roledescription="placeholder"
-                className="flex h-full w-full items-center justify-center bg-background "
+                className="flex items-center justify-center w-full h-full bg-background "
               >
                 <Icons.placeholder
                   className="h-9 w-9 text-muted-foreground"
@@ -177,7 +177,7 @@ export default function Home() {
               </label>
             </div>
             <div className='flex items-center mb-2'>
-              <Button className='mr-2' >В корзину</Button>
+              <Button className='mr-2' variant="outline">В корзину</Button>
               <Button href="/" variant='link' size='link'>Перейти в магазин</Button>
             </div>
           </CardFooter>

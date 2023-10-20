@@ -23,9 +23,9 @@ Vars
     --surface-negative-hover: 5, 28%, 92%;
     --surface-accent: 0, 0%, 10%;
     --opacity-surface-disabled: 0.02;
-    --surface-disabled: hsla(0, 0%, 0%, var(--opacity-surface-disabled));
+    --surface-disabled: 0, 0%, 0%, var(--opacity-surface-disabled);
     --opacity-surface-top: 0.5;
-    --surface-top: hsla(0, 0%, 0%, var(--opacity-surface-top));
+    --surface-top: 0, 0%, 0%, var(--opacity-surface-top);
 
     /* outline colors */
     --outline-primary: 0, 0%, 0%;
@@ -34,30 +34,30 @@ Vars
     --outline-placeholder: 0, 0%, 50%;
     --outline-initial: 0, 0%, 65%;
     --opacity-outline-disabled: 0.3;
-    --outline-disabled: rgba(0, 0, 0, var(--opacity-outline-disabled));
+    --outline-disabled: 0, 0%, 0%, var(--opacity-outline-disabled);
     --opacity-outline-faint-disabled: 0.05;
     --outline-faint: 0, 0%, 80%;
     --outline-faint-hover: 0, 0%, 70%;
-    --outline-faint-disabled: rgba(0, 0, 0, var(--opacity-outline-faint-disabled));
+    --outline-faint-disabled: 0, 0%, 0%, var(--opacity-outline-faint-disabled);
     --outline-slight: 0, 0%, 90%;
     --outline-slight-hover: 0, 0%, 82%;
     --opacity-outline-slight-disabled: 0.05;
-    --outline-slight-disabled: rgba(0, 0, 0, var(--opacity-outline-slight-disabled));
+    --outline-slight-disabled: 0, 0, 0, var(--opacity-outline-slight-disabled);
     --outline-focus: 239, 70%, 65%;
     --outline-interactive: 236, 90%, 42%;
     --outline-interactive-hover: 235, 99%, 40%;
     --outline-positive: 123, 100%, 26%;
     --outline-positive-hover: 140, 58%, 33%;
     --opacity-outline-positive-disabled: 0.1;
-    --outline-positive-disabled: rgba(2, 131, 35, var(--opacity-outline-positive-disabled));
+    --outline-positive-disabled: 135, 97%, 26.1%, var(--opacity-outline-positive-disabled);
     --outline-warning: 30, 100%, 36%;
     --outline-warning-hover: 25, 100%, 25%;
     --opacity-outline-warning-disabled: 0.1;
-    --outline-warning-disabled: rgba(209, 70, 0, var(--opacity-outline-warning-disabled));
+    --outline-warning-disabled: 200, 100%, 41%, var(--opacity-outline-warning-disabled);
     --outline-negative: 5, 84%, 47%;
     --outline-negative-hover: 3, 85%, 31%;
     --opacity-outline-negative-disabled: 0.1;
-    --outline-negative-disabled: rgba(219, 33, 19, var(--opacity-outline-negative-disabled));
+    --outline-negative-disabled: 4, 84%, 46.7%, var(--opacity-outline-negative-disabled);
     --outline-inversed: 0, 0%, 100%;
     --outline-positive-accent: 123, 72%, 61%;
     --outline-negative-accent: 5, 66%, 61%;
@@ -66,7 +66,7 @@ Vars
 
     /* fill */
     --opacity-fill-disabled: 0.3;
-    --fill-disabled: rgba(0, 0, 0, var(--opacity-fill-disabled));
+    --fill-disabled: 0, 0%, 0%, var(--opacity-fill-disabled);
     --fill-highlight: 52, 100%, 76%;
     --fill-primary: 0, 0%, 20%;
     --fill-primary-hover: 0, 0%, 1%;
@@ -95,7 +95,7 @@ Vars
     --on-surface-static: 0, 0%, 0%;
     --on-surface-accent-positive: 125, 100%, 72%;
     --on-surface-accent-negative: 0, 100%, 70%;
-    --on-surface-disabled: rgba(0, 0, 0, var(--opacity-on-surface-disabled));
+    --on-surface-disabled: 0, 0%, 0%, var(--opacity-on-surface-disabled);
     --on-surface-initial: 0, 0%, 65%;
     --on-surface-placeholder: 0, 0%, 50%;
     --on-surface-hover: 0, 0%, 30%;
@@ -103,8 +103,6 @@ Vars
     /* opacity */
     --opacity-on-surface-disabled: 0.3;
     --opacity-interactive-disabled: 0.3;
-    --opacity-border-disabled: 0.05;
-    --opacity-border-interactive-disabled: 0.1;
     --opacity-meta-initial: 0.3;
     --opacity-meta-hover: 0.7;
     --opacity-control-disabled: 0.2;

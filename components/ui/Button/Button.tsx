@@ -4,21 +4,21 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          'bg-surface-interactive text-primary-foreground hover:bg-surface-interactive-hover',
+          'bg-fill-primary text-on-surface-dark hover:bg-fill-hover',
         secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary-darker dark:hover:bg-secondary/90',
+          'bg-fill-secondary text-on-surface-secondary hover:bg-fill-secondary-hover',
         destructive:
-          'bg-secondary text-destructive hover:bg-destructive hover:text-background',
+          'bg-fill-secondary text-on-surface-negative hover:bg-fill-negative hover:text-background',
         outline:
-          'bg-transparent border border-input shadow-sm duration-300 hover:bg-primary  hover:border-primary hover:text-primary-foreground',
+          'bg-transparent border duration-300 hover:bg-fill-primary hover:border-outline-hover hover:text-on-surface-dark',
         ghost:
           'bg-transparent',
-        link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-accent before:hover:h-[8px]',
+        link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-fill-interactive before:hover:h-[8px]',
       },
       size: {
         default: 'h-9 py-2 px-4',

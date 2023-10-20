@@ -72,6 +72,8 @@ Vars
     --fill-primary-hover: 0, 0%, 1%;
     --fill-secondary: 0, 0%, 92%;
     --fill-secondary-hover: 0, 0%, 86%;
+    --fill-tertiary: 0, 0%, 70%;
+    --fill-tertiary-hover: 0, 0%, 30%;
     --fill-interactive: 236, 80%, 49%;
     --fill-interactive-hover: 239, 100%, 44%;
     --fill-additional: 120, 100%, 40%;

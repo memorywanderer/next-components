@@ -177,7 +177,7 @@ export default function Home() {
               </label>
             </div>
             <div className='flex items-center mb-2'>
-              <Button className='mr-2' variant="outline">В корзину</Button>
+              <Button className='mr-2' variant="secondary">В корзину</Button>
               <Button href="/" variant='link' size='link'>Перейти в магазин</Button>
             </div>
           </CardFooter>
@@ -196,7 +196,7 @@ export default function Home() {
         <AlertDialogTrigger
           asChild
         >
-          <Button variant="destructive">Delete account</Button>
+          <Button variant="negative">Delete account</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogTitle>

@@ -12,8 +12,13 @@ const buttonVariants = cva(
           'bg-fill-primary text-on-surface-dark hover:bg-fill-hover',
         secondary:
           'bg-fill-secondary text-on-surface-secondary hover:bg-fill-secondary-hover',
-        destructive:
+        tertiary: "bg-fill-tertiary text-on-surface-secondary hover:bg-fill-tertiary-hover",
+        positive: "bg-fill-positive hover:bg-fill-positive-hover",
+        warning: "bg-fill-warning hover:bg-fill-warning-hover",
+        negative:
           'bg-fill-secondary text-on-surface-negative hover:bg-fill-negative hover:text-background',
+        accent:
+          'bg-fill-interactive text-on-surface-dark hover:bg-fill-interactive-hover',
         outline:
           'bg-transparent border duration-300 hover:bg-fill-primary hover:border-outline-hover hover:text-on-surface-dark',
         ghost:

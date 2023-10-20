@@ -67,6 +67,8 @@ module.exports = {
           "hover": "hsl(var(--fill-primary-hover))",
           "secondary": "hsl(var(--fill-secondary))",
           "secondary-hover": "hsl(var(--fill-secondary-hover))",
+          "tertiary": "hsl(var(--fill-tertiary))",
+          "tertiary-hover": "hsl(var(--fill-tertiary-hover))",
           "interactive": "hsl(var(--fill-interactive))",
           "interactive-hover": "hsl(var(--fill-interactive-hover))",
           "additional": "hsl(var(--fill-additional))",

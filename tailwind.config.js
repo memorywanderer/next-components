@@ -110,6 +110,9 @@ module.exports = {
           negative: "hsl(var(--on-fill-negative))",
         }
       },
+      fontSize: {
+        xs: ['var(--font-small), var(--line-height-small)'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

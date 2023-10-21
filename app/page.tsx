@@ -143,7 +143,7 @@ export default function Home() {
             </AspectRatio>
           </DialogHeader>
           <DialogTitle>Welcome back!</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className='text-xs'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vel autem quae repellendus molestias eaque sit ea tenetur vitae aliquid?
           </DialogDescription>
         </DialogContent>

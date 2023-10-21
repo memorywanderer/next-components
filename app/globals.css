@@ -4,8 +4,32 @@
 
 @layer base {
   :root {
-    --on-dark: 0, 0%, 100%;
-    --on-light: 0, 0%, 0%;
+    --title-mobile: 32px/35px;
+    --title-desktop: 45px/50px;
+    --subtitle-mobile: 24px/30px;
+    --subtitle-desktop: 30px/35px;
+    --heading-one-mobile: 28px/30px;
+    --heading-one-desktop: 38px/45px;
+    --heading-two-mobile: 24px/30px;
+    --heading-two-desktop: 28px/35px;
+    --heading-three: 21px/25px;
+    --heading-four-mobile: 17px/20px;
+    --heading-four-desktop: 21px/25px;
+    --heading-five: 17px/20px;
+    --heading-six-mobile: 15px/20px;
+    --heading-six-desktop: 17px/20px;
+    --body-primary-mobile: 17px/25px;
+    --body-primary-desktop: 21px/30px;
+    --body-secondary-mobile: 15px/20px;
+    --body-secondary-desktop: 17px/25px;
+    --body-secondary-bold-mobile: 15px/20px;
+    --body-secondary-bold-desktop: 17px/25px;
+    --body-large: 17px/25px;
+    --body-large-bold: 17px/25px;
+    --body-medium: 15px/20px;
+    --body-medium-bold: 15px/20px;
+    --font-small: 13px;
+    --line-height-small: 15px;
   }
 
   .light {

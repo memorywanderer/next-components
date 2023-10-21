@@ -17,7 +17,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="w-screen p-4 bg-background-secondary">
+    <main className="w-screen p-4 ">
       <header>
         <NavigationMenu>
           <NavigationMenuList>
@@ -177,7 +177,7 @@ export default function Home() {
               </label>
             </div>
             <div className='flex items-center mb-2'>
-              <Button className='mr-2' variant="secondary">В корзину</Button>
+              <Button className='mr-2' variant="accent">В корзину</Button>
               <Button href="/" variant='link' size='link'>Перейти в магазин</Button>
             </div>
           </CardFooter>

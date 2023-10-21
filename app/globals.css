@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-Vars
-*/
-
 @layer base {
+  :root {
+    --on-dark: 0, 0%, 100%;
+    --on-light: 0, 0%, 0%;
+  }
+
   .light {
-    --background-primary: 0, 0%, 97%;
-    --background-secondary: 0, 0%, 100%;
+    --background-primary: 0, 0%, 100%;
+    --background-secondary: 0, 0%, 97%;
     --surface-primary: 0, 0%, 100%;
     --surface-secondary: 0, 0%, 97%;
+    --surface-tertiary: 0, 0%, 95%;
     --surface-hover: 0, 0%, 95%;
     --surface-interactive: 230, 100%, 95%;
     --surface-interactive-hover: 240, 21%, 89%;
@@ -65,10 +67,11 @@ Vars
     --outline-light-static: 0, 0%, 100%;
 
     /* fill */
+    --on-fill: 0, 0%, 100%;
     --opacity-fill-disabled: 0.3;
     --fill-disabled: 0, 0%, 0%, var(--opacity-fill-disabled);
     --fill-highlight: 52, 100%, 76%;
-    --fill-primary: 0, 0%, 20%;
+    --fill-primary: 0, 0%, 10%;
     --fill-primary-hover: 0, 0%, 1%;
     --fill-secondary: 0, 0%, 92%;
     --fill-secondary-hover: 0, 0%, 86%;
@@ -78,14 +81,21 @@ Vars
     --fill-interactive-hover: 239, 100%, 44%;
     --fill-additional: 120, 100%, 40%;
     --fill-additional-hover: 134, 100%, 51%;
-    --fill-positive: 141, 66%, 40%;
+    /* --fill-positive: 141, 66%, 40%;
     --fill-positive-hover: 125, 83%, 33%;
     --fill-warning: 22, 52%, 45%;
-    --fill-warning-hover: 20, 66%, 40%;
+    --fill-warning-hover: 20, 66%, 40%;*/
     --fill-negative: 7, 65%, 49%;
     --fill-negative-hover: 8, 81%, 42%;
     --opacity-link-border: 0.3;
     --opacity-link-border-hover: 0.7;
+
+    /*on fill*/
+    --on-fill-primary: 0, 0%, 100%;
+    --on-fill-secondary: 0, 0%, 10%;
+    --on-fill-tertiary: 0, 0%, 10%;
+    --on-fill-interactive: 0, 0%, 100%;
+    --on-fill-negative: 0, 0%, 100%;
 
     /* on surface */
     --on-surface-primary: 0, 0%, 0%;
@@ -110,144 +120,105 @@ Vars
     --opacity-control-disabled: 0.2;
   }
 
-  .darkk {
-    --background-primary: 18, 21, 28;
-    --background-secondary: 18, 21, 28;
-    /* surface */
-    --surface-primary: 32, 35, 42;
-    --surface-secondary: 32, 35, 42;
-    --surface-hover: 42, 44, 51;
-    --surface-interactive: 51, 51, 102;
-    --surface-interactive-hover: 62, 62, 117;
+  .dark {
+    --background-primary: 220, 22%, 9%;
+    --background-secondary: 220, 22%, 9%;
+    --surface-primary: 220, 14%, 15%;
+    --surface-secondary: 220, 13%, 37%;
+    --surface-tertiary: 220, 8%, 23%;
+    --surface-hover: 228, 10%, 47%;
+    --surface-interactive: 240, 50%, 51%;
+    --surface-interactive-hover: 240, 52%, 39%;
     --opacity-surface-disabled: 0.03;
-    --surface-disabled: rgba(255, 255, 255, var(--opacity-surface-disabled));
-    --surface-positive: 41, 68, 51;
-    --surface-positive-hover: 62, 87, 71;
-    --surface-warning: 65, 56, 50;
-    --surface-warning-hover: 84, 76, 71;
-    --surface-negative: 65, 45, 50;
-    --surface-negative-hover: 84, 66, 71;
-    --surface-accent: 225, 228, 242;
+    --surface-disabled: 0, 0%, 100%, var(--opacity-surface-disabled);
+    --surface-positive: 126, 24%, 53%;
+    --surface-positive-hover: 129, 18%, 67%;
+    --surface-warning: 19, 14%, 24%;
+    --surface-warning-hover: 20, 9%, 30%;
+    --surface-negative: 340, 17%, 55%;
+    --surface-negative-hover: 337, 18%, 67%;
+    --surface-accent: 225, 25%, 90%;
     --opacity-surface-top: 0.5;
-    --surface-top: rgba(0, 0, 0, var(--opacity-surface-top));
-    --surface-award: linear-gradient(137deg, #fee487, #d8a93e 52%, #d0952c 92%);
-    --surface-award-hover: linear-gradient(137deg, #feeaa0, #f2c45c 52%, #ebb049 92%);
+    --surface-top: 0, 0%, 0%, var(--opacity-surface-top);
 
     /* outline */
-    --outline-primary: 255, 255, 255;
-    --outline-secondary: 208, 208, 210;
-    --outline-hover: 231, 232, 232;
-    --outline-placeholder: 136, 138, 141;
-    --outline-initial: 113, 114, 119;
+    --outline-primary: 0, 0%, 100%;
+    --outline-secondary: 220, 2%, 82%;
+    --outline-hover: 191, 2%, 91%;
+    --outline-placeholder: 208, 2%, 54%;
+    --outline-initial: 217, 2%, 46%;
     --opacity-outline-disabled: 0.2;
-    --outline-disabled: rgba(255, 255, 255, var(--opacity-outline-disabled));
-    --outline-faint: 89, 91, 96;
-    --outline-faint-hover: 136, 138, 141;
-    --outline-slight: 62, 65, 70;
-    --outline-slight-hover: 91, 95, 101;
+    --outline-disabled: 0, 0%, 100%, var(--opacity-outline-disabled);
+    --outline-faint: 215, 4%, 38%;
+    --outline-faint-hover: 208, 2%, 54%;
+    --outline-slight: 215, 6%, 27%;
+    --outline-slight-hover: 214, 6%, 36%;
     --opacity-outline-slight-disabled: 0.05;
-    --outline-slight-disabled: rgba(255, 255, 255, var(--opacity-outline-slight-disabled));
-    --outline-focus: 130, 139, 187;
-    --outline-interactive: 147, 162, 255;
-    --outline-interactive-hover: 129, 129, 246;
-    --outline-positive: 109, 208, 120;
-    --outline-positive-hover: 166, 255, 176;
+    --outline-slight-disabled: 0, 0%, 100%, var(--opacity-outline-slight-disabled);
+    --outline-focus: 224, 29%, 60%;
+    --outline-interactive: 224, 83%, 70%;
+    --outline-interactive-hover: 234, 96%, 68%;
+    --outline-positive: 134, 59%, 63%;
+    --outline-positive-hover: 137, 100%, 78%;
     --opacity-outline-positive-disabled: 0.15;
-    --outline-positive-disabled: rgba(132, 255, 143 var(--opacity-outline-positive-disabled));
-    --outline-warning: 204, 158, 112;
-    --outline-warning-hover: 255, 217, 178;
+    --outline-positive-disabled: 136, 100%, 72%, var(--opacity-outline-positive-disabled);
+    --outline-warning: 33, 44%, 63%;
+    --outline-warning-hover: 33, 66%, 82%;
     --opacity-outline-warning-disabled: 0.15;
-    --outline-warning-disabled: rgba(204, 158, 112, var(--opacity-outline-warning-disabled));
-    --outline-negative: 218, 133, 134;
-    --outline-negative-hover: 255, 166, 168;
+    --outline-warning-disabled: 33, 44%, 63%, var(--opacity-outline-warning-disabled);
+    --outline-negative: 2, 63%, 66%;
+    --outline-negative-hover: 3, 100%, 82%;
     --opacity-outline-negative-disabled: 0.15;
-    --outline-negative-disabled: rgba(218, 133, 134, var(--opacity-outline-negative-disabled));
-    --outline-inversed: 0, 0, 0;
-    --outline-positive-accent: 49, 155, 76;
-    --outline-negative-accent: 239, 61, 48;
-    --outline-dark-static: 0, 0, 0;
-    --outline-light-static: 255, 255, 255;
-    --outline-award: linear-gradient(137deg, #fee487, #d8a93e 52%, #d0952c 92%);
-    --opacity-fill-disabled: 0.3;
+    --outline-negative-disabled: 2, 63%, 66%, var(--opacity-outline-negative-disabled);
+    --outline-inversed: 0, 0%, 0%;
+    --outline-positive-accent: 133, 52%, 41%;
+    --outline-negative-accent: 5, 93%, 56%;
+    --outline-dark-static: 0, 0%, 0%;
+    --outline-light-static: 0, 0%, 100%;
 
     /* fill */
-    --fill-disabled: rgba(255, 255, 255, var(--opacity-fill-disabled));
-    --fill-hover: 208, 208, 210;
-    --fill-highlight: 208, 208, 210;
-    --fill-primary: 245, 245, 249;
-    --fill-primary-hover: 255, 255, 255;
-    --fill-secondary: 54, 57, 63;
-    --fill-secondary-hover: 65, 68, 73;
-    --fill-interactive: 102, 116, 204;
-    --fill-interactive-hover: 122, 134, 204;
-    --fill-additional: 132, 255, 143;
-    --fill-additional-hover: 173, 255, 181;
-    --fill-positive: 40, 133, 78;
-    --fill-positive-hover: 99, 153, 121;
-    --fill-warning: 204, 123, 82;
-    --fill-warning-hover: 178, 131, 107;
-    --fill-negative: 178, 65, 65;
-    --fill-negative-hover: 204, 82, 82;
+    --opacity-fill-disabled: 0.3;
+    --fill-disabled: 0, 0, 100%, var(--opacity-fill-disabled);
+    --fill-hover: 208, 3%, 82%;
+    --fill-highlight: 208, 3%, 82%;
+    --fill-primary: 240, 25%, 97%;
+    --fill-primary-hover: 240, 2%, 82%;
+    --fill-secondary: 220, 8%, 23%;
+    --fill-secondary-hover: 214, 6%, 27%;
+    --fill-interactive: 231, 57%, 60%;
+    --fill-interactive-hover: 227, 60%, 70%;
+    --fill-additional: 138, 100%, 71%;
+    --fill-additional-hover: 142, 100%, 77%;
+    --fill-positive: 149, 57%, 40%;
+    --fill-positive-hover: 138, 26%, 45%;
+    --fill-warning: 29, 57%, 56%;
+    --fill-warning-hover: 28, 27%, 53%;
+    --fill-negative: 3, 55%, 47%;
+    --fill-negative-hover: 0, 53%, 56%;
     --opacity-link-border: 0.5;
+
+    /*on fill*/
+    --on-fill-primary: 0, 0%, 0%;
+    --on-fill-secondary: 0, 0%, 100%;
+    --on-fill-tertiary: 0, 0%, 100%;
+    --on-fill-interactive: 0, 0%, 100%;
+    --on-fill-negative: 0, 0%, 100%;
 
     /* on surface */
     --opacity-link-border-hover: 0.7;
-    --surface-on-primary: 255, 255, 255;
-    --surface-on-secondary: 208, 208, 210;
-    --surface-on-interactive: 178, 189, 255;
-    --surface-on-positive: 132, 255, 143;
-    --surface-on-warning: 255, 198, 140;
-    --surface-on-negative: 255, 140, 140;
-    --surface-on-static: 0, 0, 0;
-    --surface-on-award: linear-gradient(137deg, #fee487, #d8a93e 52%, #d0952c 92%);
-    --surface-on-accent-positive: 2, 131, 35;
-    --surface-on-accent-negative: 235, 16, 0;
-    --surface-on-disabled: rgba(255, 255, 255, var(--opacity-surface-on-disabled));
-    --surface-on-initial: 113, 114, 119;
-    --surface-on-placeholder: 136, 138, 141;
-    --surface-on-hover: 231, 232, 232;
-    --interactive-accent: 82, 82, 204;
-    --interactive-accent-hover: 118, 118, 217;
-    --interactive-positive: 40, 133, 78;
-    --interactive-positive-hover: 99, 153, 121;
-    --interactive-negative: 153, 46, 46;
-    --interactive-negative-hover: 204, 82, 82;
-    --interactive-warning: 153, 92, 61;
-    --interactive-warning-hover: 78, 131, 107;
-    --interactive-additional: 132, 255, 143;
-    --interactive-additional-hover: 134, 191, 149;
-    --interactive-on-primary: 255, 255, 255;
-    --interactive-on-secondary: 255, 255, 255;
-
-    /* border */
-    --border-surface: 41, 44, 51;
-    --border-separator: 62, 65, 70;
-    --border-initial: 89, 91, 96;
-    --border-hover: 136, 138, 141;
-    --border-surface-secondary-hover: 91, 95, 101;
-    --border-focus: 130, 139, 187;
-    --border-interactive-positive: 109, 208, 120;
-    --border-interactive-positive-disabled: 132, 255, 143;
-    --border-interactive-positive-hover: 166, 255, 176;
-    --border-interactive-warning: 204, 158, 112;
-    --border-interactive-warning-disabled: 204, 158, 112;
-    --border-interactive-warning-hover: 255, 217, 178;
-    --border-interactive-negative: 208, 116, 118;
-    --border-interactive-negative-disabled: 255, 140, 140;
-    --border-interactive-negative-hover: 255, 166, 168;
-
-    --control-initial: 136, 138, 141;
-    --control-hover: 208, 208, 210;
-
-    /* buttons */
-    --button-primary: 245, 245, 249;
-    --button-primary-hover: 255, 255, 255;
-    --button-secondary: 54, 57, 63;
-    --button-secondary-hover: 65, 68, 73;
-    --button-tertiary: 136, 138, 141;
-    --button-tertiary-hover: 255, 255, 255;
-    --color-neutral-primary-on: 0, 0, 0;
-    --color-neutral-primary-on-inverted: 255, 255, 255;
+    --on-surface-primary: 0, 0%, 100%;
+    --on-surface-secondary: 60, 3%, 82%;
+    --on-surface-interactive: 235, 81%, 77%;
+    --on-surface-positive: 138, 100%, 71%;
+    --on-surface-warning: 28, 100%, 70%;
+    --on-surface-negative: 0, 100%, 70%;
+    --on-surface-static: 0, 0%, 0%;
+    --on-surface-accent-positive: 2, 131, 35;
+    --on-surface-accent-negative: 235, 16, 0;
+    --on-surface-disabled: 0, 0%, 100%, var(--opacity-surface-on-disabled);
+    --on-surface-initial: 226, 5%, 45%;
+    --on-surface-placeholder: 220, 2%, 52%;
+    --on-surface-hover: 210, 2%, 91%;
 
     --color-highlight: #d0d0d2;
     --color-highlight-on: #040406;
@@ -260,60 +231,11 @@ Vars
     --opacity-meta-hover: 0.9;
     --opacity-control-disabled: 0.2;
   }
-
-  :root {
-    --background: 0 0% 97%;
-    --background-secondary: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 91.5%;
-    --secondary-darker: 240 4.8% 87%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 200, 100%, 49%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 0 0% 93%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --background-secondary: 0 0% 10%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent: 278 35% 78%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 3 93% 63%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
 }
 
 @layer base {
   * {
-    @apply border-outline;
+    @apply border-outline-faint;
   }
 
   body {

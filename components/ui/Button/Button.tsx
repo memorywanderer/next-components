@@ -9,18 +9,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-fill-primary text-on-surface-dark hover:bg-fill-hover',
+          'bg-fill-primary text-on-fill-primary hover:bg-fill-primary-hover',
         secondary:
-          'bg-fill-secondary text-on-surface-secondary hover:bg-fill-secondary-hover',
-        tertiary: "bg-fill-tertiary text-on-surface-secondary hover:bg-fill-tertiary-hover",
-        positive: "bg-fill-positive hover:bg-fill-positive-hover",
-        warning: "bg-fill-warning hover:bg-fill-warning-hover",
+          'bg-fill-secondary text-on-fill-secondary hover:bg-fill-secondary-hover',
+        tertiary: "bg-fill-tertiary text-on-fill-tertiary hover:bg-fill-tertiary-hover",
+        // positive: "bg-fill-positive hover:bg-fill-positive-hover",
+        // warning: "bg-fill-warning hover:bg-fill-warning-hover",
         negative:
-          'bg-fill-secondary text-on-surface-negative hover:bg-fill-negative hover:text-background',
+          'bg-fill-secondary text-on-surface-negative hover:bg-fill-negative hover:text-on-fill-negative',
         accent:
-          'bg-fill-interactive text-on-surface-dark hover:bg-fill-interactive-hover',
+          'bg-fill-interactive text-on-fill-interactive hover:bg-fill-interactive-hover',
         outline:
-          'bg-transparent border duration-300 hover:bg-fill-primary hover:border-outline-hover hover:text-on-surface-dark',
+          'bg-transparent border duration-300 hover:bg-fill-primary hover:border-outline-hover hover:text-on-fill',
         ghost:
           'bg-transparent',
         link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-fill-interactive before:hover:h-[8px]',

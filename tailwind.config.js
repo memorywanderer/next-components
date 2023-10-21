@@ -17,6 +17,7 @@ module.exports = {
         surface: {
           DEFAULT: "hsl(var(--surface-primary))",
           "secondary": "hsl(var(--surface-primary))",
+          "tertiary": "hsl(var(--surface-tertiary))",
           "hover": "hsl(var(--surface-hover))",
           "interactive": "hsl(var(--surface-interactive))",
           "interactive-hover": "hsl(var(--surface-interactive-hover))",
@@ -64,7 +65,7 @@ module.exports = {
         fill: {
           DEFAULT: "hsl(var(--fill-primary))",
           "primary": "hsl(var(--fill-primary))",
-          "hover": "hsl(var(--fill-primary-hover))",
+          "primary-hover": "hsl(var(--fill-primary-hover))",
           "secondary": "hsl(var(--fill-secondary))",
           "secondary-hover": "hsl(var(--fill-secondary-hover))",
           "tertiary": "hsl(var(--fill-tertiary))",
@@ -73,10 +74,10 @@ module.exports = {
           "interactive-hover": "hsl(var(--fill-interactive-hover))",
           "additional": "hsl(var(--fill-additional))",
           "additional-hover": "hsl(var(--fill-additional-hover))",
-          "positive": "hsl(var(--fill-positive))",
-          "positive-hover": "hsl(var(--fill-positive-hover))",
-          "warning": "hsl(var(--fill-warning))",
-          "warning-hover": "hsl(var(--fill-warning-hover))",
+          // "positive": "hsl(var(--fill-positive))",
+          // "positive-hover": "hsl(var(--fill-positive-hover))",
+          // "warning": "hsl(var(--fill-warning))",
+          // "warning-hover": "hsl(var(--fill-warning-hover))",
           "negative": "hsl(var(--fill-negative))",
           "negative-hover": "hsl(var(--fill-negative-hover))",
           "disabled": "hsla(var(--fill-disabled))",
@@ -84,6 +85,7 @@ module.exports = {
         },
         "on-surface": {
           DEFAULT: "hsl(var(--on-surface-primary))",
+          "primary": "hsl(var(--on-surface-primary))",
           "secondary": "hsl(var(--on-surface-secondary))",
           "interactive": "hsl(var(--on-surface-interactive))",
           "positive": "hsl(var(--on-surface-positive))",
@@ -96,8 +98,17 @@ module.exports = {
           "initial": "hsl(var(--on-surface-initial))",
           "placeholder": "hsl(var(--on-surface-placeholder))",
           "hover": "hsl(var(--on-surface-hover))",
-          "dark": "hsl(0,0%,99%)",
+          "dark": "hsl(var(--on-dark))",
+          "light": "hsl(Var(--on-light))",
         },
+        "on-fill": {
+          DEFAULT: "hsl(var(--on-fill-primary))",
+          primary: "hsl(var(--on-fill-primary))",
+          secondary: "hsl(var(--on-fill-secondary))",
+          tertiary: "hsl(var(--on-fill-tertiary))",
+          interactive: "hsl(var(--on-fill-interactive))",
+          negative: "hsl(var(--on-fill-negative))",
+        }
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

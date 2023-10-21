@@ -123,7 +123,7 @@ const AlertDialogAction = React.forwardRef<
     asChild
     {...props}
   >
-    <Button variant="destructive">{children}</Button>
+    <Button variant="negative">{children}</Button>
   </AlertDialogPrimitive.Action>
 ))
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName

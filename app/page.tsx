@@ -93,6 +93,7 @@ export default function Home() {
           </NavigationMenuList>
         </NavigationMenu>
       </header>
+      <h1 className="text-title-desktop">Welcome to my website!</h1>
       <form>
         <Label htmlFor="surname">
           Surname

@@ -17,7 +17,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="w-screen p-4 ">
+    <main className="w-screen p-4 flex flex-col items-center">
       <header>
         <NavigationMenu>
           <NavigationMenuList>
@@ -93,7 +93,16 @@ export default function Home() {
           </NavigationMenuList>
         </NavigationMenu>
       </header>
-      <h1 className="text-title-desktop">Welcome to my website!</h1>
+      <h1 className="max-w-3xl text-title-desktop font-neue-montreal">Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить</h1>
+      <div className="max-w-3xl mt-8">
+        <h2 className="text-heading-two-desktop mb-4">
+          Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
+        </h2>
+        <p className="text-body-large text-on-surface-secondary font-charter">
+          На самом деле ограничивать себя не нужно: можно есть то, что нравится, и не беспокоиться о здоровье. В нашем курсе мы расскажем, как разобраться в принципах здорового питания без диет и запретов. Вы узнаете, какие у вас пищевые привычки, как не переедать и постепенно улучшать рацион — при этом не отказываясь от любимых продуктов и не переплачивая.
+        </p>
+
+      </div>
       <form>
         <Label htmlFor="surname">
           Surname
@@ -112,7 +121,9 @@ export default function Home() {
       >
         <AccordionItem value="item-1">
           <AccordionTrigger>Click me</AccordionTrigger>
-          <AccordionContent>Lorem ipsum dolor sit amet consectetur adipisicing elit. A non dolores, nostrum debitis consequatur voluptas, esse vitae sunt maiores magni aliquid minima id deserunt temporibus eligendi numquam qui assumenda at.</AccordionContent>
+          <AccordionContent>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A non dolores, nostrum debitis consequatur voluptas, esse vitae sunt maiores magni aliquid minima id deserunt temporibus eligendi numquam qui assumenda at.
+          </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger>I'm behind</AccordionTrigger>

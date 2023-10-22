@@ -1,11 +1,52 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
 import { ThemeProvider } from '@/components/providers'
 import { cn } from '@/lib/utils'
 
-const inter = Inter({ subsets: ['latin'] })
+const neueMachina = localFont({
+  src: [
+    {
+      path: '../public/neue-machina/PPNeueMachina-PlainRegular.otf',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../public/neue-machina/PPNeueMachina-PlainUltrabold.otf',
+      // weight: '700',
+      style: 'normal'
+    },
+  ],
+  variable: '--font-neue-machina'
+})
+
+const neueMontreal = localFont({
+  src: [
+    {
+      path: '../public/neue-montreal/PPNeueMontreal-Bold.otf',
+      weight: '700',
+      style: 'normal'
+    }
+  ],
+  variable: '--font-neue-montreal'
+})
+
+const charter = localFont({
+  src: [
+    {
+      path: '../public/charter_regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../public/charter_bold.woff2',
+      weight: '700',
+      style: 'normal'
+    },
+  ],
+  variable: '--font-charter',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,7 +62,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
-        inter.className,
+        charter.variable,
+        neueMachina.variable,
+        neueMontreal.variable
       )}>
         <ThemeProvider
           attribute='class'

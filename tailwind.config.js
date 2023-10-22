@@ -9,6 +9,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        charter: ['var(--font-charter)'],
+        "neue-machina": ['var(--font-neue-machina)'],
+        "neue-montreal": ['var(--font-neue-montreal)'],
+      },
       colors: {
         background: {
           DEFAULT: "hsl(var(--background-primary))",
@@ -111,19 +116,56 @@ module.exports = {
         }
       },
       fontSize: {
-        "title-desktop": ['var(--title-desktop)', 'var(--title-desktop-leading)'],
-        "title-mobile": ['var(--title-mobile)', 'var(--title-mobile-leading)'],
+        "title-desktop": ['var(--title-desktop)', {
+          lineHeight: 'var(--title-desktop-leading)',
+          fontWeight: 700,
+        }],
+        "title-mobile": ['var(--title-mobile)', {
+          lineHeight: 'var(--title-mobile-leading)',
+          fontWeight: 700,
+        }],
         "subtitle-mobile": ['var(--subtitle-mobile)', 'var(--subtitle-mobile-leading'],
         "subtitle-desktop": ['var(--subtitle-desktop)', 'var(--subtitle-desktop-leading)'],
-        "heading-one-desktop": ['var(--heading-one-desktop)', 'var(--heading-one-desktop-leading)'],
-        "heading-one-mobile": ['var(--heading-one-mobile)', 'var(--heading-one-mobile-leading)'],
-        "heading-two-desktop": ['var(--heading-two-desktop)', 'var(--heading-two-desktop-leading)'],
-        "heading-three": ['var(--heading-three)', 'var(--heading-three-leading)'],
-        "heading-four-mobile": ['var(--heading-four-mobile)', 'var(--heading-four-mobile-leading)'],
-        "heading-four-desktop": ['var(--heading-four-desktop)', 'var(--heading-four-desktop-leading)'],
-        "heading-five": ['var(--heading-five)', 'var(--heading-five-leading)'],
-        "heading-six-mobile": ['var(--heading-six-mobile)', 'var(--heading-six-mobile-leading)'],
-        "heading-six-desktop": ['var(--heading-six-desktop)', 'var(--heading-six-desktop-leading)'],
+        "heading-one-desktop": ['var(--heading-one-desktop)', {
+          lineHeight: 'var(--heading-one-desktop-leading)',
+          fontWeight: 700,
+        }],
+        "heading-one-mobile": ['var(--heading-one-mobile)', {
+          lineHeight: 'var(--heading-one-mobile-leading)',
+          fontWeight: 700,
+        }],
+        "heading-two-mobile": ['var(--heading-two-mobile', {
+          lineHeight: 'var(--heading-two-mobile-leading)',
+          fontWeight: 700,
+        }],
+        "heading-two-desktop": ['var(--heading-two-desktop)', {
+          lineHeight: 'var(--heading-two-desktop-leading)',
+          fontWeight: 700,
+        }],
+        "heading-three": ['var(--heading-three)', {
+          lineHeight: 'var(--heading-three-leading)',
+          fontWeight: 700,
+        }],
+        "heading-four-mobile": ['var(--heading-four-mobile)', {
+          lineHeight: 'var(--heading-four-mobile-leading)',
+          fontWeight: 700,
+        }],
+        "heading-four-desktop": ['var(--heading-four-desktop)', {
+          lineHeight: 'var(--heading-four-desktop-leading)',
+          fontWeight: 700,
+        }],
+        "heading-five": ['var(--heading-five)', {
+          lineHeight: 'var(--heading-five-leading)',
+          fontWeight: 700,
+        }],
+        "heading-six-mobile": ['var(--heading-six-mobile)', {
+          lineHeight: 'var(--heading-six-mobile-leading)',
+          fontWeight: 700,
+        }],
+        "heading-six-desktop": ['var(--heading-six-desktop)', {
+          lineHeight: 'var(--heading-six-desktop-leading)',
+          fontWeight: 700,
+        }],
         "body-primary-mobile": ['var(--body-primary-mobile)', 'var(--body-primary-mobile-leading)'],
         "body-primary-desktop": ['var(--body-primary-desktop)', 'var(--body-primary-desktop-leading)'],
         "body-secondary-mobile": ['var(--body-secondary-mobile)', 'var(--body-secondary-mobile-leading)'],

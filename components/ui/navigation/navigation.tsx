@@ -41,7 +41,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-background hover:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group'
+  'inline-flex items-center justify-center rounded-md transition-colors bg-background hover:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group'
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -50,7 +50,7 @@ const NavigationMenuTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), 'group', className)}
+    className="group flex items-center justify-center rounded-md text-heading-one-desktop  transition-colors bg-surface-primary hover:bg-surface-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4"
     {...props}
   >
     {children}{' '}
@@ -115,28 +115,6 @@ const NavigationMenuIndicator = React.forwardRef<
 NavigationMenuIndicator.displayName =
   NavigationMenuPrimitive.Indicator.displayName
 
-const ListItem = React.forwardRef<
-  HTMLElement,
-  React.HTMLAttributes<HTMLElement>
->(({ className, children, title, ...props }) => (
-  <li>
-    <NavigationMenuPrimitive.Link asChild>
-      <a
-        className={cn(
-          'focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
-          className
-        )}
-        {...props}
-      >
-        <div className="mb-[5px] font-medium leading-[1.2]">{title}</div>
-        <p className="leading-[1.4]">{children}</p>
-      </a>
-    </NavigationMenuPrimitive.Link>
-  </li>
-));
-ListItem.displayName = NavigationMenuPrimitive.Link.displayName
-
-
 export {
   navigationMenuTriggerStyle,
   NavigationMenu,
@@ -146,6 +124,5 @@ export {
   NavigationMenuTrigger,
   NavigationMenuLink,
   NavigationMenuIndicator,
-  NavigationMenuViewport,
-  ListItem,
+  NavigationMenuViewport
 }

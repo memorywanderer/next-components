@@ -11,6 +11,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Input } from "@/components/ui/input/Input"
 import { Label } from "@/components/ui/label/label"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation/navigation"
+import { Typography } from "@/components/ui/typography/typography"
 import { NavigationMenuContent } from "@radix-ui/react-navigation-menu"
 import Image from "next/image"
 import Link from "next/link"
@@ -23,7 +24,9 @@ export default function Home() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                Learn
+                <Typography type="interface-primary">
+                  Learn
+                </Typography>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
@@ -68,7 +71,9 @@ export default function Home() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                Overview
+                <Typography type="interface-primary" className='text-on-surface-positive'>
+                  Overview
+                </Typography>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul>
@@ -93,6 +98,15 @@ export default function Home() {
           </NavigationMenuList>
         </NavigationMenu>
       </header>
+      <Typography tag="h1" type="title-desktop">
+        Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить
+      </Typography>
+      <Typography tag="h1" type="heading-two-desktop">
+        Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
+      </Typography>
+      <Typography type="body-large">
+        На самом деле ограничивать себя не нужно: можно есть то, что нравится, и не беспокоиться о здоровье. В нашем курсе мы расскажем, как разобраться в принципах здорового питания без диет и запретов. Вы узнаете, какие у вас пищевые привычки, как не переедать и постепенно улучшать рацион — при этом не отказываясь от любимых продуктов и не переплачивая.
+      </Typography>
       <h1 className="max-w-3xl text-title-desktop font-neue-montreal">Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить</h1>
       <div className="max-w-3xl mt-8">
         <h2 className="text-heading-two-desktop mb-4">
@@ -141,7 +155,9 @@ export default function Home() {
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button>Show dialog</Button>
+          <Button>
+            <Typography type="interface-primary">Show dialog</Typography>
+          </Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>

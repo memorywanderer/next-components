@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Tooltip } from './tooltip';
+import { Tooltip } from './tooltip-old';
 
 describe('Tooltip', () => {
   it('renders a tooltip', () => {

@@ -2,7 +2,6 @@ import * as React from 'react'
 import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import Link from "next/link";
-import { Typography, TypographyProps } from '../typography/typography';
 
 const cardVariants = cva(
   '',
@@ -10,7 +9,7 @@ const cardVariants = cva(
     variants: {
       variant: {
         default:
-          'border bg-card text-card-foreground',
+          'border border-outline-slight bg-surface-secondary text-on-surface-secondary',
       },
       size: {
         default: 'w-fit h-fit',

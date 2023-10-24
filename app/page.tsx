@@ -21,8 +21,29 @@ import { SelectGroup, SelectLabel } from "@radix-ui/react-select"
 import { Separator } from "@/components/ui/separator/separator"
 import { Slider } from "@/components/ui/slider/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
+import { Toast, ToastAction, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from "@/components/ui/toast/toast"
+import { useEffect, useRef, useState } from "react"
+
+function oneWeekAway(date?: Date) {
+  const now = new Date();
+  const inOneWeek = now.setDate(now.getDate() + 7);
+  return new Date(inOneWeek);
+}
+
+function prettyDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(date);
+}
+
 
 export default function Home() {
+  const [open, setOpen] = useState(false)
+  const eventDateRef = useRef(new Date())
+  const timerRef = useRef(0)
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
+
   return (
     <>
       <header className="px-5 py-7 bg-background-secondary">
@@ -105,6 +126,44 @@ export default function Home() {
         </NavigationMenu>
       </header>
       <main className="flex flex-col items-center w-screen p-4">
+        <ToastProvider swipeDirection="right">
+          <Button
+            onClick={() => {
+              setOpen(false);
+              window.clearTimeout(timerRef.current);
+              timerRef.current = window.setTimeout(() => {
+                eventDateRef.current = oneWeekAway();
+                setOpen(true);
+              }, 100);
+            }}
+          >
+            Show must go on
+          </Button>
+          <Toast
+            open={open}
+            onOpenChange={setOpen}
+          >
+            <ToastTitle className="[grid-area:_title]">
+              <Typography tag="h3" type="heading-three">Scheduled: Catch up</Typography>
+            </ToastTitle>
+            <ToastDescription asChild>
+              <time
+                className="[grid-area:_description] m-0 text-slate11 text-[13px] leading-[1.3]"
+                dateTime={eventDateRef.current.toISOString()}
+              >
+                {prettyDate(eventDateRef.current)}
+              </time>
+            </ToastDescription>
+            <ToastAction className="[grid-area:_action]" asChild altText="Goto schedule to undo">
+              <Button variant="accent">
+                <Typography>
+                  undo
+                </Typography>
+              </Button>
+            </ToastAction>
+          </Toast>
+          <ToastViewport className="[--viewport-padding:_25px] " />
+        </ToastProvider>
         <Tabs defaultValue="one">
           <TabsList>
             <TabsTrigger value="one">one</TabsTrigger>

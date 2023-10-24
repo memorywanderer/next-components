@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
-import { Tooltip, TooltipBehaviorType } from './tooltip'; // Replace './Tooltip' with the correct path to your Tooltip component
+import { Tooltip, TooltipBehaviorType } from './tooltip-old'; // Replace './Tooltip' with the correct path to your Tooltip component
 
 jest.useFakeTimers(); // Enable fake timers for this test file
 

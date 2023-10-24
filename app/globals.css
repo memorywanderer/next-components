@@ -181,7 +181,7 @@
     --surface-secondary: 220, 13%, 37%;
     --surface-tertiary: 220, 8%, 23%;
     --surface-hover: 228, 10%, 47%;
-    --surface-interactive: 240, 50%, 51%;
+    --surface-interactive: 240, 33%, 30%;
     --surface-interactive-hover: 240, 52%, 39%;
     --opacity-surface-disabled: 0.03;
     --surface-disabled: 0, 0%, 100%, var(--opacity-surface-disabled);
@@ -262,7 +262,7 @@
     --opacity-link-border-hover: 0.7;
     --on-surface-primary: 0, 0%, 92%;
     --on-surface-secondary: 60, 3%, 82%;
-    --on-surface-interactive: 235, 81%, 77%;
+    --on-surface-interactive: 231, 100%, 85%;
     --on-surface-positive: 138, 100%, 71%;
     --on-surface-warning: 28, 100%, 70%;
     --on-surface-negative: 0, 100%, 70%;

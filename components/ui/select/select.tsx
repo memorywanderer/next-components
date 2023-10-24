@@ -16,13 +16,13 @@ const SelectTrigger = forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      'relative flex justify-between items-center rounded-md w-full bg-slate-800 box-border px-4 py-3 outline-none',
+      'relative flex justify-between items-center rounded-md w-full bg-surface-secondary border border-outline-slight box-border px-4 py-3 outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background',
       className
     )}
     {...props}
   >
     {children}
-    <ChevronDown className="h-4 w-4 ml-1 opacity-50" />
+    <ChevronDown className="w-4 h-4 ml-1 opacity-50" />
   </SelectPrimitive.Trigger>
 ))
 
@@ -38,7 +38,7 @@ const SelectContent = forwardRef<
       position={position}
       ref={ref}
       className={cn(
-        "relative box-border z-50 min-w-[8rem] data-[state=open]:animate-in data-[state=closed]:animate-out bg-slate-700 rounded-md shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]",
+        "relative box-border z-50 min-w-[8rem] data-[state=open]:animate-in data-[state=closed]:animate-out bg-surface-secondary rounded-md shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]",
         position === "popper" &&
         "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
         className
@@ -66,7 +66,7 @@ const SelectLabel = forwardRef<
   <SelectPrimitive.Label
     ref={ref}
     className={cn(
-      'px-[25px] text-xs leading-[25px]',
+      'px-[25px]',
       className
     )}
     {...props}
@@ -84,7 +84,7 @@ const SelectItem = forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      'cursor-pointer text-[13px] py-4 leading-none rounded-[3px] flex w-full items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-slate-500 data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-blue-800 data-[highlighted]:text-white',
+      'cursor-pointer text-[13px] py-4 leading-none rounded-[3px] flex w-full items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-on-surface-disabled data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-fill-interactive data-[highlighted]:text-on-fill-primary',
       className
     )}
     {...props}

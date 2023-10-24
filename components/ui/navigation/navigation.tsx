@@ -30,7 +30,7 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      'group flex flex-1 list-none items-center justify-center ',
+      'group flex gap-6 flex-1 list-none items-center justify-center ',
       className
     )}
     {...props}
@@ -41,7 +41,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  'inline-flex items-center justify-center rounded-md transition-colors bg-background hover:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group'
+  'inline-flex items-center justify-center rounded-full transition-colors border border-outline-slight bg-surface hover:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group'
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -50,7 +50,10 @@ const NavigationMenuTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className="group flex items-center justify-center rounded-md text-heading-one-desktop  transition-colors bg-surface-primary hover:bg-surface-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4"
+    className={cn(
+      navigationMenuTriggerStyle(),
+      className
+    )}
     {...props}
   >
     {children}{' '}
@@ -69,7 +72,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      'p-2 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto',
+      'p-6 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto',
       className
     )}
     {...props}
@@ -86,7 +89,7 @@ const NavigationMenuViewport = React.forwardRef<
   <div className={cn('absolute top-full left-0 bottom-0 right-0 flex w-full justify-center')}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        'relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-fit origin-[top_center] overflow-hidden rounded-[6px] bg-popover border ',
+        'relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)]  origin-[top_center] overflow-hidden rounded-3xl bg-surface-secondary border border-outline-slight',
         className
       )}
       ref={ref}

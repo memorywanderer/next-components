@@ -2,6 +2,7 @@ import * as React from 'react'
 import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import Link from "next/link";
+import { Typography, TypographyProps } from '../typography/typography';
 
 const cardVariants = cva(
   '',
@@ -107,43 +108,10 @@ const CardFooter = React.forwardRef<
   ))
 CardFooter.displayName = 'CardFooter'
 
-const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement> & { as?: "h1" | "h2" | "h3" }
->(({ className, as: Comp = "h3", ...props }, ref) => (
-  <Comp
-    ref={ref}
-    className={cn(
-      'font-semibold leading-none tracking-tight',
-      className
-    )}
-    {...props}
-  />
-))
-CardTitle.displayName = 'CardTitle'
-
-const CardDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-  <p
-    ref={ref}
-    className={cn(
-      'text-sm text-muted-foreground',
-      className
-    )}
-    {...props}
-  />
-))
-CardDescription.displayName = 'CardDescription'
-
-
 
 export {
   Card,
   CardContent,
   CardHeader,
-  CardFooter,
-  CardTitle,
-  CardDescription,
+  CardFooter
 }

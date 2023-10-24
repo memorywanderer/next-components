@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { forwardRef } from 'react'
 import { X } from 'lucide-react'
+import { Typography } from '../typography/typography'
 
 const Dialog = DialogPrimitive.Root
 
@@ -15,7 +16,7 @@ const DialogPortal = ({
   <DialogPrimitive.Portal
     {...props}
   >
-    <div className='fixed inset-0 z-50 flex items-start justify-center sm:items-center'>
+    <div className='fixed inset-0 top-0 bottom-0 left-0 right-0 z-50 flex items-center justify-center'>
       {children}
     </div>
   </DialogPrimitive.Portal>
@@ -50,15 +51,15 @@ const DialogContent = forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        'fixed z-50 grid w-full scale-100 gap-4 bg-background p-6 opacity-100 animate-in fade-in-90 slide-in-from-bottom-10 sm:max-w-lg sm:rounded-lg sm:zoom-in-90 sm:slide-in-from-bottom-0',
+        'fixed z-50 grid scale-100 gap-4 bg-background border border-outline-slight p-6 pt-10 opacity-100 animate-in fade-in-90 slide-in-from-bottom-10 max-h-[85vh] w-[90vw] max-w-[450px]',
         className
       )}
       {...props}
     >
       {children}
       <DialogPrimitive.Close
-        className="absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-slate-100 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900 dark:data-[state=open]:bg-slate-800">
-        <X className="h-4 w-4" />
+        className="absolute p-1 transition-opacity rounded-sm top-2 right-2 bg-fill-secondary opacity-70 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-non ">
+        <X className="w-4 h-4" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
@@ -97,30 +98,37 @@ DialogFooter.displayName = 'DialogFooter'
 const DialogTitle = forwardRef<
   React.ElementRef<typeof DialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
     className={cn(
-      'text-lg font-semibol',
       className
     )}
     {...props}
-  />
+  >
+    <Typography type="interface-heading-one-desktop">
+      {children}
+    </Typography>
+  </DialogPrimitive.Title>
 ))
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 
 const DialogDescription = forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
     className={cn(
-      'text-sm text-muted-foreground',
+      'text-on-surface-secondary',
       className
     )}
     {...props}
-  />
+  >
+    <Typography type="body-large">
+      {children}
+    </Typography>
+  </DialogPrimitive.Description>
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 

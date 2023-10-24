@@ -10,7 +10,7 @@ const Separator = forwardRef<
   <SeparatorPrimitive.Root
     ref={ref}
     className={cn(
-      'bg-slate-200 dark:bg-slate-700',
+      'bg-outline-slight',
       orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
       className
     )}

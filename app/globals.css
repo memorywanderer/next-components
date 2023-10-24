@@ -175,9 +175,9 @@
   }
 
   .dark {
-    --background-primary: 220, 22%, 9%;
-    --background-secondary: 220, 22%, 9%;
-    --surface-primary: 220, 14%, 15%;
+    --background-primary: 222, 22%, 9%;
+    --background-secondary: 222, 22%, 9%;
+    --surface-primary: 222, 14%, 15%;
     --surface-secondary: 220, 13%, 37%;
     --surface-tertiary: 220, 8%, 23%;
     --surface-hover: 228, 10%, 47%;
@@ -209,7 +209,7 @@
     --outline-slight-hover: 214, 6%, 36%;
     --opacity-outline-slight-disabled: 0.05;
     --outline-slight-disabled: 0, 0%, 100%, var(--opacity-outline-slight-disabled);
-    --outline-focus: 224, 29%, 60%;
+    --outline-focus: 231, 30%, 62%;
     --outline-interactive: 224, 83%, 70%;
     --outline-interactive-hover: 234, 96%, 68%;
     --outline-positive: 134, 59%, 63%;
@@ -239,7 +239,7 @@
     --fill-primary-hover: 240, 2%, 82%;
     --fill-secondary: 220, 8%, 23%;
     --fill-secondary-hover: 214, 6%, 27%;
-    --fill-interactive: 231, 57%, 60%;
+    --fill-interactive: 232, 50%, 60%;
     --fill-interactive-hover: 227, 60%, 70%;
     --fill-additional: 138, 100%, 71%;
     --fill-additional-hover: 142, 100%, 77%;

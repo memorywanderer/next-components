@@ -5,31 +5,37 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog/alert-dialog"
 import { AspectRatio } from "@/components/ui/aspect-ratio/aspect-ratio"
 import { Button } from "@/components/ui/button/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card/card"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card/card"
 import { Checkbox } from "@/components/ui/checkbox/checkbox"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog/dialog"
-import { Input } from "@/components/ui/input/Input"
 import { Label } from "@/components/ui/label/label"
+import { Input } from "@/components/ui/input/input"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation/navigation"
 import { Typography } from "@/components/ui/typography/typography"
 import { NavigationMenuContent } from "@radix-ui/react-navigation-menu"
 import Image from "next/image"
 import Link from "next/link"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group/radio-group"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select/select"
+import { SelectGroup, SelectLabel } from "@radix-ui/react-select"
+import { Separator } from "@/components/ui/separator/separator"
+import { Slider } from "@/components/ui/slider/slider"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
 
 export default function Home() {
   return (
-    <main className="w-screen p-4 flex flex-col items-center">
-      <header>
+    <>
+      <header className="px-5 py-7 bg-background-secondary">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                <Typography type="interface-primary">
-                  Learn
+                <Typography type="heading-five">
+                  Изучить
                 </Typography>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
+                <ul className="one m-0 grid list-none gap-x-[10px] p-5 sm:grid-cols-[0.75fr_1fr]">
                   <li>
                     <NavigationMenuLink asChild>
                       <a
@@ -71,12 +77,12 @@ export default function Home() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
-                <Typography type="interface-primary" className='text-on-surface-positive'>
-                  Overview
+                <Typography type="heading-five">
+                  Обзор
                 </Typography>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul>
+                <ul className="p-5">
                   <li>
                     <NavigationMenuLink>
                       <Link href='#'>Link 1</Link>
@@ -98,153 +104,213 @@ export default function Home() {
           </NavigationMenuList>
         </NavigationMenu>
       </header>
-      <Typography tag="h1" type="title-desktop">
-        Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить
-      </Typography>
-      <Typography tag="h1" type="heading-two-desktop">
-        Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
-      </Typography>
-      <Typography type="body-large">
-        На самом деле ограничивать себя не нужно: можно есть то, что нравится, и не беспокоиться о здоровье. В нашем курсе мы расскажем, как разобраться в принципах здорового питания без диет и запретов. Вы узнаете, какие у вас пищевые привычки, как не переедать и постепенно улучшать рацион — при этом не отказываясь от любимых продуктов и не переплачивая.
-      </Typography>
-      <h1 className="max-w-3xl text-title-desktop font-neue-montreal">Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить</h1>
-      <div className="max-w-3xl mt-8">
-        <h2 className="text-heading-two-desktop mb-4">
+      <main className="flex flex-col items-center w-screen p-4">
+        <Tabs defaultValue="one">
+          <TabsList>
+            <TabsTrigger value="one">one</TabsTrigger>
+            <TabsTrigger value="two">two</TabsTrigger>
+            <TabsTrigger value="three">three</TabsTrigger>
+          </TabsList>
+          <TabsContent value="one">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quibusdam, repudiandae nisi omnis maiores porro pariatur esse mollitia placeat velit aperiam, in necessitatibus eveniet excepturi ad iste. Consequuntur, eveniet sequi.
+          </TabsContent>
+          <TabsContent value="two">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde eius tempore adipisci, odit placeat totam est, distinctio, eos dicta possimus nobis voluptas ab! Quasi cum quod aperiam natus provident odio?
+          </TabsContent>
+          <TabsContent value="three">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit vitae accusantium magni ut, excepturi quod possimus porro sed praesentium illum maxime repellat recusandae perferendis nisi distinctio quibusdam reiciendis. Atque, cupiditate.
+          </TabsContent>
+        </Tabs>
+        <Typography tag="h1" type="title-desktop">
+          Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить
+        </Typography>
+        <Typography tag="h1" type="heading-two-desktop">
           Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
-        </h2>
-        <p className="text-body-large text-on-surface-secondary font-charter">
+        </Typography>
+        <Typography type="body-large">
           На самом деле ограничивать себя не нужно: можно есть то, что нравится, и не беспокоиться о здоровье. В нашем курсе мы расскажем, как разобраться в принципах здорового питания без диет и запретов. Вы узнаете, какие у вас пищевые привычки, как не переедать и постепенно улучшать рацион — при этом не отказываясь от любимых продуктов и не переплачивая.
-        </p>
+        </Typography>
 
-      </div>
-      <form>
-        <Label htmlFor="surname">
-          Surname
-          <Input name="surname" placeholder="Your surname" radius='lg' />
-        </Label>
-        <Label htmlFor="name">
-          Name
-          <Input name="name" placeholder="Your name" radius='lg' disabled />
-        </Label>
-      </form>
-      <Accordion
-        className="bg-background"
-        type="single"
-        defaultValue='item-1'
-        collapsible
-      >
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Click me</AccordionTrigger>
-          <AccordionContent>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A non dolores, nostrum debitis consequatur voluptas, esse vitae sunt maiores magni aliquid minima id deserunt temporibus eligendi numquam qui assumenda at.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger>I'm behind</AccordionTrigger>
-          <AccordionContent>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum laudantium voluptate voluptas laboriosam nobis! Ratione eum, dicta, asperiores mollitia perspiciatis, nulla velit id aut neque ad nesciunt. Amet, quam earum!</AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-3">
-          <AccordionTrigger>
-            Stay close
-          </AccordionTrigger>
-          <AccordionContent>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, eos aut delectus eum consequatur aliquam, quasi quaerat alias veritatis repellat nesciunt consectetur, odit unde id necessitatibus quis ab et harum!
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button>
-            <Typography type="interface-primary">Show dialog</Typography>
-          </Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <AspectRatio ratio={4 / 3}>
-              <Image
-                src='/artur-stanulevich-F_zWvxrQeCk-unsplash.jpg'
-                alt="lighting strike in the night sky"
-                fill
-                className="object-cover"
-              />
-            </AspectRatio>
-          </DialogHeader>
-          <DialogTitle>Welcome back!</DialogTitle>
-          <DialogDescription className='text-xs'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vel autem quae repellendus molestias eaque sit ea tenetur vitae aliquid?
-          </DialogDescription>
-        </DialogContent>
-      </Dialog>
-      <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-        <Card className="h-full overflow-hidden max-w-[270px]" border="lg">
-          <CardHeader className="py-4">
-            <AspectRatio ratio={4 / 3}>
-              <div
-                aria-label="Placeholder"
-                role="img"
-                aria-roledescription="placeholder"
-                className="flex items-center justify-center w-full h-full bg-background "
-              >
-                <Icons.placeholder
-                  className="h-9 w-9 text-muted-foreground"
-                  aria-hidden="true"
-                />
-              </div>
-            </AspectRatio>
-          </CardHeader>
-          <CardContent>
-            <CardTitle className="mb-4">Смартфон Apple iPhone 11 128GB Black</CardTitle>
-            <CardDescription className="text-xl font-bold text-card-foreground">314 990 ₸</CardDescription>
-          </CardContent>
-          <CardFooter className="flex flex-col">
-            <div className='flex items-center mb-2'>
-              <Checkbox id="c1" />
-              <label className="pl-[15px] text-[15px] leading-none text-foreground cursor-pointer" htmlFor="c1">
-                Accept terms and conditions.
-              </label>
-            </div>
-            <div className='flex items-center mb-2'>
-              <Button className='mr-2' variant="accent">В корзину</Button>
-              <Button href="/" variant='link' size='link'>Перейти в магазин</Button>
-            </div>
-          </CardFooter>
-        </Card>
-      </div>
-      <div>
-        <Image
-          src='/viacheslav-kvaratskheliia-939ZR0Q3rq8-unsplash.jpg'
-          width={500}
-          height={480}
-          alt="Life's greatest adventures are born from the seeds of unshakable dreams. For years, I carried this place in my heart, a distant yearning that seemed beyond reach. 6,277 miles and visa hurdles. I set a goal so audacious, it felt like chasing the impossible. Yet, today, I stand on this sacred ground, proof that dreams, determination, and the refusal to give up can defy all odds. Embrace your dreams, for they hold the keys to your most extraordinary journeys."
-        />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, perferendis ex animi unde vitae corporis consequuntur delectus necessitatibus aliquam minima doloremque, iure provident voluptas quis dicta? Earum corrupti nihil eius!</p>
-      </div>
-      <AlertDialog>
-        <AlertDialogTrigger
-          asChild
+        <form>
+          <Label htmlFor="surname">
+            Surname
+            <Input name="surname" placeholder="Your surname" />
+          </Label>
+          <Label htmlFor="name">
+            Name
+            <Input name="name" placeholder="Your name" disabled />
+          </Label>
+          <Label className="flex item-center">
+            <Checkbox />
+            Check it
+          </Label>
+        </form>
+        <Accordion
+          className="w-full bg-surface-secondary"
+          type="single"
+          defaultValue='item-1'
+          collapsible
         >
-          <Button variant="negative">Delete account</Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogTitle>
-            This is alert dialog
-          </AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your account and remove your
-            data from our servers.
-          </AlertDialogDescription>
-          <div className="flex justify-end gap-[25px]">
-            <AlertDialogCancel>
-              Cancel
-            </AlertDialogCancel>
-            <AlertDialogAction>
-              Confirm
-            </AlertDialogAction>
-          </div>
-        </AlertDialogContent>
-      </AlertDialog>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Click me</AccordionTrigger>
+            <AccordionContent>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A non dolores, nostrum debitis consequatur voluptas, esse vitae sunt maiores magni aliquid minima id deserunt temporibus eligendi numquam qui assumenda at.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>I'm behind</AccordionTrigger>
+            <AccordionContent>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum laudantium voluptate voluptas laboriosam nobis! Ratione eum, dicta, asperiores mollitia perspiciatis, nulla velit id aut neque ad nesciunt. Amet, quam earum!</AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>
+              Stay close
+            </AccordionTrigger>
+            <AccordionContent>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, eos aut delectus eum consequatur aliquam, quasi quaerat alias veritatis repellat nesciunt consectetur, odit unde id necessitatibus quis ab et harum!
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
 
-    </main>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="secondary">
+              <Typography type="interface-primary">Показать диалог</Typography>
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <AspectRatio ratio={4 / 3}>
+                <Image
+                  src='/artur-stanulevich-F_zWvxrQeCk-unsplash.jpg'
+                  alt="lighting strike in the night sky"
+                  fill
+                  className="object-cover rounded-md"
+                />
+              </AspectRatio>
+            </DialogHeader>
+            <DialogTitle>Welcome back!</DialogTitle>
+            <DialogDescription className='text-xs'>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vel autem quae repellendus molestias eaque sit ea tenetur vitae aliquid?
+            </DialogDescription>
+          </DialogContent>
+        </Dialog>
+        <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+          <Card className="h-full overflow-hidden max-w-[270px]" border="lg">
+            <CardHeader className="py-4">
+              <AspectRatio ratio={4 / 3}>
+                <div
+                  aria-label="Placeholder"
+                  role="img"
+                  aria-roledescription="placeholder"
+                  className="flex items-center justify-center w-full h-full bg-background "
+                >
+                  <Icons.placeholder
+                    className="h-9 w-9 text-muted-foreground"
+                    aria-hidden="true"
+                  />
+                </div>
+              </AspectRatio>
+            </CardHeader>
+            <CardContent>
+              <Typography tag="h3" type="heading-three" className="mb-4">
+                Смартфон Apple iPhone 11 128GB Black</Typography>
+              <Separator />
+              <Slider />
+              <Typography type="body-large" className="font-bold">314 990 ₸</Typography>
+            </CardContent>
+            <CardFooter className="flex flex-col">
+              <div className='flex items-center mb-2'>
+                <Checkbox id="c1" />
+                <label className="pl-[15px] text-[15px] leading-none text-foreground cursor-pointer" htmlFor="c1">
+                  Accept terms and conditions.
+                </label>
+                <RadioGroup>
+                  <RadioGroupItem id='r1' value="Item 1" />
+                  <label className=" pl-[15px]" htmlFor="r1">
+                    <Typography>
+                      Default
+                    </Typography>
+                  </label>
+                  <RadioGroupItem id='r2' value="Item 2" />
+                  <label className=" pl-[15px]" htmlFor="r2">
+                    <Typography>
+                      Advanced
+                    </Typography>
+                  </label>
+                  <RadioGroupItem id='r3' value="Item 3" />
+                  <label className=" pl-[15px]" htmlFor="r3">
+                    <Typography>
+                      Pro
+                    </Typography>
+                  </label>
+
+                </RadioGroup>
+              </div>
+              <div className='flex items-center mb-2'>
+                <Button className='mr-2' variant="accent">В корзину</Button>
+                <Button href="/" variant='link' size='link'>Перейти в магазин</Button>
+              </div>
+            </CardFooter>
+          </Card>
+        </div>
+        <Select>
+          <SelectTrigger>
+            <SelectValue placeholder="Select a fruit" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>
+                <Typography>
+                  Fruits
+                </Typography>
+              </SelectLabel>
+              <SelectItem value="apple">
+                <Typography>Apple</Typography>
+              </SelectItem>
+              <SelectItem value="pear">
+                <Typography>Pear</Typography>
+              </SelectItem>
+              <SelectItem value="Blueberry">
+                <Typography>Blueberry</Typography>
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <div>
+          <Image
+            src='/viacheslav-kvaratskheliia-939ZR0Q3rq8-unsplash.jpg'
+            width={500}
+            height={480}
+            alt="Life's greatest adventures are born from the seeds of unshakable dreams. For years, I carried this place in my heart, a distant yearning that seemed beyond reach. 6,277 miles and visa hurdles. I set a goal so audacious, it felt like chasing the impossible. Yet, today, I stand on this sacred ground, proof that dreams, determination, and the refusal to give up can defy all odds. Embrace your dreams, for they hold the keys to your most extraordinary journeys."
+          />
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, perferendis ex animi unde vitae corporis consequuntur delectus necessitatibus aliquam minima doloremque, iure provident voluptas quis dicta? Earum corrupti nihil eius!</p>
+        </div>
+        <AlertDialog>
+          <AlertDialogTrigger
+            asChild
+          >
+            <Button variant="negative">Delete account</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogTitle>
+              This is alert dialog
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete your account and remove your
+              data from our servers.
+            </AlertDialogDescription>
+            <div className="flex justify-end gap-[25px]">
+              <AlertDialogCancel>
+                Cancel
+              </AlertDialogCancel>
+              <AlertDialogAction>
+                Confirm
+              </AlertDialogAction>
+            </div>
+          </AlertDialogContent>
+        </AlertDialog>
+
+      </main>
+    </>
   )
 }

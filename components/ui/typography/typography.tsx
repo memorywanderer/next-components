@@ -131,3 +131,91 @@ const Typography = (
 
 
 export { Typography }
+
+// Test
+/*
+      <Typography type={"title-desktop"}>
+        Title desktop
+      </Typography>
+      <Typography type={"title-mobile"}>
+        Title mobile
+      </Typography>
+      <Typography type="subtile-desktop">
+        Subtitle desktop
+      </Typography>
+      <Typography type="subtitle-mobile">
+        Subtitle mobile
+      </Typography>
+      <Typography type="heading-one-desktop">
+        Heading 1 desktop
+      </Typography>
+      <Typography type="heading-one-mobile">
+        Heading 1 mobile
+      </Typography>
+      <Typography type="heading-two-desktop">
+        Heading 2 desktop
+      </Typography>
+      <Typography type="heading-two-mobile">
+        Heading 2 mobile
+      </Typography>
+      <Typography type="heading-three">
+        Heading 3
+      </Typography>
+      <Typography type="heading-four-desktop">
+        Heading 4 desktop
+      </Typography>
+      <Typography type="heading-four-mobile">
+        Heading 4 mobile
+      </Typography>
+      <Typography type="heading-five">
+        Heading 5
+      </Typography>
+      <Typography type="heading-six-desktop">
+        Heading 6 desktop
+      </Typography>
+      <Typography type="heading-six-mobile">
+        Heading 6 mobile
+      </Typography>
+      <Typography type="body-primary-desktop">
+        Body primary desktop
+      </Typography>
+      <Typography type="body-primary-mobile">
+        Body primary mobile
+      </Typography>
+      <Typography type="body-secondary-desktop">
+        Body secondary desktop
+      </Typography>
+      <Typography type="body-secondary-mobile">
+        Body secondary mobile
+      </Typography>
+      <Typography type="body-large">
+        Body large
+      </Typography>
+      <Typography type="body-medium">
+        Body medium
+      </Typography>
+      <Typography type="body-small">
+        Body small
+      </Typography>
+      <Typography type="interface-heading-one-desktop">
+        Interface heading one desktop
+      </Typography>
+      <Typography type="interface-heading-one-mobile">
+        Interface heading one mobile
+      </Typography>
+      <Typography type="interface-primary">
+        Interface primary
+      </Typography>
+      <Typography type="interface-secondary">
+        Interface secondary
+      </Typography>
+      <Typography type="interface-caption">
+        Interface caption
+      </Typography>
+      <Typography type="interface-error-desktop">
+        Interface error desktop
+      </Typography>
+      <Typography type="interface-error-mobile">
+        Interface error mobile
+      </Typography>
+*/

@@ -58,7 +58,7 @@ const DialogContent = forwardRef<
     >
       {children}
       <DialogPrimitive.Close
-        className="absolute p-1 transition-opacity rounded-sm top-2 right-2 bg-fill-secondary opacity-70 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-non ">
+        className="absolute p-1 transition-opacity rounded-sm top-2 right-2 bg-interactive-secondary opacity-70 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-non ">
         <X className="w-4 h-4" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>

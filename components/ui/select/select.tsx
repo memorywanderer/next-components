@@ -16,7 +16,7 @@ const SelectTrigger = forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      'relative flex justify-between items-center rounded-md w-full bg-surface-secondary border border-outline-slight box-border px-4 py-3 outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+      'relative flex justify-between items-center rounded-md w-full bg-surface-secondary border border-outline-secondary box-border px-4 py-3 outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background',
       className
     )}
     {...props}
@@ -84,7 +84,7 @@ const SelectItem = forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      'cursor-pointer text-[13px] py-4 leading-none rounded-[3px] flex w-full items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-on-surface-disabled data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-fill-interactive data-[highlighted]:text-on-fill-primary',
+      'cursor-pointer text-[13px] py-4 leading-none rounded-[3px] flex w-full items-center h-[25px] pr-[35px] pl-[25px] relative select-none data-[disabled]:text-on-surface-faint data-[disabled]:pointer-events-none data-[highlighted]:outline-none data-[highlighted]:bg-interactive-accent data-[highlighted]:text-on-fill-primary',
       className
     )}
     {...props}

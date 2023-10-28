@@ -63,227 +63,127 @@
   }
 
   .light {
-    --background-primary: 0, 0%, 100%;
-    --background-secondary: 0, 0%, 97%;
-    --surface-primary: 0, 0%, 100%;
-    --surface-secondary: 0, 0%, 97%;
-    --surface-tertiary: 0, 0%, 95%;
-    --surface-hover: 0, 0%, 95%;
-    --surface-interactive: 230, 100%, 95%;
-    --surface-interactive-hover: 240, 21%, 89%;
+    --background: 0, 0, 100%;
+
+    --surface-primary: 0, 0, 97%;
+    --surface-secondary: 0, 0, 89%;
+    --surface-tertiary: 0, 0, 81%;
+    --surface-hover: 0, 0, 73%;
+    --surface-accent: 230, 100%, 95%;
+    --surface-accent-hover: 261, 82%, 89%;
     --surface-positive: 138, 45%, 96%;
     --surface-positive-hover: 138, 22%, 91%;
     --surface-warning: 27, 73%, 97%;
-    --surface-warning-hover: 30, 25%, 92%;
-    --surface-negative: 1, 96%, 91%;
-    --surface-negative-hover: 5, 28%, 92%;
-    --surface-accent: 0, 0%, 10%;
-    --opacity-surface-disabled: 0.02;
-    --surface-disabled: 0, 0%, 0%, var(--opacity-surface-disabled);
-    --opacity-surface-top: 0.5;
-    --surface-top: 0, 0%, 0%, var(--opacity-surface-top);
+    --surface-warnign-hover: 30, 25%, 92%;
+    --surface-negative: 5, 86%, 97%;
+    --surface-negative-hover: 5, 32%, 93%;
 
-    /* outline colors */
-    --outline-primary: 0, 0%, 0%;
-    --outline-secondary: 0, 0%, 0%;
-    --outline-hover: 0, 0%, 30%;
-    --outline-placeholder: 0, 0%, 50%;
-    --outline-initial: 0, 0%, 65%;
-    --opacity-outline-disabled: 0.3;
-    --outline-disabled: 0, 0%, 0%, var(--opacity-outline-disabled);
-    --opacity-outline-faint-disabled: 0.05;
-    --outline-faint: 0, 0%, 80%;
-    --outline-faint-hover: 0, 0%, 70%;
-    --outline-faint-disabled: 0, 0%, 0%, var(--opacity-outline-faint-disabled);
-    --outline-slight: 0, 0%, 90%;
-    --outline-slight-hover: 0, 0%, 82%;
-    --opacity-outline-slight-disabled: 0.05;
-    --outline-slight-disabled: 0, 0, 0, var(--opacity-outline-slight-disabled);
-    --outline-focus: 239, 70%, 65%;
-    --outline-interactive: 236, 90%, 42%;
-    --outline-interactive-hover: 235, 99%, 40%;
-    --outline-positive: 123, 100%, 26%;
-    --outline-positive-hover: 140, 58%, 33%;
-    --opacity-outline-positive-disabled: 0.1;
-    --outline-positive-disabled: 135, 97%, 26.1%, var(--opacity-outline-positive-disabled);
-    --outline-warning: 30, 100%, 36%;
+    --on-surface-primary: 0, 0, 10%;
+    --on-surface-secondary: 0, 0, 25%;
+    --on-surface-tertiary: 0, 0, 40%;
+    --on-surface-faint: 0, 0, 70%;
+    --on-surface-accent: 240, 82%, 44%;
+    --on-surface-positive: 135, 97%, 26%;
+    --on-surface-warning: 29, 100%, 37%;
+    --on-surface-negative: 5, 100%, 46%;
+
+    --interactive-primary: 0, 0, 10%;
+    --interactive-primary-hover: 0, 0, 3%;
+    --interactive-secondary: var(--surface-secondary);
+    --interactive-secondary-hover: 0, 0, 85%;
+    --interactive-tertiary: var(--surface-tertiary);
+    --interactive-tertiary-hover: 0, 0, 76%;
+    --interactive-accent: 240, 78%, 54%;
+    --interactive-accent-hover: 240, 100%, 35%;
+    --interactive-positive: 145, 65%, 37%;
+    --interactive-positive-hover: 145, 83%, 28%;
+    --interactive-warning: 20, 52%, 45%;
+    --interactive-warning-hover: 20, 66%, 36%;
+    --interactive-negative: 5, 66%, 50%;
+    --interactive-negative-hover: 5, 82%, 41%;
+    --interactive-highlight: 49, 100%, 82%;
+
+    --on-interactive-primary: 0, 0, 97%;
+    --on-interactive-secondary: 0, 0, 10%;
+
+    --outline-primary: 0, 0, 5%;
+    --outline-primary-hover: 0, 0, 30%;
+    --outline-secondary: 0, 0, 80%;
+    --outline-secondary-hover: 0, 0, 70%;
+    --outline-tertiary: 0, 0, 90%;
+    --outline-tertiary-hover: 0, 0, 82%;
+    --outline-focus: 240, 64%, 72%;
+    --outline-accent: 240, 82%, 44%;
+    --outline-accent-hover: 240, 99%, 32%;
+    --outline-positive: 135, 100%, 26%;
+    --outline-positive-hover: 135, 53%, 26%;
+    --outline-warning: 29, 100%, 36%;
     --outline-warning-hover: 25, 100%, 25%;
-    --opacity-outline-warning-disabled: 0.1;
-    --outline-warning-disabled: 200, 100%, 41%, var(--opacity-outline-warning-disabled);
     --outline-negative: 5, 84%, 47%;
-    --outline-negative-hover: 3, 85%, 31%;
-    --opacity-outline-negative-disabled: 0.1;
-    --outline-negative-disabled: 4, 84%, 46.7%, var(--opacity-outline-negative-disabled);
-    --outline-inversed: 0, 0%, 100%;
-    --outline-positive-accent: 123, 72%, 61%;
-    --outline-negative-accent: 5, 66%, 61%;
-    --outline-dark-static: 0, 0%, 0%;
-    --outline-light-static: 0, 0%, 100%;
-
-    /* fill */
-    --on-fill: 0, 0%, 100%;
-    --opacity-fill-disabled: 0.3;
-    --fill-disabled: 0, 0%, 0%, var(--opacity-fill-disabled);
-    --fill-highlight: 52, 100%, 76%;
-    --fill-primary: 0, 0%, 10%;
-    --fill-primary-hover: 0, 0%, 1%;
-    --fill-secondary: 0, 0%, 92%;
-    --fill-secondary-hover: 0, 0%, 86%;
-    --fill-tertiary: 0, 0%, 70%;
-    --fill-tertiary-hover: 0, 0%, 30%;
-    --fill-interactive: 236, 80%, 49%;
-    --fill-interactive-hover: 239, 100%, 44%;
-    --fill-additional: 120, 100%, 40%;
-    --fill-additional-hover: 134, 100%, 51%;
-    /* --fill-positive: 141, 66%, 40%;
-    --fill-positive-hover: 125, 83%, 33%;
-    --fill-warning: 22, 52%, 45%;
-    --fill-warning-hover: 20, 66%, 40%;*/
-    --fill-negative: 7, 65%, 49%;
-    --fill-negative-hover: 8, 81%, 42%;
-    --opacity-link-border: 0.3;
-    --opacity-link-border-hover: 0.7;
-
-    /*on fill*/
-    --on-fill-primary: 0, 0%, 100%;
-    --on-fill-secondary: 0, 0%, 10%;
-    --on-fill-tertiary: 0, 0%, 10%;
-    --on-fill-interactive: 0, 0%, 100%;
-    --on-fill-negative: 0, 0%, 100%;
-
-    /* on surface */
-    --on-surface-primary: 0, 0%, 10%;
-    --on-surface-secondary: 0, 0%, 20%;
-    --on-surface-interactive: 234, 100%, 40%;
-    --on-surface-positive: 118, 98%, 27%;
-    --on-surface-warning: 31, 100%, 37%;
-    --on-surface-negative: 4, 100%, 46%;
-    --on-surface-static: 0, 0%, 0%;
-    --on-surface-accent-positive: 125, 100%, 72%;
-    --on-surface-accent-negative: 0, 100%, 70%;
-    --on-surface-disabled: 0, 0%, 0%, var(--opacity-on-surface-disabled);
-    --on-surface-initial: 0, 0%, 65%;
-    --on-surface-placeholder: 0, 0%, 50%;
-    --on-surface-hover: 0, 0%, 30%;
-
-    /* opacity */
-    --opacity-on-surface-disabled: 0.3;
-    --opacity-interactive-disabled: 0.3;
-    --opacity-meta-initial: 0.3;
-    --opacity-meta-hover: 0.7;
-    --opacity-control-disabled: 0.2;
+    --outline-negative-hover: 5, 82%, 33%;
+    --outline-inversed: 0, 0, 0;
   }
 
   .dark {
-    --background-primary: 222, 22%, 9%;
-    --background-secondary: 222, 22%, 9%;
+    --background: 222, 22%, 9%;
+
     --surface-primary: 222, 14%, 15%;
-    --surface-secondary: 220, 13%, 37%;
-    --surface-tertiary: 220, 8%, 23%;
-    --surface-hover: 228, 10%, 47%;
-    --surface-interactive: 240, 33%, 30%;
-    --surface-interactive-hover: 240, 52%, 39%;
-    --opacity-surface-disabled: 0.03;
-    --surface-disabled: 0, 0%, 100%, var(--opacity-surface-disabled);
-    --surface-positive: 126, 24%, 53%;
-    --surface-positive-hover: 129, 18%, 67%;
-    --surface-warning: 19, 14%, 24%;
-    --surface-warning-hover: 20, 9%, 30%;
-    --surface-negative: 340, 17%, 55%;
-    --surface-negative-hover: 337, 18%, 67%;
-    --surface-accent: 225, 25%, 90%;
-    --opacity-surface-top: 0.5;
-    --surface-top: 0, 0%, 0%, var(--opacity-surface-top);
+    --surface-secondary: 222, 11%, 23%;
+    --surface-tertiary: 222, 9%, 34%;
+    --surface-hover: 222, 10, 18%;
+    --surface-accent: 240, 33%, 30%;
+    --surface-accent-hover: 240, 31%, 35%;
+    --surface-positive: 142, 25%, 21%;
+    --surface-positive-hover: 142, 17%, 29%;
+    --surface-warning: 24, 13%, 23%;
+    --surface-warnign-hover: 24, 8%, 30%;
+    --surface-negative: 345, 18%, 22%;
+    --surface-negative-hover: 343, 12%, 29%;
 
-    /* outline */
-    --outline-primary: 0, 0%, 100%;
-    --outline-secondary: 220, 2%, 82%;
-    --outline-hover: 191, 2%, 91%;
-    --outline-placeholder: 208, 2%, 54%;
-    --outline-initial: 217, 2%, 46%;
-    --opacity-outline-disabled: 0.2;
-    --outline-disabled: 0, 0%, 100%, var(--opacity-outline-disabled);
-    --outline-faint: 215, 4%, 38%;
-    --outline-faint-hover: 208, 2%, 54%;
-    --outline-slight: 215, 6%, 27%;
-    --outline-slight-hover: 214, 6%, 36%;
-    --opacity-outline-slight-disabled: 0.05;
-    --outline-slight-disabled: 0, 0%, 100%, var(--opacity-outline-slight-disabled);
-    --outline-focus: 231, 30%, 62%;
-    --outline-interactive: 224, 83%, 70%;
-    --outline-interactive-hover: 234, 96%, 68%;
-    --outline-positive: 134, 59%, 63%;
-    --outline-positive-hover: 137, 100%, 78%;
-    --opacity-outline-positive-disabled: 0.15;
-    --outline-positive-disabled: 136, 100%, 72%, var(--opacity-outline-positive-disabled);
-    --outline-warning: 33, 44%, 63%;
-    --outline-warning-hover: 33, 66%, 82%;
-    --opacity-outline-warning-disabled: 0.15;
-    --outline-warning-disabled: 33, 44%, 63%, var(--opacity-outline-warning-disabled);
-    --outline-negative: 2, 63%, 66%;
-    --outline-negative-hover: 3, 100%, 82%;
-    --opacity-outline-negative-disabled: 0.15;
-    --outline-negative-disabled: 2, 63%, 66%, var(--opacity-outline-negative-disabled);
-    --outline-inversed: 0, 0%, 0%;
-    --outline-positive-accent: 133, 52%, 41%;
-    --outline-negative-accent: 5, 93%, 56%;
-    --outline-dark-static: 0, 0%, 0%;
-    --outline-light-static: 0, 0%, 100%;
+    --on-surface-primary: 222, 2%, 97%;
+    --on-surface-secondary: 222, 2, 85%;
+    --on-surface-tertiary: 222, 2, 70%;
+    --on-surface-faint: 222, 2, 50%;
+    --on-surface-accent: 231, 100%, 85%;
+    --on-surface-positive: 125, 100%, 77%;
+    --on-surface-warning: 30, 100%, 77%;
+    --on-surface-negative: 0, 100%, 77%;
 
-    /* fill */
-    --opacity-fill-disabled: 0.3;
-    --fill-disabled: 0, 0, 100%, var(--opacity-fill-disabled);
-    --fill-hover: 208, 3%, 82%;
-    --fill-highlight: 208, 3%, 82%;
-    --fill-primary: 240, 25%, 97%;
-    --fill-primary-hover: 240, 2%, 82%;
-    --fill-secondary: 220, 8%, 23%;
-    --fill-secondary-hover: 214, 6%, 27%;
-    --fill-interactive: 232, 50%, 60%;
-    --fill-interactive-hover: 227, 60%, 70%;
-    --fill-additional: 138, 100%, 71%;
-    --fill-additional-hover: 142, 100%, 77%;
-    --fill-positive: 149, 57%, 40%;
-    --fill-positive-hover: 138, 26%, 45%;
-    --fill-warning: 29, 57%, 56%;
-    --fill-warning-hover: 28, 27%, 53%;
-    --fill-negative: 3, 55%, 47%;
-    --fill-negative-hover: 0, 53%, 56%;
-    --opacity-link-border: 0.5;
+    --interactive-primary: 222, 14%, 97%;
+    --interactive-primary-hover: 0, 0, 100%;
+    --interactive-secondary: var(--surface-secondary);
+    --interactive-secondary-hover: 222, 6%, 27%;
+    --interactive-tertiary: var(--surface-tertiary);
+    --interactive-tertiary-hover: 222, 6%, 40%;
+    --interactive-accent: 232, 50%, 60%;
+    --interactive-accent-hover: 232, 45%, 64%;
+    --interactive-positive: 145, 54%, 34%;
+    --interactive-positive-hover: 145, 21%, 49%;
+    --interactive-warning: 20, 54%, 56%;
+    --interactive-warning-hover: 20, 32%, 56%;
+    --interactive-negative: 0, 47%, 48%;
+    --interactive-negative-hover: 0, 54%, 56%;
+    --interactive-highlight: 49, 47%, 20%;
 
-    /*on fill*/
-    --on-fill-primary: 0, 0%, 0%;
-    --on-fill-secondary: 0, 0%, 100%;
-    --on-fill-tertiary: 0, 0%, 100%;
-    --on-fill-interactive: 0, 0%, 100%;
-    --on-fill-negative: 0, 0%, 100%;
+    --on-interactive-primary: 0, 0, 97%;
+    --on-interactive-secondary: 0, 0, 10%;
 
-    /* on surface */
-    --opacity-link-border-hover: 0.7;
-    --on-surface-primary: 0, 0%, 92%;
-    --on-surface-secondary: 60, 3%, 82%;
-    --on-surface-interactive: 231, 100%, 85%;
-    --on-surface-positive: 138, 100%, 71%;
-    --on-surface-warning: 28, 100%, 70%;
-    --on-surface-negative: 0, 100%, 70%;
-    --on-surface-static: 0, 0%, 0%;
-    --on-surface-accent-positive: 2, 131, 35;
-    --on-surface-accent-negative: 235, 16, 0;
-    --on-surface-disabled: 0, 0%, 100%, var(--opacity-surface-on-disabled);
-    --on-surface-initial: 226, 5%, 45%;
-    --on-surface-placeholder: 220, 2%, 52%;
-    --on-surface-hover: 210, 2%, 91%;
-
-    --color-highlight: #d0d0d2;
-    --color-highlight-on: #040406;
-
-    --opacity-surface-on-disabled: 0.3;
-    --opacity-interactive-disabled: 0.3;
-    --opacity-border-disabled: 0.05;
-    --opacity-border-interactive-disabled: 0.15;
-    --opacity-meta-initial: 0.5;
-    --opacity-meta-hover: 0.9;
-    --opacity-control-disabled: 0.2;
+    --outline-primary: 210, 14%, 97%;
+    --outline-primary-hover: 0, 0, 75%;
+    --outline-secondary: 217, 6%, 26%;
+    --outline-secondary-hover: 217, 5%, 38%;
+    --outline-tertiary: 223, 4%, 36%;
+    --outline-tertiary-hover: 216, 2, 54%;
+    --outline-focus: 232, 30%, 62%;
+    --outline-accent: 232, 100%, 79%;
+    --outline-accent-hover: 240, 87%, 74%;
+    --outline-positive: 127, 51%, 62%;
+    --outline-positive-hover: 127, 100%, 83%;
+    --outline-warning: 30, 47%, 62%;
+    --outline-warning-hover: 30, 100%, 85%;
+    --outline-negative: 359, 53%, 69%;
+    --outline-negative-hover: 359, 100%, 83%;
+    --outline-inversed: 0, 0, 100%;
   }
 }
 

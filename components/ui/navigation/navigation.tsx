@@ -12,7 +12,7 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      'relative z-[1] flex w-screen justify-center',
+      'relative z-[1] flex w-screen',
       className
     )}
     {...props}
@@ -41,7 +41,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  'inline-flex items-center justify-center rounded-full transition-colors border border-outline-slight bg-surface hover:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group'
+  'inline-flex items-center justify-center rounded-full transition-colors border border-outline-secondary bg-surface-primary hover:bg-surface-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group'
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -89,7 +89,7 @@ const NavigationMenuViewport = React.forwardRef<
   <div className={cn('absolute top-full left-0 bottom-0 right-0 flex w-full justify-center')}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        'relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)]  origin-[top_center] overflow-hidden rounded-3xl bg-surface-secondary border border-outline-slight',
+        'relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)]  origin-[top_center] overflow-hidden rounded-3xl bg-surface-secondary border border-outline-secondary',
         className
       )}
       ref={ref}

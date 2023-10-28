@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-        "min-h-screen bg-background font-sans antialiased flex flex-col",
+        "min-h-screen bg-background font-sans antialiased flex flex-col items-start justify-start",
         charter.variable,
         neueMachina.variable,
         neueMontreal.variable

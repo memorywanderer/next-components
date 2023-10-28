@@ -23,18 +23,18 @@ const Slider = forwardRef<
         thickness === "thin" && "h-0.5"
       )}
     >
-      <SliderPrimitive.Range className="absolute h-full bg-fill-interactive" />
+      <SliderPrimitive.Range className="absolute h-full bg-interactive-accent" />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
       className={cn(
-        'block w-4 h-4 rounded-full bg-fill-interactive shadow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50',
+        'block w-4 h-4 rounded-full bg-interactive-accent shadow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50',
         thickness === "thin" && "h-3.5 w-3.5",
       )}
     />
     {variant === "range" && (
       <SliderPrimitive.Thumb
         className={cn(
-          'block w-4 h-4 rounded-full bg-fill-interactive shadow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50',
+          'block w-4 h-4 rounded-full bg-interactive-accent shadow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50',
           thickness === "thin" && "h-3.5 w-3.5"
         )}
       />

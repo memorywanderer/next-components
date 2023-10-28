@@ -46,7 +46,8 @@ export default function Home() {
 
   return (
     <>
-      <header className="px-5 py-7 bg-background-secondary">
+      <header className="flex items-center w-full gap-6 px-5 border-b py-7 bg-surface-primary border-outline-secondary">
+        <Typography tag="h1" type='heading-one-desktop'>Line</Typography>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -125,8 +126,111 @@ export default function Home() {
           </NavigationMenuList>
         </NavigationMenu>
       </header>
-      <main className="flex flex-col items-center w-screen p-4">
-        <ToastProvider swipeDirection="right">
+      <main className="flex h-screen gap-2">
+        <nav className="h-full p-4 border-r w-60 border-outline-secondary">
+          <ul className='flex flex-col gap-4'>
+            <li>
+              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-secondary hover:bg-surface-interactive hover:text-on-surface-interactive">
+                <Typography type="body-large" className="font-bold">Читай</Typography>
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-secondary hover:bg-surface-interactive hover:text-on-surface-interactive">
+                <Typography type="body-large" className="font-bold">Смотри</Typography>
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-secondary hover:bg-surface-interactive hover:text-on-surface-interactive">
+                <Typography type="body-large" className="font-bold">Слушай</Typography>
+              </Link>
+            </li>
+            <li>
+              <Button variant="accent" className="w-full px-5 py-6 rounded-full">
+                <Typography tag="span" type="interface-primary" className="font-bold">Опубликовать пост</Typography>
+              </Button>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="pt-4 ml-48 max-w-[800px]">
+          <Image
+            src="/richard-horvath-_nWaeTF6qo0-unsplash.jpg"
+            alt="preparing car for winter"
+            width={720}
+            height={480}
+            className="object-cover rounded-md"
+          />
+          <div className="flex p-4 bg-surface-primary">
+            <Button variant="secondary">Привет!</Button>
+          </div>
+          <div className="flex p-4 bg-surface-secondary">
+            <Button variant="tertiary">Привет!</Button>
+          </div>
+
+          <div className="flex flex-col max-w-xs gap-2 p-4 bg-surface-seconadry">
+
+            <Button>Привет!</Button>
+            <Button variant="secondary">Привет!</Button>
+            <Button variant="tertiary">Привет!</Button>
+            <Button variant="outline">Привет!</Button>
+            <Button variant="ghost">Привет!</Button>
+            <Button variant="link">Привет!</Button>
+            <Button variant="negative">Привет!</Button>
+
+          </div>
+          <div className="p-4 border bg-surface-positive text-on-surface-positive border-outline-positive rounded-xl">
+            <Typography tag="h1" type="heading-four-desktop">
+              Двухфакторная авторизация
+            </Typography>
+            <Typography>
+              Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
+            </Typography>
+          </div>
+          <div className="p-4 border bg-surface-warning text-on-surface-warning border-outline-warning rounded-xl">
+            <Typography tag="h1" type="heading-four-desktop">
+              Двухфакторная авторизация
+            </Typography>
+            <Typography>
+              Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
+            </Typography>
+          </div>
+          <div className="p-4 border bg-surface-negative text-on-surface-negative border-outline-negative rounded-xl">
+            <Typography tag="h1" type="heading-four-desktop">
+              Двухфакторная авторизация
+            </Typography>
+            <Typography>
+              Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
+            </Typography>
+          </div>
+          <div className="p-4 border bg-surface-interactive text-on-surface-interactive border-outline-interactive rounded-xl">
+            <Typography tag="h1" type="heading-four-desktop">
+              Двухфакторная авторизация
+            </Typography>
+            <Typography>
+              Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
+            </Typography>
+          </div>
+          <Typography tag="h1" type="title-desktop" className="mb-6 text-on-surface-primary">
+            Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить
+          </Typography>
+          <Typography tag="h1" type="heading-two-desktop" className="mb-4 text-on-surface-primary">
+            Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
+          </Typography>
+          <Typography type="body-primary-desktop" className="mb-4 text-on-surface-secondary">
+            На самом деле ограничивать себя не нужно: можно есть то, что нравится, и не беспокоиться о здоровье. В нашем курсе мы расскажем, как разобраться в принципах здорового питания без диет и запретов. Вы узнаете, какие у вас пищевые привычки, как не переедать и постепенно улучшать рацион — при этом не отказываясь от любимых продуктов и не переплачивая.
+          </Typography>
+          <Typography type="body-primary-desktop" className="mb-4 text-on-surface-secondary">
+            Поправка вступила в силу 18 октября 2023 года. До этого момента в тексте ГОСТ 50577-2018 «Знаки государственные регистрационные транспортных средств» было сказано, что на автомобилях с нестандартным местом крепления регистрационного знака разрешается установка квадратного номера сзади. Речь идет об автономерах типа 1А. Это касалось в том числе японских и американских автомобилей.
+
+            Измененный гост теперь разрешает устанавливать такие номера и спереди автомобиля. Но только если конструкция транспортного средства не позволяет установить стандартные прямоугольные знаки. Например, если на бампере есть специальное углубление под крепление квадратного знака.
+          </Typography>
+          <Typography type="body-primary-desktop" className="mb-4 text-on-surface-secondary">
+            Внимание на изменение этого госта обратила газета «Коммерсант». По данным издания, ГИБДД 20 октября разослала в региональные управления разъяснения с просьбой рассказать сотрудникам об изменении стандарта, чтобы не допустить неправомерного привлечения водителей к ответственности.
+
+            За установку нестандартных номеров, если этого не предусматривает конструкция автомобиля, грозит административная ответственность по ст. 12.2 КоАП РФ. Водителя могут оштрафовать на 500 ₽.
+          </Typography>
+        </div>
+        {/* <ToastProvider swipeDirection="right">
           <Button
             onClick={() => {
               setOpen(false);
@@ -140,11 +244,12 @@ export default function Home() {
             Show must go on
           </Button>
           <Toast
+            variant="interactive"
             open={open}
             onOpenChange={setOpen}
           >
             <ToastTitle className="[grid-area:_title]">
-              <Typography tag="h3" type="heading-three">Scheduled: Catch up</Typography>
+              <Typography tag="h3" type="heading-three" className="text-on-surface-interactive">Scheduled: Catch up</Typography>
             </ToastTitle>
             <ToastDescription asChild>
               <time
@@ -367,7 +472,7 @@ export default function Home() {
               </AlertDialogAction>
             </div>
           </AlertDialogContent>
-        </AlertDialog>
+        </AlertDialog> */}
 
       </main>
     </>

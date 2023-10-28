@@ -3,7 +3,6 @@ import * as ToastPrimitive from '@radix-ui/react-toast'
 import { VariantProps, cva } from 'class-variance-authority'
 import { X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { Typography } from '../typography/typography'
 
 const ToastProvider = ToastPrimitive.Provider
 
@@ -28,7 +27,7 @@ const toastVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-surface-primary border-outline-slight',
+          'bg-surface-primary border-outline-secondary',
         positive:
           'bg-surface-positive border-outline-positive',
         warning:
@@ -36,7 +35,7 @@ const toastVariants = cva(
         negative:
           'bg-surface-negative border-outline-negative',
         interactive:
-          'bg-surface-interactive border-outline-interactive',
+          'bg-surface-accent border-outline-accent',
       }
     },
     defaultVariants: {
@@ -61,7 +60,7 @@ Toast.displayName = ToastPrimitive.Root.displayName
 const ToastAction = React.forwardRef<
   React.ElementRef<typeof ToastPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitive.Action>
->(({ className, children, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <ToastPrimitive.Action
     ref={ref}
     className={cn(
@@ -80,7 +79,7 @@ const ToastClose = React.forwardRef<
   <ToastPrimitive.Close
     ref={ref}
     className={cn(
-      'absolute top-2 right-2 rounded-md p-1 text-on-surface-primary opacity-0 transition-opacity hover:text-on-surface-static focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background group-hover:opacity-100',
+      'absolute top-2 right-2 rounded-md p-1 text-on-surface-primary opacity-0 transition-opacity hover:text-on-surface-primary/80 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background group-hover:opacity-100',
       className
     )}
     toast-close=""

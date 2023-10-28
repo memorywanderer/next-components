@@ -53,7 +53,7 @@ const typographyVariants = cva(
           'text-[length:var(--body-primary-mobile)] leading-[var(--body-primary-mobile-leading)] font-charter',
 
         "body-primary-desktop":
-          'text-[length:var(--body-desktop-primary)] leading-[var(--body-primary-desktop-leading)] font-charter',
+          'text-[length:var(--body-primary-desktop)] leading-[var(--body-primary-desktop-leading)] font-charter',
 
         "body-secondary-mobile":
           'text-[length:var(--body-secondary-mobile)] leading-[var(--body-secondary-mobile-leading)] font-charter',

@@ -25,12 +25,12 @@ const RadioGroupItem = forwardRef<
   <RadioGroupPrimitive.Item
     ref={ref}
     className={cn(
-      'peer h-4 w-4 rounded-full border border-ouline-primary text-on-surface-primary hover:border-outline-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50',
+      'peer h-4 w-4 rounded-full border border-outline-primary text-on-surface-primary hover:border-outline--primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50',
       className
     )}
     {...props}
   >
-    <RadioGroupPrimitive.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-3 after:h-3 after:rounded-[50%] after:bg-fill-interactive" />
+    <RadioGroupPrimitive.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-3 after:h-3 after:rounded-[50%] after:bg-interactive-accent" />
   </RadioGroupPrimitive.Item>
 ))
 

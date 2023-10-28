@@ -9,21 +9,21 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-fill-primary text-on-fill-primary hover:bg-fill-primary-hover',
+          'bg-interactive-primary text-on-interactive-secondary hover:bg-interactive-primary-hover',
         secondary:
-          'bg-fill-secondary text-on-fill-secondary hover:bg-fill-secondary-hover',
-        tertiary: "bg-fill-tertiary text-on-fill-tertiary hover:bg-fill-tertiary-hover",
-        // positive: "bg-fill-positive hover:bg-fill-positive-hover",
-        // warning: "bg-fill-warning hover:bg-fill-warning-hover",
+          'bg-interactive-secondary text-on-interactive-secondary hover:bg-interactive-secondary-hover',
+        tertiary: "bg-interactive-tertiary text-on-interactive-tertiary hover:bg-interactive-tertiary-hover",
+        // positive: "bg-interactive-positive hover:bg-interactive-positive-hover",
+        // warning: "bg-interactive-warning hover:bg-interactive-warning-hover",
         negative:
-          'bg-fill-secondary text-on-surface-negative hover:bg-fill-negative hover:text-on-fill-negative',
+          'bg-interactive-secondary text-on-surface-negative hover:bg-interactive-negative hover:text-on-interactive-secondary',
         accent:
-          'bg-fill-interactive text-on-fill-interactive hover:bg-fill-interactive-hover',
+          'bg-interactive-accent text-on-interactive-accent hover:bg-interactive-accent-hover',
         outline:
-          'bg-transparent border duration-300 hover:bg-fill-primary hover:border-outline-hover hover:text-on-fill',
+          'bg-transparent border duration-300 hover:bg-interactive-primary hover:border-outline-hover hover:text-on-interactive-secondary',
         ghost:
           'bg-transparent',
-        link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-fill-interactive before:hover:h-[8px]',
+        link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-interactive-interactive before:hover:h-[8px]',
       },
       size: {
         default: 'h-9 py-2 px-4',

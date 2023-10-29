@@ -15,7 +15,7 @@ module.exports = {
         "neue-montreal": ['var(--font-neue-montreal)'],
       },
       colors: {
-        background: "hsl(var(--background-primary))",
+        background: "hsl(var(--background))",
         surface: {
           DEFAULT: "hsl(var(--surface-primary))",
           "primary": "hsl(var(--surface-primary))",
@@ -40,6 +40,7 @@ module.exports = {
           "secondary-hover": "hsl(var(--outline-secondary-hover)",
           "tertiary": "hsl(var(--outline-tertiary))",
           "tertiary-hover": "hsl(var(--outline-tertiary-hover)",
+          "focus": "hsl(var(--outline-focus))",
           "faint": "hsl(var(--outline-faint))",
           "faint-hover": "hsl(var(--outline-faint-hover))",
           "faint-disabled": "hsla(var(--outline-faint-disabled))",
@@ -56,7 +57,7 @@ module.exports = {
           "negative-disabled": "hsla(var(--outline-negative-disabled))",
           "inversed": "hsl(var(--outline-inversed))",
         },
-        "interactive": {
+        interactive: {
           DEFAULT: "hsl(var(--interactive-primary))",
           "primary": "hsl(var(--interactive-primary))",
           "primary-hover": "hsl(var(--interactive-primary-hover))",
@@ -78,6 +79,8 @@ module.exports = {
           DEFAULT: "hsl(var(--on-surface-primary))",
           "primary": "hsl(var(--on-surface-primary))",
           "secondary": "hsl(var(--on-surface-secondary))",
+          "tertiary": "hsl(var(--on-surface-tertiary))",
+          "faint": "hsl(var(--on-surface-faint))",
           "accent": "hsl(var(--on-surface-accent))",
           "positive": "hsl(var(--on-surface-positive))",
           "warning": "hsl(var(--on-surface-warning))",
@@ -87,7 +90,9 @@ module.exports = {
           DEFAULT: "hsl(var(--on-interactive-primary))",
           primary: "hsl(var(--on-interactive-primary))",
           secondary: "hsl(var(--on-interactive-secondary))",
-        }
+          accent: "hsl(var(--on-interactive-accent))",
+        },
+
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

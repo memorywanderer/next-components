@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex items-center w-full gap-6 px-5 border-b py-7 bg-surface-primary border-outline-secondary">
+      <header className="flex items-center w-full gap-6 px-5 border-b py-7 bg-surface-primary border-outline-tertiary">
         <Typography tag="h1" type='heading-one-desktop'>Line</Typography>
         <NavigationMenu>
           <NavigationMenuList>
@@ -127,20 +127,20 @@ export default function Home() {
         </NavigationMenu>
       </header>
       <main className="flex h-screen gap-2">
-        <nav className="h-full p-4 border-r w-60 border-outline-secondary">
+        <nav className="h-full p-4 border-r w-60 border-outline-tertiary">
           <ul className='flex flex-col gap-4'>
             <li>
-              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-secondary hover:bg-surface-interactive hover:text-on-surface-interactive">
+              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-tertiary hover:bg-surface-accent hover:text-on-surface-accent">
                 <Typography type="body-large" className="font-bold">Читай</Typography>
               </Link>
             </li>
             <li>
-              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-secondary hover:bg-surface-interactive hover:text-on-surface-interactive">
+              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-tertiary hover:bg-surface-accent hover:text-on-surface-accent">
                 <Typography type="body-large" className="font-bold">Смотри</Typography>
               </Link>
             </li>
             <li>
-              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-secondary hover:bg-surface-interactive hover:text-on-surface-interactive">
+              <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-tertiary hover:bg-surface-accent hover:text-on-surface-accent">
                 <Typography type="body-large" className="font-bold">Слушай</Typography>
               </Link>
             </li>
@@ -168,15 +168,17 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col max-w-xs gap-2 p-4 bg-surface-seconadry">
-
-            <Button>Привет!</Button>
+            <Label htmlFor="opinion">
+              Ваше мнение
+            </Label>
+            <Input id="opinion" name="opinion" placeholder="Ваш ответ" />
+            <Button >Привет!</Button>
             <Button variant="secondary">Привет!</Button>
             <Button variant="tertiary">Привет!</Button>
             <Button variant="outline">Привет!</Button>
             <Button variant="ghost">Привет!</Button>
             <Button variant="link">Привет!</Button>
             <Button variant="negative">Привет!</Button>
-
           </div>
           <div className="p-4 border bg-surface-positive text-on-surface-positive border-outline-positive rounded-xl">
             <Typography tag="h1" type="heading-four-desktop">
@@ -202,7 +204,7 @@ export default function Home() {
               Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
             </Typography>
           </div>
-          <div className="p-4 border bg-surface-interactive text-on-surface-interactive border-outline-interactive rounded-xl">
+          <div className="p-4 border bg-surface-accent text-on-surface-accent border-outline-accent rounded-xl">
             <Typography tag="h1" type="heading-four-desktop">
               Двухфакторная авторизация
             </Typography>
@@ -213,7 +215,7 @@ export default function Home() {
           <Typography tag="h1" type="title-desktop" className="mb-6 text-on-surface-primary">
             Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить
           </Typography>
-          <Typography tag="h1" type="heading-two-desktop" className="mb-4 text-on-surface-primary">
+          <Typography tag="h1" type="heading-two-desktop" className="mb-4 text-on-surface-faint">
             Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
           </Typography>
           <Typography type="body-primary-desktop" className="mb-4 text-on-surface-secondary">

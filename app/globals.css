@@ -60,39 +60,41 @@
     --interface-error-mobile-leading: 15px;
     --interface-error-desktop: 15px;
     --interface-error-desktop-leading: 20px;
+
+
   }
 
   .light {
-    --background: 0, 0, 100%;
+    --background: 0, 0%, 100%;
 
-    --surface-primary: 0, 0, 97%;
-    --surface-secondary: 0, 0, 89%;
-    --surface-tertiary: 0, 0, 81%;
-    --surface-hover: 0, 0, 73%;
+    --surface-primary: 0, 0%, 97%;
+    --surface-secondary: 0, 0%, 89%;
+    --surface-tertiary: 0, 0%, 81%;
+    --surface-hover: 0, 0%, 73%;
     --surface-accent: 230, 100%, 95%;
     --surface-accent-hover: 261, 82%, 89%;
-    --surface-positive: 138, 45%, 96%;
-    --surface-positive-hover: 138, 22%, 91%;
-    --surface-warning: 27, 73%, 97%;
+    --surface-positive: 142, 45%, 96%;
+    --surface-positive-hover: 142, 22%, 91%;
+    --surface-warning: 30, 73%, 97%;
     --surface-warnign-hover: 30, 25%, 92%;
     --surface-negative: 5, 86%, 97%;
     --surface-negative-hover: 5, 32%, 93%;
 
-    --on-surface-primary: 0, 0, 10%;
-    --on-surface-secondary: 0, 0, 25%;
-    --on-surface-tertiary: 0, 0, 40%;
-    --on-surface-faint: 0, 0, 70%;
+    --on-surface-primary: 0, 0%, 5%;
+    --on-surface-secondary: 0, 0%, 25%;
+    --on-surface-tertiary: 0, 0%, 40%;
+    --on-surface-faint: 0, 0%, 50%;
     --on-surface-accent: 240, 82%, 44%;
-    --on-surface-positive: 135, 97%, 26%;
-    --on-surface-warning: 29, 100%, 37%;
-    --on-surface-negative: 5, 100%, 46%;
+    --on-surface-positive: 135, 97%, 22%;
+    --on-surface-warning: 30, 100%, 30%;
+    --on-surface-negative: 5, 100%, 38%;
 
-    --interactive-primary: 0, 0, 10%;
-    --interactive-primary-hover: 0, 0, 3%;
+    --interactive-primary: 0, 0%, 10%;
+    --interactive-primary-hover: 0, 0%, 3%;
     --interactive-secondary: var(--surface-secondary);
-    --interactive-secondary-hover: 0, 0, 85%;
+    --interactive-secondary-hover: 0, 0%, 85%;
     --interactive-tertiary: var(--surface-tertiary);
-    --interactive-tertiary-hover: 0, 0, 76%;
+    --interactive-tertiary-hover: 0, 0%, 76%;
     --interactive-accent: 240, 78%, 54%;
     --interactive-accent-hover: 240, 100%, 35%;
     --interactive-positive: 145, 65%, 37%;
@@ -103,16 +105,17 @@
     --interactive-negative-hover: 5, 82%, 41%;
     --interactive-highlight: 49, 100%, 82%;
 
-    --on-interactive-primary: 0, 0, 97%;
-    --on-interactive-secondary: 0, 0, 10%;
+    --on-interactive-primary: 0, 0%, 97%;
+    --on-interactive-secondary: 0, 0%, 10%;
+    --on-interactive-accent: 0, 0%, 100%;
 
-    --outline-primary: 0, 0, 5%;
-    --outline-primary-hover: 0, 0, 30%;
-    --outline-secondary: 0, 0, 80%;
-    --outline-secondary-hover: 0, 0, 70%;
-    --outline-tertiary: 0, 0, 90%;
-    --outline-tertiary-hover: 0, 0, 82%;
-    --outline-focus: 240, 64%, 72%;
+    --outline-primary: 0, 0%, 5%;
+    --outline-primary-hover: 0, 0%, 30%;
+    --outline-secondary: 0, 0%, 80%;
+    --outline-secondary-hover: 0, 0%, 70%;
+    --outline-tertiary: 0, 0%, 90%;
+    --outline-tertiary-hover: 0, 0%, 82%;
+    --outline-focus: 240, 100%, 65%;
     --outline-accent: 240, 82%, 44%;
     --outline-accent-hover: 240, 99%, 32%;
     --outline-positive: 135, 100%, 26%;
@@ -121,41 +124,43 @@
     --outline-warning-hover: 25, 100%, 25%;
     --outline-negative: 5, 84%, 47%;
     --outline-negative-hover: 5, 82%, 33%;
-    --outline-inversed: 0, 0, 0;
+    --outline-inversed: 0, 0%, 0%;
+
+    --light: hsl(0, 0%, 97%);
+    --dark: hsl(0, 0%, 10%);
   }
 
   .dark {
     --background: 222, 22%, 9%;
-
     --surface-primary: 222, 14%, 15%;
     --surface-secondary: 222, 11%, 23%;
     --surface-tertiary: 222, 9%, 34%;
-    --surface-hover: 222, 10, 18%;
+    --surface-hover: 222, 10%, 18%;
     --surface-accent: 240, 33%, 30%;
     --surface-accent-hover: 240, 31%, 35%;
-    --surface-positive: 142, 25%, 21%;
+    --surface-positive: 142, 25%, 22%;
     --surface-positive-hover: 142, 17%, 29%;
-    --surface-warning: 24, 13%, 23%;
+    --surface-warning: 24, 15%, 22%;
     --surface-warnign-hover: 24, 8%, 30%;
     --surface-negative: 345, 18%, 22%;
     --surface-negative-hover: 343, 12%, 29%;
 
     --on-surface-primary: 222, 2%, 97%;
-    --on-surface-secondary: 222, 2, 85%;
-    --on-surface-tertiary: 222, 2, 70%;
-    --on-surface-faint: 222, 2, 50%;
-    --on-surface-accent: 231, 100%, 85%;
-    --on-surface-positive: 125, 100%, 77%;
+    --on-surface-secondary: 222, 2%, 85%;
+    --on-surface-tertiary: 222, 2%, 70%;
+    --on-surface-faint: 222, 2%, 60%;
+    --on-surface-accent: 231, 100%, 90%;
+    --on-surface-positive: 135, 100%, 77%;
     --on-surface-warning: 30, 100%, 77%;
-    --on-surface-negative: 0, 100%, 77%;
+    --on-surface-negative: 5, 100%, 83%;
 
     --interactive-primary: 222, 14%, 97%;
-    --interactive-primary-hover: 0, 0, 100%;
+    --interactive-primary-hover: 0, 0%, 100%;
     --interactive-secondary: var(--surface-secondary);
     --interactive-secondary-hover: 222, 6%, 27%;
     --interactive-tertiary: var(--surface-tertiary);
     --interactive-tertiary-hover: 222, 6%, 40%;
-    --interactive-accent: 232, 50%, 60%;
+    --interactive-accent: 240, 50%, 60%;
     --interactive-accent-hover: 232, 45%, 64%;
     --interactive-positive: 145, 54%, 34%;
     --interactive-positive-hover: 145, 21%, 49%;
@@ -165,16 +170,17 @@
     --interactive-negative-hover: 0, 54%, 56%;
     --interactive-highlight: 49, 47%, 20%;
 
-    --on-interactive-primary: 0, 0, 97%;
-    --on-interactive-secondary: 0, 0, 10%;
+    --on-interactive-primary: 0, 0%, 10%;
+    --on-interactive-secondary: 0, 0%, 97%;
+    --on-interactive-accent: 0, 0%, 100%;
 
     --outline-primary: 210, 14%, 97%;
-    --outline-primary-hover: 0, 0, 75%;
+    --outline-primary-hover: 0, 0%, 75%;
     --outline-secondary: 217, 6%, 26%;
     --outline-secondary-hover: 217, 5%, 38%;
     --outline-tertiary: 223, 4%, 36%;
-    --outline-tertiary-hover: 216, 2, 54%;
-    --outline-focus: 232, 30%, 62%;
+    --outline-tertiary-hover: 216, 2%, 54%;
+    --outline-focus: 232, 63%, 62%;
     --outline-accent: 232, 100%, 79%;
     --outline-accent-hover: 240, 87%, 74%;
     --outline-positive: 127, 51%, 62%;
@@ -183,7 +189,10 @@
     --outline-warning-hover: 30, 100%, 85%;
     --outline-negative: 359, 53%, 69%;
     --outline-negative-hover: 359, 100%, 83%;
-    --outline-inversed: 0, 0, 100%;
+    --outline-inversed: 0, 0%, 100%;
+
+    --light: hsl(0, 0%, 97%);
+    --dark: hsl(0, 0%, 10%);
   }
 }
 

@@ -4,26 +4,26 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          'bg-interactive-primary text-on-interactive-secondary hover:bg-interactive-primary-hover',
+          'bg-interactive-primary text-on-interactive-primary hover:bg-interactive-primary-hover',
         secondary:
           'bg-interactive-secondary text-on-interactive-secondary hover:bg-interactive-secondary-hover',
-        tertiary: "bg-interactive-tertiary text-on-interactive-tertiary hover:bg-interactive-tertiary-hover",
+        tertiary: "bg-interactive-tertiary text-on-interactive-secondary hover:bg-interactive-tertiary-hover",
         // positive: "bg-interactive-positive hover:bg-interactive-positive-hover",
         // warning: "bg-interactive-warning hover:bg-interactive-warning-hover",
         negative:
-          'bg-interactive-secondary text-on-surface-negative hover:bg-interactive-negative hover:text-on-interactive-secondary',
+          'bg-interactive-secondary text-on-surface-negative hover:bg-interactive-negative hover:text-[color:var(--light)]',
         accent:
           'bg-interactive-accent text-on-interactive-accent hover:bg-interactive-accent-hover',
         outline:
-          'bg-transparent border duration-300 hover:bg-interactive-primary hover:border-outline-hover hover:text-on-interactive-secondary',
+          'bg-transparent border duration-300 hover:bg-interactive-primary hover:border-outline-hover hover:text-on-interactive-primary',
         ghost:
           'bg-transparent',
-        link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-interactive-interactive before:hover:h-[8px]',
+        link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-interactive-accent before:hover:h-[8px]',
       },
       size: {
         default: 'h-9 py-2 px-4',

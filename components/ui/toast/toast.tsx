@@ -34,7 +34,7 @@ const toastVariants = cva(
           'bg-surface-warning border-outline-warning',
         negative:
           'bg-surface-negative border-outline-negative',
-        interactive:
+        accent:
           'bg-surface-accent border-outline-accent',
       }
     },

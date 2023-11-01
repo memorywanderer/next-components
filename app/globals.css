@@ -154,8 +154,8 @@
     --on-surface-warning: 30, 100%, 77%;
     --on-surface-negative: 5, 100%, 83%;
 
-    --interactive-primary: 222, 14%, 97%;
-    --interactive-primary-hover: 0, 0%, 100%;
+    --interactive-primary: 222, 14%, 94%;
+    --interactive-primary-hover: 0, 100%, 100%;
     --interactive-secondary: var(--surface-secondary);
     --interactive-secondary-hover: 222, 6%, 27%;
     --interactive-tertiary: var(--surface-tertiary);
@@ -176,10 +176,10 @@
 
     --outline-primary: 210, 14%, 97%;
     --outline-primary-hover: 0, 0%, 75%;
-    --outline-secondary: 217, 6%, 26%;
-    --outline-secondary-hover: 217, 5%, 38%;
-    --outline-tertiary: 223, 4%, 36%;
-    --outline-tertiary-hover: 216, 2%, 54%;
+    --outline-secondary: 223, 4%, 36%;
+    --outline-secondary-hover: 216, 2%, 54%;
+    --outline-tertiary: 217, 6%, 22%;
+    --outline-tertiary-hover: 217, 5%, 38%;
     --outline-focus: 232, 63%, 62%;
     --outline-accent: 232, 100%, 79%;
     --outline-accent-hover: 240, 87%, 74%;

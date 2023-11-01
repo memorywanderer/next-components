@@ -23,6 +23,7 @@ import { Slider } from "@/components/ui/slider/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
 import { Toast, ToastAction, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from "@/components/ui/toast/toast"
 import { useEffect, useRef, useState } from "react"
+import { FormWithReactHookForm } from "@/components/ui/form/form-old"
 
 function oneWeekAway(date?: Date) {
   const now = new Date();
@@ -46,7 +47,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex items-center w-full gap-6 px-5 border-b py-7 bg-surface-primary border-outline-tertiary">
+      <header className="flex items-center w-full gap-6 px-5 border-b py-7 bg-surface-primary border-outline-tertiary ">
         <Typography tag="h1" type='heading-one-desktop'>Line</Typography>
         <NavigationMenu>
           <NavigationMenuList>
@@ -168,10 +169,10 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col max-w-xs gap-2 p-4 bg-surface-seconadry">
-            <Label htmlFor="opinion">
-              Ваше мнение
+            <Label htmlFor="opinion" className="p-2 rounded-lg max-w-fit bg-surface-accent text-on-surface-accent">
+              Мнение
             </Label>
-            <Input id="opinion" name="opinion" placeholder="Ваш ответ" />
+            <FormWithReactHookForm />
             <Button >Привет!</Button>
             <Button variant="secondary">Привет!</Button>
             <Button variant="tertiary">Привет!</Button>

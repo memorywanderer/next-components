@@ -24,6 +24,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/t
 import { Toast, ToastAction, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from "@/components/ui/toast/toast"
 import { useEffect, useRef, useState } from "react"
 import { FormWithReactHookForm } from "@/components/ui/form/form-old"
+import { Form } from "@/components/ui/form/form"
+import { TestForm } from "@/components/forms/test-form"
 
 function oneWeekAway(date?: Date) {
   const now = new Date();
@@ -172,7 +174,8 @@ export default function Home() {
             <Label htmlFor="opinion" className="p-2 rounded-lg max-w-fit bg-surface-accent text-on-surface-accent">
               Мнение
             </Label>
-            <FormWithReactHookForm />
+            {/* <FormWithReactHookForm /> */}
+            <TestForm />
             <Button >Привет!</Button>
             <Button variant="secondary">Привет!</Button>
             <Button variant="tertiary">Привет!</Button>

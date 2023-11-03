@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils'
 import { Label } from '../label/label'
 import { createContext } from 'vm'
 import React, { useContext } from 'react'
+import { Typography } from '../typography/typography'
 
 const Form = FormProvider
 
@@ -72,3 +73,132 @@ type FormItemContextValue = {
 const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 )
+
+const FormItem = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  const id = React.useId()
+
+  return (
+    <FormItemContext.Provider value={{ id }}>
+      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+    </FormItemContext.Provider>
+  )
+})
+FormItem.displayName = "FormItem"
+
+const FormLabel = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
+>(({ className, ...props }, ref) => {
+  const { error, formItemId } = useFormField()
+
+  return (
+    <Label
+      ref={ref}
+      className={cn(error && 'text-on-surface-negative', className)}
+      htmlFor={formItemId}
+      {...props}
+    />
+  )
+})
+
+FormLabel.displayName = "FormLabel"
+
+const FormControl = React.forwardRef<
+  React.ElementRef<typeof Slot>,
+  React.ComponentPropsWithoutRef<typeof Slot>
+>(({ ...props }, ref) => {
+  const {
+    error,
+    formItemId,
+    formDescriptionId,
+    formMessageId
+  } = useFormField()
+
+  return (
+    <Slot
+      ref={ref}
+      id={formItemId}
+      aria-describedby={
+        !error
+          ? `${formDescriptionId}`
+          : `${formDescriptionId} ${formMessageId}`
+      }
+      aria-invalid={!!error}
+      {...props}
+    />
+  )
+})
+FormControl.displayName = 'FormControl'
+
+const FormDescription = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
+  const { formDescriptionId } = useFormField()
+  return (
+    <Typography
+      id={formDescriptionId}
+      type="interface-caption"
+      className='text-on-surface-secondary'
+      {...props}
+    />
+  )
+}
+FormDescription.displayName = 'FormDescription'
+
+const FormMessage = ({ className, children, ...props }: React.HTMLAttributes<HTMLElement>) => {
+  const { error, formMessageId } = useFormField()
+  const body = error ? String(error?.message) : children
+
+  if (!body) {
+    return null
+  }
+
+  return (
+    <Typography
+      id={formMessageId}
+      type="interface-error-desktop"
+      className={cn(
+        'md:text-[length:var(--interface-error-mobile)] md:leading-[var(--interface-error-mobile-leading)] font-charter text-on-surface-negative',
+        className
+      )}
+      {...props}
+    >
+      {body}
+    </Typography>
+  )
+}
+FormMessage.displayName = "FormMessage"
+
+const UncontrolledFormMessage = ({ className, children, message, ...props }: React.HTMLAttributes<HTMLElement> & {
+  message?: string
+}) => {
+  const { formMessageId } = useFormField()
+  const body = message ? String(message) : children
+
+  if (!body) {
+    return null
+  }
+
+  return (
+    <Typography
+      id={formMessageId}
+      type="interface-caption"
+    >
+      {body}
+    </Typography>
+  )
+}
+UncontrolledFormMessage.displayName = 'UncontrolledFormMessage'
+
+export {
+  useFormField,
+  Form,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+  UncontrolledFormMessage,
+  FormField
+}

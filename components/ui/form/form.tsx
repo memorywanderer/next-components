@@ -11,7 +11,6 @@ import {
 
 import { cn } from '@/lib/utils'
 import { Label } from '../label/label'
-import { createContext } from 'vm'
 import React, { useContext } from 'react'
 import { Typography } from '../typography/typography'
 
@@ -82,7 +81,7 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      <div ref={ref} className={cn(className)} {...props} />
     </FormItemContext.Provider>
   )
 })
@@ -97,7 +96,7 @@ const FormLabel = React.forwardRef<
   return (
     <Label
       ref={ref}
-      className={cn(error && 'text-on-surface-negative', className)}
+      className={cn(className)}
       htmlFor={formItemId}
       {...props}
     />
@@ -109,7 +108,7 @@ FormLabel.displayName = "FormLabel"
 const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
+>(({ className, ...props }, ref) => {
   const {
     error,
     formItemId,
@@ -120,6 +119,7 @@ const FormControl = React.forwardRef<
   return (
     <Slot
       ref={ref}
+      className={cn(error && 'border-2 border-outline-negative', className)}
       id={formItemId}
       aria-describedby={
         !error

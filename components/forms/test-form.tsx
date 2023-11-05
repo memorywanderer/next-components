@@ -20,6 +20,7 @@ import {
 import { Input } from '../ui/input/input'
 import { Typography } from '../ui/typography/typography'
 import { cn } from '@/lib/utils'
+import { PasswordInput } from '../ui/password-input/password-input'
 type Inputs = z.infer<typeof testSchema>
 
 export const TestForm = () => {
@@ -64,7 +65,8 @@ export const TestForm = () => {
             <FormItem>
               <FormLabel>Пароль</FormLabel>
               <FormControl>
-                <Input placeholder='******' {...field} />
+                <PasswordInput placeholder='*******' {...field} />
+                {/* <Input placeholder='******' {...field} /> */}
               </FormControl>
               <FormMessage />
             </FormItem>

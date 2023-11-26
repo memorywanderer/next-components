@@ -27,7 +27,7 @@ import {
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button/button"
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog/dialog"
-import { Dispatch, HTMLAttributes, SetStateAction, useCallback, useEffect } from "react"
+import { Dispatch, HTMLAttributes, SetStateAction, useCallback, useEffect, useRef, useState } from "react"
 import { FileWithPreview } from "@/types"
 import { Typography } from "./ui/typography/typography"
 
@@ -195,5 +195,150 @@ export function FileDialog<TFieldValues extends FieldValues>({
         ) : null}
       </DialogContent>
     </Dialog>
+  )
+}
+
+interface FileCardProps {
+  i: number
+  file: FileWithPreview,
+  files: FileWithPreview[] | null,
+  setFiles: React.Dispatch<React.SetStateAction<FileWithPreview[] | null>>
+}
+
+function FileCard({ i, file, files, setFiles }: FileCardProps) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [cropData, setCropData] = useState<string | null>(null)
+  const cropperRef = useRef<ReactCropperElement>(null)
+
+  const onCrop = useCallback(() => {
+    if (!files || !cropperRef.current) return
+
+    const croppedCanvas = cropperRef.current?.cropper.getCroppedCanvas()
+    setCropData(croppedCanvas.toDataURL())
+
+    croppedCanvas.toBlob((blob) => {
+      if (!blob) {
+        console.error("Blob creation failed!")
+        return
+      }
+
+      const croppedImage = new File([blob], file.name, {
+        type: file.type,
+        lastModified: Date.now(),
+      })
+
+      const croppedFileWithPathAndPreview = Object.assign(croppedImage, {
+        preview: URL.createObjectURL(croppedImage),
+        path: file.name,
+      }) satisfies FileWithPreview
+
+      const newFiles = files.map((file, j) =>
+        j === i ? croppedFileWithPathAndPreview : file
+      )
+      setFiles(newFiles)
+    })
+  }, [file.name, file.type, files, i, setFiles])
+
+  useEffect(() => {
+    function handleKeydown(e: KeyboardEvent) {
+      if (e.key === "Enter") {
+        onCrop()
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener("keydown", handleKeydown)
+
+    return () => document.removeEventListener("keydown", handleKeydown)
+
+  }, [onCrop])
+
+  return (
+    <div className="relative flex items-center justify-between gap-2.5">
+      <div className="flex items-center gap-2">
+        <Image
+          src={cropData ? cropData : file.preview}
+          alt={file.name}
+          className="w-10 h-10 rounded-md shrink-0"
+          width={40}
+          height={40}
+          loading="lazy"
+        />
+        <div className="flex flex-col">
+          <Typography className="line-clamp-1 text-on-surface-secondary">
+            {file.name}
+          </Typography>
+          <Typography>
+            {(file.size / 1024 / 1024).toFixed(2)}MB
+          </Typography>
+        </div>
+      </div>
+      <div className="flex items-center gap-2">
+        {file.type.startsWith("image") && (
+          <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            <DialogTrigger asChild>
+              <Button
+                type="button"
+                variant="outline"
+                className="w-7 h-7"
+              >
+                <CropIcon className="w-4 h-4 text-white" aria-hidden="true" />
+                <span className="sr-only">Crop image</span>
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <Typography className="absolute left-5 top-4 text-on-surface-secondary">
+                Crop image
+              </Typography>
+              <div className="grid mt-8 space-y-5 place-items-center">
+                <Cropper
+                  ref={cropperRef}
+                  className="w-[450px] h-[450] object-cover"
+                  zoomTo={0.5}
+                  initialAspectRatio={1 / 1}
+                  preview=".img-preview"
+                  src={file.preview}
+                  viewMode={1}
+                  minCropBoxHeight={10}
+                  minCropBoxWidth={10}
+                  background={false}
+                  responsive={true}
+                  autoCropArea={1}
+                  checkOrientation={false} // https://github.com/fengyuanchen/cropperjs/issues/671
+                  guides={true}
+                />
+                <div className="flex items-center justify-center space-x-2">
+                  <Button
+                    aria-label="Crop-image"
+                    type="button"
+                    className="h-8"
+                    onClick={() => {
+                      onCrop()
+                      setIsOpen(false)
+                    }}
+                  >
+                    <CropIcon className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
+                    <Typography>
+                      Crop image
+                    </Typography>
+                  </Button>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
+        )}
+        <Button
+          type="button"
+          variant="outline"
+          className="h-7 w-7"
+          onClick={() => {
+            if (!files) return
+            setFiles(files.filter((_, j) => j !== i))
+          }}
+        >
+          <Trash2Icon className="w-4 h-4 text-white" aria-hidden="true" />
+          <span className="sr-only">Remove file</span>
+        </Button>
+      </div>
+    </div>
   )
 }

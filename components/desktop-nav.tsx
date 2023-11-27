@@ -3,94 +3,82 @@
 import { DesktopNavItem } from "@/types"
 import { NavigationListItem, NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation/navigation"
 import { Icons } from "./icons"
+import { siteConfig } from "@/config/site"
+import Link from "next/link"
+import { ChevronDown } from "lucide-react"
 
 export interface DesktopNavProps {
   items?: DesktopNavItem[]
 }
 
-const DesktopNav = ({ items }: DesktopNavProps) => {
+export const DesktopNav = ({ items }: DesktopNavProps) => {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger index={0}>
-            Trigger 1
-          </NavigationMenuTrigger>
-          <NavigationMenuContent index={0} id="menu-content-0">
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              <NavigationListItem title="Introduction" href="/primitives/docs/overview/introduction">
-                Build high-quality, accessible design systems and web apps.
-              </NavigationListItem>
-              <NavigationListItem title="Getting started" href="/primitives/docs/overview/getting-started">
-                A quick tutorial to get you up and running with Radix Primitives.
-              </NavigationListItem>
-              <NavigationListItem title="Styling" href="/primitives/docs/guides/styling">
-                Unstyled and compatible with any styling solution.
-              </NavigationListItem>
-              <NavigationListItem title="Animation" href="/primitives/docs/guides/animation">
-                Use CSS keyframes or any animation library of your choice.
-              </NavigationListItem>
-              <NavigationListItem title="Accessibility" href="/primitives/docs/overview/accessibility">
-                Tested in a range of browsers and assistive technologies.
-              </NavigationListItem>
-              <NavigationListItem title="Releases" href="/primitives/docs/overview/releases">
-                Radix Primitives releases and their changelogs.
-              </NavigationListItem>
-            </ul>
+    <div className="hidden gap-6 lg:flex">
+      <Link href="/" className="items-center hidden space-x-2 lg:flex">
+        <Icons.logo className="w-6 h-6" aria-hidden="true" />
+        <span className="hidden font-bold lg:inline-block">
+          {siteConfig.name}
+        </span>
+        <span className="sr-only">Home</span>
+      </Link>
+      <NavigationMenu>
+        {/* <NavigationMenuList>
+          {items?.[0].items ? (
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="flex items-center justify-center" index={0}>
+                {items[0]?.title}
+                <ChevronDown className="w-4 h-4" />
+              </NavigationMenuTrigger>
+              <NavigationMenuContent
+                index={0}
+                id="menu-content-0"
+              >
+                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  {items[0].items.map((item) => (
+                    <NavigationListItem
+                      key={item.title}
+                      title={item.title}
+                      href={item.href}
+                    >
+                      {item.description}
+                    </NavigationListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          ) : (
+            null
+          )}
+        </NavigationMenuList> */}
+        <NavigationMenuList>
+          {items ? (items?.map((item, index) => (
+            <NavigationMenuItem>
+              <NavigationMenuTrigger index={index}>
+                {item?.title}
+              </NavigationMenuTrigger>
+              <NavigationMenuContent
+                index={index}
+                id={`menu-content-${index}`}
+              >
+                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  {item?.items?.map((item) => (
+                    <NavigationListItem
+                      key={item.title}
+                      title={item.title}
+                      href={item.href}
+                    >
+                      {item.description}
+                    </NavigationListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          ))) : (
+            null
+          )}
 
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger index={1}>
-            Trigger 2
-          </NavigationMenuTrigger>
-          <NavigationMenuContent index={1} id="menu-content-1">
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              <NavigationListItem title="Introduction" href="/primitives/docs/overview/introduction">
-                Build high-quality, accessible design systems and web apps.
-              </NavigationListItem>
-              <NavigationListItem title="Getting started" href="/primitives/docs/overview/getting-started">
-                A quick tutorial to get you up and running with Radix Primitives.
-              </NavigationListItem>
-              <NavigationListItem title="Styling" href="/primitives/docs/guides/styling">
-                Unstyled and compatible with any styling solution.
-              </NavigationListItem>
-              <NavigationListItem title="Animation" href="/primitives/docs/guides/animation">
-                Use CSS keyframes or any animation library of your choice.
-              </NavigationListItem>
-              <NavigationListItem title="Accessibility" href="/primitives/docs/overview/accessibility">
-                Tested in a range of browsers and assistive technologies.
-              </NavigationListItem>
-              <NavigationListItem title="Releases" href="/primitives/docs/overview/releases">
-                Radix Primitives releases and their changelogs.
-              </NavigationListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger index={2}>
-            Trigger 3
-          </NavigationMenuTrigger>
-          <NavigationMenuContent index={2} id="menu-content-2">
-            Content 3
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="#">
-            Link
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="#">
-            Link
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="#">
-            Link
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   )
 }

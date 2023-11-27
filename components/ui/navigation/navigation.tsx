@@ -4,6 +4,7 @@ import { cva } from "class-variance-authority";
 import Link from "next/link";
 import { HTMLAttributes, forwardRef, useEffect } from "react";
 import { Typography } from "../typography/typography";
+import { ChevronDown } from "lucide-react";
 
 const NavigationMenu = forwardRef<
   HTMLDivElement,
@@ -43,7 +44,7 @@ NavigationMenuItem.displayName = 'NavigationMenuItem'
 
 
 const navigationMenuTriggerStyle = cva(
-  'inline-flex items-center justify-center rounded-full transition-colors border border-outline-secondary bg-surface-primary hover:bg-surface-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group'
+  'inline-flex items-center justify-center rounded-full transition-colors border border-outline-secondary bg-surface-primary hover:bg-surface-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-4 px-4 group'
 )
 
 const NavigationMenuTrigger = forwardRef<
@@ -51,23 +52,33 @@ const NavigationMenuTrigger = forwardRef<
   HTMLAttributes<HTMLButtonElement> & {
     index: number
   }
->(({ className, index, ...props }, ref) => {
-  const { toggleMenuAtIndex } = useNavgationMenuContext()
-
+>(({ className, children, index, ...props }, ref) => {
+  const { openIndex, toggleMenuAtIndex } = useNavgationMenuContext()
+  const isOpen = openIndex === index
   const handleClick = () => {
     toggleMenuAtIndex(index)
   }
 
   return (
+
     <button
       ref={ref}
       onClick={handleClick}
       className={cn(
         navigationMenuTriggerStyle(),
+        "flex items-center ",
         className
       )}
       {...props}
-    />
+    >
+      <Typography>{children}</Typography> {" "}
+      <ChevronDown className={cn(
+        "relative top-[1px] ml-1 h-3 w-3 transition duration-300",
+        isOpen && "-rotate-180"
+      )} />
+    </button>
+
+
   )
 })
 NavigationMenuTrigger.displayName = 'NavigationMenuTrigger'
@@ -113,7 +124,7 @@ const NavigationMenuLink = forwardRef<
 NavigationMenuLink.displayName = 'NavigationMenuLink'
 
 export interface ListItemProps extends React.HTMLAttributes<HTMLAnchorElement> {
-  href: string,
+  href: string | undefined,
 }
 
 const NavigationListItem = forwardRef<
@@ -123,7 +134,7 @@ const NavigationListItem = forwardRef<
   <li>
     <Link
       ref={forwardedRef}
-      href={href}
+      href={href ? href : "/"}
       className={cn(
         'hover:bg-interactive-secondary block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-surface-primary',
         className

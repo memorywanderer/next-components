@@ -30,3 +30,12 @@ export interface NavItemWithOptionalChildren extends NavItem {
 export type DesktopNavItem = NavItemWithOptionalChildren
 
 export type SidebarNavItem = NavItemWithChildren
+
+export interface FooterItem {
+  title: string
+  items: {
+    title: string
+    href: string
+    external?: boolean
+  }[]
+}

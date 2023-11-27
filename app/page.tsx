@@ -26,6 +26,8 @@ import { FormWithReactHookForm } from "@/components/ui/form/form-old"
 import { Form } from "@/components/ui/form/form"
 import { TestForm } from "@/components/forms/test-form"
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationListItem } from "@/components/ui/navigation/navigation"
+import { DesktopNav } from "@/components/desktop-nav"
+import { siteConfig } from "@/config/site"
 
 
 function oneWeekAway(date?: Date) {
@@ -214,7 +216,7 @@ export default function Home() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu> */}
-        <NavigationMenu>
+        {/* <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger index={0}>
@@ -295,7 +297,8 @@ export default function Home() {
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
-        </NavigationMenu>
+        </NavigationMenu> */}
+        <DesktopNav items={siteConfig.desktopNav} />
       </header>
       <main className="flex flex-wrap h-screen gap-2">
         <nav className="h-full p-4 border-r w-60 border-outline-tertiary">

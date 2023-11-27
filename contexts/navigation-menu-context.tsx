@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 type navigationMenuProviderProps = {
@@ -8,8 +8,8 @@ type navigationMenuProviderProps = {
 }
 
 type MenuContext = {
-  isOpen: boolean,
-  toggleMenu: () => void
+  openIndex: number | null,
+  toggleMenuAtIndex: (index: number) => void,
 }
 
 export const NavigationMenuContext = createContext<MenuContext | null>(null)
@@ -17,15 +17,34 @@ export const NavigationMenuContext = createContext<MenuContext | null>(null)
 export const NavigationMenuContextProvider = ({
   children
 }: navigationMenuProviderProps) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleMenu = () => {
-    setIsOpen((prevIsOpen) => !prevIsOpen)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const toggleMenuAtIndex = (index: number) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
   }
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const menuElement = document.getElementById(`menu-content-${openIndex}`)
+      if (menuElement && !menuElement.contains(event.target as Node)) {
+        setOpenIndex(null)
+      }
+    }
+
+    if (openIndex !== null) {
+      document.addEventListener('click', handleOutsideClick)
+    }
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [openIndex])
+
   return (
     <NavigationMenuContext.Provider
       value={{
-        isOpen,
-        toggleMenu
+        openIndex,
+        toggleMenuAtIndex
       }}
     >
       {children}

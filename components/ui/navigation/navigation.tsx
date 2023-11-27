@@ -2,7 +2,8 @@ import { useNavgationMenuContext } from "@/contexts/navigation-menu-context";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import Link from "next/link";
-import { HTMLAttributes, forwardRef } from "react";
+import { HTMLAttributes, forwardRef, useEffect } from "react";
+import { Typography } from "../typography/typography";
 
 const NavigationMenu = forwardRef<
   HTMLDivElement,
@@ -22,7 +23,7 @@ const NavigationMenuList = forwardRef<
 >(({ className, ...props }, ref) => (
   <ul
     ref={ref}
-    className={cn('', className)}
+    className={cn('flex items-center gap-2', className)}
     {...props}
   />
 ))
@@ -34,7 +35,7 @@ const NavigationMenuItem = forwardRef<
 >(({ className, ...props }, ref) => (
   <li
     ref={ref}
-    className={cn('', className)}
+    className={cn('relative', className)}
     {...props}
   />
 ))
@@ -47,13 +48,20 @@ const navigationMenuTriggerStyle = cva(
 
 const NavigationMenuTrigger = forwardRef<
   HTMLButtonElement,
-  HTMLAttributes<HTMLButtonElement>
->(({ className, ...props }, ref) => {
-  const { toggleMenu } = useNavgationMenuContext()
+  HTMLAttributes<HTMLButtonElement> & {
+    index: number
+  }
+>(({ className, index, ...props }, ref) => {
+  const { toggleMenuAtIndex } = useNavgationMenuContext()
+
+  const handleClick = () => {
+    toggleMenuAtIndex(index)
+  }
+
   return (
     <button
       ref={ref}
-      onClick={toggleMenu}
+      onClick={handleClick}
       className={cn(
         navigationMenuTriggerStyle(),
         className
@@ -66,18 +74,22 @@ NavigationMenuTrigger.displayName = 'NavigationMenuTrigger'
 
 const NavigationMenuContent = forwardRef<
   HTMLDivElement,
-  HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { isOpen } = useNavgationMenuContext()
-  return (
-    isOpen && (
-      <div
-        ref={ref}
-        className={cn('', className)}
-        {...props}
-      />
+  HTMLAttributes<HTMLDivElement> & {
+    index: number
+  }
+>(({ className, index, ...props }, ref) => {
+  const { openIndex } = useNavgationMenuContext()
+  const isOpen = openIndex === index
 
-    )
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "absolute top-[100%] bg-surface-primary border border-outline-secondary rounded-md left-0 h-0 opacity-0 invisible transition-opacity duration-200",
+        isOpen && 'h-auto opacity-100 visible',
+        className)}
+      {...props}
+    />
   )
 
 })
@@ -100,6 +112,29 @@ const NavigationMenuLink = forwardRef<
 ))
 NavigationMenuLink.displayName = 'NavigationMenuLink'
 
+export interface ListItemProps extends React.HTMLAttributes<HTMLAnchorElement> {
+  href: string,
+}
+
+const NavigationListItem = forwardRef<
+  HTMLAnchorElement,
+  ListItemProps
+>(({ className, children, title, href, ...props }, forwardedRef) => (
+  <li>
+    <Link
+      ref={forwardedRef}
+      href={href}
+      className={cn(
+        'hover:bg-interactive-secondary block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-surface-primary',
+        className
+      )}
+      {...props}
+    >
+      <Typography tag="span" type="interface-primary" className='font-bold text-on-surface-accent'>{title}</Typography>
+      <Typography type="interface-caption" className="text-on-surface-secondary">{children}</Typography>
+    </Link>
+  </li>
+));
 
 export {
   NavigationMenu,
@@ -108,5 +143,6 @@ export {
   NavigationMenuLink,
   NavigationMenuTrigger,
   NavigationMenuContent,
+  NavigationListItem,
   navigationMenuTriggerStyle
 }

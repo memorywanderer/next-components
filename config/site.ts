@@ -32,6 +32,28 @@ export const siteConfig = {
           items: [],
         },
         {
+          title: "Test link 2",
+          href: "/test2",
+          description: "Buy your own product.",
+          items: [],
+        },
+        {
+          title: "Test link 2",
+          href: "/test2",
+          description: "Buy your own product.",
+          items: [],
+        }, {
+          title: "Test link 2",
+          href: "/test2",
+          description: "Buy your own product.",
+          items: [],
+        }, {
+          title: "Test link 2",
+          href: "/test2",
+          description: "Buy your own product.",
+          items: [],
+        },
+        {
           title: "Test link 3",
           href: "/test3",
           description: "Read our latest blog posts.",
@@ -61,6 +83,18 @@ export const siteConfig = {
           items: [],
         }
       ]
+    },
+    {
+      title: "Test 3",
+      href: "/test3"
+    },
+    {
+      title: "Test TestTestTestTest 4",
+      href: "/test4"
+    },
+    {
+      title: "Test 5",
+      href: "/test5"
     },
   ] satisfies DesktopNavItem[],
   footerNav: [

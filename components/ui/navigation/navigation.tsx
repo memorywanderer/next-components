@@ -44,7 +44,7 @@ NavigationMenuItem.displayName = 'NavigationMenuItem'
 
 
 const navigationMenuTriggerStyle = cva(
-  'inline-flex items-center justify-center rounded-full transition-colors border border-outline-secondary bg-surface-primary hover:bg-surface-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-4 px-4 group'
+  'inline-flex items-center justify-center rounded-full transition-colors border border-outline-tertiary bg-surface-primary hover:bg-surface-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-outline-focus focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none h-10 py-4 px-4 group'
 )
 
 const NavigationMenuTrigger = forwardRef<
@@ -96,7 +96,7 @@ const NavigationMenuContent = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "absolute top-[100%] bg-surface-primary border border-outline-secondary rounded-md left-0 h-0 opacity-0 invisible transition-opacity duration-200",
+        "absolute top-[calc(100%_+_0.75rem)] bg-surface-primary border border-outline-secondary rounded-md left-0 h-0 opacity-0 invisible transition-opacity duration-200",
         isOpen && 'h-auto opacity-100 visible',
         className)}
       {...props}
@@ -117,6 +117,7 @@ const NavigationMenuLink = forwardRef<
 >(({ className, href, ...props }, ref) => (
   <Link
     ref={ref}
+    className={cn(className)}
     href={href}
     {...props}
   />

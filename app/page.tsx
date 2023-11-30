@@ -28,6 +28,7 @@ import { TestForm } from "@/components/forms/test-form"
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationListItem } from "@/components/ui/navigation/navigation"
 import { DesktopNav } from "@/components/desktop-nav"
 import { siteConfig } from "@/config/site"
+import { Header } from "@/components/site-header"
 
 
 function oneWeekAway(date?: Date) {
@@ -89,219 +90,9 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex items-center w-full gap-6 px-5 py-5 border-b bg-surface-primary border-outline-tertiary ">
-        {/* <Typography tag="h1" type='heading-one-desktop'>Line</Typography> */}
-        {/* <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                Getting started
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <li className="row-span-3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none bg-gradient-to-b from-muted/50 to-muted focus:shadow-md"
-                        href="/"
-                      >
-                        <div className="mt-4 mb-2 text-lg font-medium">
-                          shadcn/ui
-                        </div>
-                        <p className="text-sm leading-tight text-muted-foreground">
-                          Beautifully designed components built with Radix UI and
-                          Tailwind CSS.
-                        </p>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <NavigationListItem href="/docs" title="Introduction">
-                    Re-usable components built using Radix UI and Tailwind CSS.
-                  </NavigationListItem>
-                  <NavigationListItem href="/docs/installation" title="Installation">
-                    How to install dependencies and structure your app.
-                  </NavigationListItem>
-                  <NavigationListItem href="/docs/primitives/typography" title="Typography">
-                    Styles for headings, paragraphs, lists...etc
-                  </NavigationListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {components.map((component) => (
-                    <NavigationListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </NavigationListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {components.map((component) => (
-                    <NavigationListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </NavigationListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {components.map((component) => (
-                    <NavigationListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </NavigationListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {components.map((component) => (
-                    <NavigationListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </NavigationListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {components.map((component) => (
-                    <NavigationListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </NavigationListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Documentation
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu> */}
-        {/* <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger index={0}>
-                Trigger 1
-              </NavigationMenuTrigger>
-              <NavigationMenuContent index={0} id="menu-content-0">
-                <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-                  <NavigationListItem title="Introduction" href="/primitives/docs/overview/introduction">
-                    Build high-quality, accessible design systems and web apps.
-                  </NavigationListItem>
-                  <NavigationListItem title="Getting started" href="/primitives/docs/overview/getting-started">
-                    A quick tutorial to get you up and running with Radix Primitives.
-                  </NavigationListItem>
-                  <NavigationListItem title="Styling" href="/primitives/docs/guides/styling">
-                    Unstyled and compatible with any styling solution.
-                  </NavigationListItem>
-                  <NavigationListItem title="Animation" href="/primitives/docs/guides/animation">
-                    Use CSS keyframes or any animation library of your choice.
-                  </NavigationListItem>
-                  <NavigationListItem title="Accessibility" href="/primitives/docs/overview/accessibility">
-                    Tested in a range of browsers and assistive technologies.
-                  </NavigationListItem>
-                  <NavigationListItem title="Releases" href="/primitives/docs/overview/releases">
-                    Radix Primitives releases and their changelogs.
-                  </NavigationListItem>
-                </ul>
-
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger index={1}>
-                Trigger 2
-              </NavigationMenuTrigger>
-              <NavigationMenuContent index={1} id="menu-content-1">
-                <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-                  <NavigationListItem title="Introduction" href="/primitives/docs/overview/introduction">
-                    Build high-quality, accessible design systems and web apps.
-                  </NavigationListItem>
-                  <NavigationListItem title="Getting started" href="/primitives/docs/overview/getting-started">
-                    A quick tutorial to get you up and running with Radix Primitives.
-                  </NavigationListItem>
-                  <NavigationListItem title="Styling" href="/primitives/docs/guides/styling">
-                    Unstyled and compatible with any styling solution.
-                  </NavigationListItem>
-                  <NavigationListItem title="Animation" href="/primitives/docs/guides/animation">
-                    Use CSS keyframes or any animation library of your choice.
-                  </NavigationListItem>
-                  <NavigationListItem title="Accessibility" href="/primitives/docs/overview/accessibility">
-                    Tested in a range of browsers and assistive technologies.
-                  </NavigationListItem>
-                  <NavigationListItem title="Releases" href="/primitives/docs/overview/releases">
-                    Radix Primitives releases and their changelogs.
-                  </NavigationListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger index={2}>
-                Trigger 3
-              </NavigationMenuTrigger>
-              <NavigationMenuContent index={2} id="menu-content-2">
-                Content 3
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#">
-                Link
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#">
-                Link
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#">
-                Link
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu> */}
-        <DesktopNav items={siteConfig.desktopNav} />
-      </header>
+      <Header />
       <main className="flex flex-wrap h-screen gap-2">
-        <nav className="h-full p-4 border-r w-60 border-outline-tertiary">
+        {/* <nav className="h-full p-4 border-r w-60 border-outline-tertiary">
           <ul className='flex flex-col gap-4'>
             <li>
               <Link href="#" className="flex justify-center px-4 py-2 border bg-surface-primary rounded-3xl border-outline-tertiary hover:bg-surface-accent hover:text-on-surface-accent">
@@ -324,7 +115,7 @@ export default function Home() {
               </Button>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <div className="pt-4 ml-48 max-w-[800px]">
           <Image
@@ -345,8 +136,7 @@ export default function Home() {
             <Label htmlFor="opinion" className="p-2 rounded-lg max-w-fit bg-surface-accent text-on-surface-accent">
               Мнение
             </Label>
-            {/* <FormWithReactHookForm /> */}
-            {/* <TestForm /> */}
+
             <Button >Привет!</Button>
             <Button variant="secondary">Привет!</Button>
             <Button variant="tertiary">Привет!</Button>

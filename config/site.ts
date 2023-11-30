@@ -17,7 +17,7 @@ export const siteConfig = {
   links,
   desktopNav: [
     {
-      title: "Test",
+      title: "Учебник",
       items: [
         {
           title: "Test link 1",
@@ -62,7 +62,7 @@ export const siteConfig = {
       ]
     },
     {
-      title: "Test 2",
+      title: "О нас",
       items: [
         {
           title: "Test 2 link 1",

@@ -71,7 +71,7 @@ const NavigationMenuTrigger = forwardRef<
       )}
       {...props}
     >
-      <Typography>{children}</Typography> {" "}
+      <Typography type="heading-five" className="font-bold">{children}</Typography> {" "}
       <ChevronDown className={cn(
         "relative top-[1px] ml-1 h-3 w-3 transition duration-300",
         isOpen && "-rotate-180"
@@ -96,7 +96,7 @@ const NavigationMenuContent = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "absolute top-[calc(100%_+_0.75rem)] bg-surface-primary border border-outline-secondary rounded-md left-0 h-0 opacity-0 invisible transition-opacity duration-200",
+        "absolute top-[calc(100%_+_0.5rem)] bg-surface-primary border border-outline-secondary rounded-md left-0 h-0 opacity-0 invisible transition-opacity duration-200",
         isOpen && 'h-auto opacity-100 visible',
         className)}
       {...props}
@@ -114,13 +114,15 @@ interface NavigationMenuLinkProps
 const NavigationMenuLink = forwardRef<
   HTMLAnchorElement,
   NavigationMenuLinkProps
->(({ className, href, ...props }, ref) => (
+>(({ className, children, href, ...props }, ref) => (
   <Link
     ref={ref}
     className={cn(className)}
     href={href}
     {...props}
-  />
+  >
+    <Typography type="heading-five">{children}</Typography>
+  </Link>
 ))
 NavigationMenuLink.displayName = 'NavigationMenuLink'
 

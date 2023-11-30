@@ -20,6 +20,7 @@ const Checkbox = forwardRef<
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
 ))
+Checkbox.displayName = CheckboxPrimitive.Checkbox.displayName
 
 export {
   Checkbox

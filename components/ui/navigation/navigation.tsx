@@ -146,6 +146,7 @@ const NavigationListItem = forwardRef<
     </Link>
   </li>
 ));
+NavigationListItem.displayName = "NavigationListItem"
 
 export {
   NavigationMenu,

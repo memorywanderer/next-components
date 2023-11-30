@@ -17,6 +17,7 @@ const RadioGroup = forwardRef<
     {children}
   </RadioGroupPrimitive.Root>
 ))
+RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 
 const RadioGroupItem = forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
@@ -33,6 +34,7 @@ const RadioGroupItem = forwardRef<
     <RadioGroupPrimitive.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-3 after:h-3 after:rounded-[50%] after:bg-interactive-accent" />
   </RadioGroupPrimitive.Item>
 ))
+RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 
 export {
   RadioGroup,

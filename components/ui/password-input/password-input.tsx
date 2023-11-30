@@ -35,6 +35,7 @@ const PasswordInput = forwardRef<
     </div>
   )
 })
+PasswordInput.displayName = "PasswordInput"
 
 export {
   PasswordInput

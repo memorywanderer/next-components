@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin')
 module.exports = {
-  darkMode: ["class"],
+  darkMode: "class",
+  purge: {
+    enabled: true,
+    options: {
+      safelist: ['dark'],
+    },
+  },
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -133,7 +139,7 @@ module.exports = {
           from: { opacity: 0, transform: 'translate(-50%, -48%) scale(0.96)' },
           to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
         },
-      }
+      },
     },
   },
   plugins: [
@@ -144,6 +150,5 @@ module.exports = {
         }),
       });
     }),
-    require("tailwindcss-animate"),
   ],
 }

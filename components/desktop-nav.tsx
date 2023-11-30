@@ -22,37 +22,9 @@ export const DesktopNav = ({ items }: DesktopNavProps) => {
         <span className="sr-only">Home</span>
       </Link>
       <NavigationMenu>
-        {/* <NavigationMenuList>
-          {items?.[0].items ? (
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="flex items-center justify-center" index={0}>
-                {items[0]?.title}
-                <ChevronDown className="w-4 h-4" />
-              </NavigationMenuTrigger>
-              <NavigationMenuContent
-                index={0}
-                id="menu-content-0"
-              >
-                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  {items[0].items.map((item) => (
-                    <NavigationListItem
-                      key={item.title}
-                      title={item.title}
-                      href={item.href}
-                    >
-                      {item.description}
-                    </NavigationListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          ) : (
-            null
-          )}
-        </NavigationMenuList> */}
         <NavigationMenuList>
           {items ? (items?.map((item, index) => (
-            <NavigationMenuItem>
+            <NavigationMenuItem key={index}>
               <NavigationMenuTrigger index={index}>
                 {item?.title}
               </NavigationMenuTrigger>

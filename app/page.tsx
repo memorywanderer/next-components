@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+
       <main className="flex flex-wrap h-screen gap-2">
         {/* <nav className="h-full p-4 border-r w-60 border-outline-tertiary">
           <ul className='flex flex-col gap-4'>
@@ -118,6 +118,9 @@ export default function Home() {
         </nav> */}
 
         <div className="pt-4 ml-48 max-w-[800px]">
+          <Typography tag="h1" type="title-desktop" className="mb-6 text-on-surface-primary">
+            Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить
+          </Typography>
           <Image
             src="/richard-horvath-_nWaeTF6qo0-unsplash.jpg"
             alt="preparing car for winter"
@@ -145,7 +148,7 @@ export default function Home() {
             <Button variant="link">Привет!</Button>
             <Button variant="negative">Привет!</Button>
           </div>
-          <div className="p-4 border bg-surface-positive text-on-surface-positive border-outline-positive rounded-xl">
+          {/* <div className="p-4 border bg-surface-positive text-on-surface-positive border-outline-positive rounded-xl">
             <Typography tag="h1" type="heading-four-desktop">
               Двухфакторная авторизация
             </Typography>
@@ -176,7 +179,7 @@ export default function Home() {
             <Typography>
               Кажется, что вкусно есть и хорошо себя чувствовать — понятия несовместимые: все вкусное вредно, а пресное и однообразное — полезно
             </Typography>
-          </div>
+          </div> */}
           <Typography tag="h1" type="title-desktop" className="mb-6 text-on-surface-primary">
             Двухфакторная авторизация на госуслугах станет обязательной для всех: как ее настроить
           </Typography>

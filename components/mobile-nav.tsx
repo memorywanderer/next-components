@@ -1,3 +1,4 @@
+"use client"
 import { DesktopNavItem } from "@/types"
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { useMemo, useState } from "react"

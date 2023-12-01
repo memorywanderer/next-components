@@ -5,6 +5,7 @@ import localFont from 'next/font/local'
 import { ThemeProvider } from '@/components/providers'
 import { cn } from '@/lib/utils'
 import { NavigationMenuContextProvider } from '@/contexts/navigation-menu-context'
+import { Header } from '@/components/site-header'
 
 const neueMachina = localFont({
   src: [
@@ -75,6 +76,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavigationMenuContextProvider>
+            <Header />
             {children}
           </NavigationMenuContextProvider>
         </ThemeProvider>

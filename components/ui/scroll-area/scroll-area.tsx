@@ -8,10 +8,7 @@ const ScrollArea = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <ScrollAreaPrimitive.Root
     ref={ref}
-    className={cn(
-      'relative w-[200px] h-[225px] rounded overflow-hidden shadow-[0_2px_10px] shadow-slate-800',
-      className
-    )}
+    className={cn("relative overflow-hidden", className)}
     {...props}
   >
     <ScrollAreaPrimitive.Viewport className='w-full h-full rounded-[inherit]'>

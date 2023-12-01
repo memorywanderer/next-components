@@ -2,13 +2,13 @@ import { DesktopNavItem, SidebarNavItem } from "@/types"
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { useMemo, useState } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion/accordion"
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog/dialog"
 import { Button } from "./ui/button/button"
 import { Icons } from "./icons"
 import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { ScrollArea } from "./ui/scroll-area/scroll-area"
 import { cn } from "@/lib/utils"
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet/sheet"
 
 export interface MobileNavProps {
   mainItems?: DesktopNavItem[]
@@ -24,14 +24,15 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
   }, [mainItems])
 
   return (
-    <Dialog open={isOpen}>
-      <DialogTrigger asChild>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild>
         <Button>
-          <Icons.menu />
+          <Icons.menu className="w-6 h-6 text-white" />
+          o
           <span className="sr-only">Toggle menu</span>
         </Button>
-      </DialogTrigger>
-      <DialogContent className="pl-1 pr-0">
+      </SheetTrigger>
+      <SheetContent side="left" className="pl-1 pr-0">
         <div className="px-7">
           <Link
             href="/"
@@ -83,8 +84,8 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
             </Accordion>
           </div>
         </ScrollArea>
-      </DialogContent>
-    </Dialog>
+      </SheetContent>
+    </Sheet>
   )
 
 }

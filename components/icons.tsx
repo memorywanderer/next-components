@@ -27,8 +27,8 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.43200000000000005"></g>
+      <g id="SVGRepo_bgCarrier" ></g>
+      <g id="SVGRepo_tracerCarrier"></g>
       <g id="SVGRepo_iconCarrier">
         <path d="M4 18H10" ></path>
         <path d="M4 12L16 12" ></path>

@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site"
 import { ScrollArea } from "./ui/scroll-area/scroll-area"
 import { cn } from "@/lib/utils"
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet/sheet"
+import { MenuIcon } from "lucide-react"
 
 export interface MobileNavProps {
   mainItems?: DesktopNavItem[]
@@ -26,9 +27,8 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button>
-          <Icons.menu className="w-6 h-6 text-white" />
-          o
+        <Button variant="ghost">
+          <MenuIcon className="w-6 h-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
@@ -51,6 +51,7 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
               defaultValue={navItems.map((item) => item.title)}
             >
               {navItems?.map((item, index) => (
+                item?.items &&
                 <AccordionItem value={item.title} key={index}>
                   <AccordionTrigger className="text-sm capitalize">
                     {item.title}
@@ -82,6 +83,18 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
                 </AccordionItem>
               ))}
             </Accordion>
+            {navItems?.map((item, index) => (
+              !item?.items &&
+              <MobileLink
+                key={index}
+                href={String(item.href)}
+                segment={String(segment)}
+                setIsOpen={setIsOpen}
+                disabled={item.disabled}
+              >
+                {item.title}
+              </MobileLink>
+            ))}
           </div>
         </ScrollArea>
       </SheetContent>

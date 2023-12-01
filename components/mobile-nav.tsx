@@ -1,4 +1,4 @@
-import { DesktopNavItem, SidebarNavItem } from "@/types"
+import { DesktopNavItem } from "@/types"
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { useMemo, useState } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion/accordion"
@@ -10,6 +10,7 @@ import { ScrollArea } from "./ui/scroll-area/scroll-area"
 import { cn } from "@/lib/utils"
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet/sheet"
 import { MenuIcon } from "lucide-react"
+import { Typography } from "./ui/typography/typography"
 
 export interface MobileNavProps {
   mainItems?: DesktopNavItem[]
@@ -27,7 +28,7 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost">
+        <Button variant="ghost" className="lg:hidden">
           <MenuIcon className="w-6 h-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
@@ -45,7 +46,7 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
           </Link>
         </div>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="pl-1 pr-7">
+          <div className="flex flex-col gap-4 pl-1 pr-7">
             <Accordion
               type="multiple"
               defaultValue={navItems.map((item) => item.title)}
@@ -56,29 +57,28 @@ export const MobileNav = ({ mainItems }: MobileNavProps) => {
                   <AccordionTrigger className="text-sm capitalize">
                     {item.title}
                   </AccordionTrigger>
-                  <AccordionContent>
-                    <div>
-                      {item.items?.map((subItem, index) => (
-                        subItem.href ? (
-                          <MobileLink
-                            key={index}
-                            href={String(subItem.href)}
-                            segment={String(segment)}
-                            setIsOpen={setIsOpen}
-                            disabled={subItem.disabled}
-                          >
-                            {subItem.title}
-                          </MobileLink>
-                        ) : (
-                          <div
-                            key={index}
-                            className="transition-colors text-on-surface-secondary"
-                          >
-                            {item.title}
-                          </div>
-                        )
-                      ))}
-                    </div>
+                  <AccordionContent className='flex flex-col gap-4'>
+                    {item.items?.map((subItem, index) => (
+                      subItem.href ? (
+                        <MobileLink
+                          key={index}
+                          href={String(subItem.href)}
+                          segment={String(segment)}
+                          setIsOpen={setIsOpen}
+                          disabled={subItem.disabled}
+                        >
+                          {subItem.title}
+                        </MobileLink>
+                      ) : (
+                        <div
+                          key={index}
+                          className="transition-colors text-on-surface-secondary"
+                        >
+                          <Typography type="interface-primary">{item.title}</Typography>
+                        </div>
+                      )
+                    ))}
+
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -121,13 +121,13 @@ function MobileLink({
     <Link
       href={href}
       className={cn(
-        "text-foreground/70 transition-colors hover:text-foreground",
+        "text-on-surface-primary/70 px-5 transition-colors hover:text-foreground",
         href.includes(segment) && "text-foreground",
         disabled && "pointer-events-none opacity-60"
       )}
       onClick={() => setIsOpen(false)}
     >
-      {children}
+      <Typography type="interface-primary">{children}</Typography>
     </Link>
   )
 }

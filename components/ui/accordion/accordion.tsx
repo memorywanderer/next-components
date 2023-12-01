@@ -56,12 +56,12 @@ const AccordionContent = forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={cn(
-      'data-[state=open]:animate-accordion-up data-[state=closed]:animate-accordion-down overflow-hidden text-on-surface-primary text-[length:var(--body-large)] leading-[var(--body-large-leading)]',
+      'data-[state=open]:animate-accordion-up overflow-hidden text-on-surface-primary text-[length:var(--body-large)] leading-[var(--body-large-leading)]',
       className
     )}
     {...props}
   >
-    <div className="py-[15px] px-5">{children}</div>
+    {children}
   </AccordionPrimitive.Content>
 ))
 

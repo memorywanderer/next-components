@@ -10,7 +10,7 @@ const links = {
 }
 
 export const siteConfig = {
-  name: "MyWebsite",
+  name: "Luden",
   description: "A modern website build with next.js 13",
   url: "",
   ogImage: "",
@@ -85,15 +85,15 @@ export const siteConfig = {
       ]
     },
     {
-      title: "Test 3",
+      title: "Наши работы",
       href: "/test3"
     },
     {
-      title: "Test TestTestTestTest 4",
+      title: "Карьера",
       href: "/test4"
     },
     {
-      title: "Test 5",
+      title: "Контакты",
       href: "/test5"
     },
   ] satisfies DesktopNavItem[],

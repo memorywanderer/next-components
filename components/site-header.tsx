@@ -2,6 +2,7 @@ import { siteConfig } from "@/config/site"
 import { DesktopNav } from "./desktop-nav"
 import { Button } from "./ui/button/button"
 import { MobileNav } from "./mobile-nav"
+import { ModeToggle } from "./mode-toggle"
 
 export const Header = () => {
   return (
@@ -11,6 +12,7 @@ export const Header = () => {
         <MobileNav mainItems={siteConfig.desktopNav} />
         <div className="flex items-center justify-end flex-1 space-x-4">
           <Button>Look up</Button>
+          <ModeToggle />
         </div>
       </div>
     </header>

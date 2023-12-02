@@ -30,7 +30,7 @@ import { siteConfig } from "@/config/site"
 import { Header } from "@/components/site-header"
 import { toast } from "sonner"
 import { Toaster } from "@/components/ui/toaster/toaster"
-import { Toast } from "@/components/ui/toast-new/toast-new"
+import { Toast } from "@/components/ui/toast/toast"
 
 
 function oneWeekAway(date?: Date) {

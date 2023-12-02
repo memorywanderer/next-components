@@ -33,20 +33,3 @@ export const Toast = ({
     return toast(title, { description, duration, icon, className })
   }
 }
-
-
-// const ToastWarning = ({
-//   title,
-//   description,
-//   duration,
-//   icon,
-//   className
-// }: ToastProps) => (
-//   toast.warning(title, {
-//     description,
-//     duration,
-//     icon,
-//     className
-//   })
-// )
-

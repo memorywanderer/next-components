@@ -75,7 +75,6 @@ const typographyVariants = cva(
 
         "interface-heading-one-desktop":
           'font-bold text-[length:var(--interface-heading-one-desktop)] leading-[var(--interface-heading-one-desktop-leading)] font-neue-montreal',
-
         "interface-primary":
           'text-[length:var(--interface-primary)] leading-[var(--interface-primary-leading)] font-charter',
 

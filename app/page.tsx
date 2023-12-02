@@ -20,7 +20,6 @@ import { SelectGroup, SelectLabel } from "@radix-ui/react-select"
 import { Separator } from "@/components/ui/separator/separator"
 import { Slider } from "@/components/ui/slider/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
-import { Toast, ToastAction, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from "@/components/ui/toast/toast"
 import { useEffect, useRef, useState } from "react"
 import { FormWithReactHookForm } from "@/components/ui/form/form-old"
 import { Form } from "@/components/ui/form/form"
@@ -29,6 +28,9 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DesktopNav } from "@/components/desktop-nav"
 import { siteConfig } from "@/config/site"
 import { Header } from "@/components/site-header"
+import { toast } from "sonner"
+import { Toaster } from "@/components/ui/toaster/toaster"
+import { Toast } from "@/components/ui/toast-new/toast-new"
 
 
 function oneWeekAway(date?: Date) {
@@ -129,7 +131,8 @@ export default function Home() {
             className="object-cover rounded-md"
           />
           <div className="flex p-4 bg-surface-primary">
-            <Button variant="secondary">Привет!</Button>
+            <Toaster />
+            <Button variant="secondary" onClick={() => Toast({ title: "Внимание", description: "Поле email должно быть заполнено", type: "error" })}>Покажи мне тост!</Button>
           </div>
           <div className="flex p-4 bg-surface-secondary">
             <Button variant="tertiary">Привет!</Button>

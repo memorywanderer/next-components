@@ -80,6 +80,7 @@ module.exports = {
           "negative": "hsl(var(--interactive-negative))",
           "negative-hover": "hsl(var(--interactive-negative-hover))",
           "highlight": "hsla(var(--interactive-highlight))",
+          "contrast": "hsl(var(--interactive-contrast))",
         },
         "on-surface": {
           DEFAULT: "hsl(var(--on-surface-primary))",
@@ -91,13 +92,21 @@ module.exports = {
           "positive": "hsl(var(--on-surface-positive))",
           "warning": "hsl(var(--on-surface-warning))",
           "negative": "hsl(var(--on-surface-negative))",
+          "contrast": "hsl(var(--on-surface-contrast))"
         },
         "on-interactive": {
           DEFAULT: "hsl(var(--on-interactive-primary))",
           primary: "hsl(var(--on-interactive-primary))",
           secondary: "hsl(var(--on-interactive-secondary))",
           accent: "hsl(var(--on-interactive-accent))",
+          "contrast": "hsl(var(--on-interactive-contrast))",
+          "contrast-hover": "hsl(var(--on-interactive-contrast-hover))"
         },
+        "on": {
+          DEFAULT: "hsl(var(--dark))",
+          "light": "hsl(var(--dark))",
+          "dark": "hsl(var(--light))"
+        }
 
       },
       backgroundImage: {

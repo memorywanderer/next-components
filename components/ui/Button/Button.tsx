@@ -20,7 +20,7 @@ const buttonVariants = cva(
         accent:
           'bg-interactive-accent text-on-interactive-accent hover:bg-interactive-accent-hover',
         outline:
-          'bg-transparent border duration-300 hover:bg-interactive-primary hover:border-outline-hover hover:text-on-interactive-primary',
+          'border duration-300 hover:bg-interactive-contrast text-on-interactive-contrast hover:text-on-interactive-contrast-hover',
         ghost:
           'bg-transparent',
         link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-interactive-accent before:hover:h-[8px]',

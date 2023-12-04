@@ -33,7 +33,7 @@ import { Toaster } from "@/components/ui/toaster/toaster"
 import { Toast } from "@/components/ui/toast/toast"
 import { Grid } from "@/components/layouts/grid/grid"
 import { Shell } from "@/components/shell/shell"
-import { Hero } from "@/components/pages/hero/hero"
+import { FullscreenHero, FullscreenVideoHero, Hero } from "@/components/pages/hero/hero"
 
 
 function oneWeekAway(date?: Date) {
@@ -96,7 +96,11 @@ export default function Home() {
   return (
     <>
       <main className="w-full">
-        <Hero title="Пластиковые окна" description="15 лет гарантии на окна ПВХ, комплектующие и монтаж!" buttonTitle="Бесплатный замер" />
+        <Hero
+          title="Создаем СИИ для блага всего человечества"
+          description="Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы."
+          buttonTitle="Узнать больше о AI"
+        />
       </main>
     </>
   )

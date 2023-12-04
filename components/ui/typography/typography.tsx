@@ -10,53 +10,32 @@ const typographyVariants = cva(
         "title":
           'font-bold md:text-[length:var(--title-desktop)] md:leading-[var(--title-desktop-leading)] text-[length:var(--title-mobile)] leading-[var(--title-mobile-leading)] font-neue-montreal',
 
-        "subtitle-mobile":
-          'text-[length:var(--subtitle-mobile)] leading-[var(--subtitle-mobile-leading)] font-charter',
+        "subtitle":
+          'text-[length:var(--subtitle-mobile)] leading-[var(--subtitle-mobile-leading)] md:text-[length:var(--subtitle-desktop)] md:leading-[var(--subtitle-desktop-leading)] font-charter',
 
-        "subtile-desktop":
-          'text-[length:var(--subtitle-desktop)] leading-[var(--subtitle-desktop-leading)] font-charter',
+        "heading-one":
+          "font-bold text-[length:var(--heading-one-mobile)] leading-[var(--heading-one-mobile-leading)] md:text-[length:var(--heading-one-desktop)] md:leading-[var(--heading-one-desktop-leading)] font-neue-montreal",
 
-        "heading-one-mobile":
-          "font-bold text-[length:var(--heading-one-mobile)] leading-[var(--heading-one-mobile-leading)] font-neue-montreal",
-
-        "heading-one-desktop":
-          'font-bold text-[length:var(--heading-one-desktop)] leading-[var(--heading-one-desktop-leading)] font-neue-montreal',
-
-        "heading-two-mobile":
-          'font-bold text-[length:var(--heading-two-mobile)] leading-[var(--heading-two-mobile-leading)] font-neue-montreal',
-
-        "heading-two-desktop":
-          'font-bold text-[length:var(--heading-two-desktop)] leading-[var(--heading-two-desktop-leading)] font-neue-montreal',
+        "heading-two":
+          'font-bold text-[length:var(--heading-two-mobile)] leading-[var(--heading-two-mobile-leading)] md:text-[length:var(--heading-two-desktop)] md:leading-[var(--heading-two-desktop-leading)] font-neue-montreal',
 
         "heading-three":
           'font-bold text-[length:var(--heading-three)] leading-[var(--heading-three-leading)] font-neue-montreal',
 
-        "heading-four-mobile":
-          'font-bold text-[length:var(--heading-four-mobile)] leading-[var(--heading-four-mobile-leading)] font-neue-montreal',
-
-        "heading-four-desktop":
-          'font-bold text-[length:var(--heading-four-desktop)] leading-[var(--heading-four-desktop-leading)] font-neue-montreal',
+        "heading-four":
+          'font-bold text-[length:var(--heading-four-mobile)] leading-[var(--heading-four-mobile-leading)]md:text-[length:var(--heading-four-desktop)] md:leading-[var(--heading-four-desktop-leading)] font-neue-montreal',
 
         "heading-five":
           'font-bold text-[length:var(--heading-five)] leading-[var(--heading-five-leading)] font-neue-montreal',
 
-        "heading-six-mobile":
-          'font-bold text-[length:var(--heading-six-desktop)] leading-[var(--heading-six-mobile-leading)] font-neue-montreal',
+        "heading-six":
+          'font-bold text-[length:var(--heading-six-desktop)] leading-[var(--heading-six-mobile-leading)] md:th:var(--heading-six-desktop)] md:leading-[var(--heading-six-desktop-leading)] font-neue-montreal',
 
-        "heading-six-desktop":
-          'font-bold text-[length:var(--heading-six-desktop)] leading-[var(--heading-six-desktop-leading)] font-neue-montreal',
+        "body-primary":
+          'text-[length:var(--body-primary-mobile)] leading-[var(--body-primary-mobile-leading)] md:text-[length:var(--body-primary-desktop)] md:leading-[var(--body-primary-desktop-leading)] font-charter',
 
-        "body-primary-mobile":
-          'text-[length:var(--body-primary-mobile)] leading-[var(--body-primary-mobile-leading)] font-charter',
-
-        "body-primary-desktop":
-          'text-[length:var(--body-primary-desktop)] leading-[var(--body-primary-desktop-leading)] font-charter',
-
-        "body-secondary-mobile":
-          'text-[length:var(--body-secondary-mobile)] leading-[var(--body-secondary-mobile-leading)] font-charter',
-
-        "body-secondary-desktop":
-          'text-[length:var(--body-desktop-secondary)] leading-[var(--body-secondary-desktop-leading)] font-charter',
+        "body-secondary":
+          'text-[length:var(--body-secondary-mobile)] leading-[var(--body-secondary-mobile-leading)] md:text-[length:var(--body-desktop-secondary)] md:leading-[var(--body-secondary-desktop-leading)] font-charter',
 
         "body-large":
           'text-[length:var(--body-large)] leading-[var(--body-large-leading)] font-charter',
@@ -67,11 +46,9 @@ const typographyVariants = cva(
         "body-small":
           'text-[length:var(--body-small)] leading-[var(--body-small-leading)] font-charter',
 
-        "interface-heading-one-mobile":
-          'font-bold text-[length:var(--interface-heading-one-mobile)] leading-[var(--interface-heading-one-mobile-leading)] font-neue-montreal',
+        "interface-heading-one":
+          'font-bold text-[length:var(--interface-heading-one-mobile)] leading-[var(--interface-heading-one-mobile-leading)] md:text-[length:var(--interface-heading-one-desktop)] md:leading-[var(--interface-heading-one-desktop-leading)] font-neue-montreal',
 
-        "interface-heading-one-desktop":
-          'font-bold text-[length:var(--interface-heading-one-desktop)] leading-[var(--interface-heading-one-desktop-leading)] font-neue-montreal',
         "interface-primary":
           'text-[length:var(--interface-primary)] leading-[var(--interface-primary-leading)] font-charter',
 
@@ -82,10 +59,7 @@ const typographyVariants = cva(
           'text-[length:var(--interface-caption)] leading-[var(--interface-caption-leading)] font-charter',
 
         "interface-error-mobile":
-          'text-[length:var(--interface-error-mobile)] leading-[var(--interface-error-mobile-leading)] font-charter',
-
-        "interface-error-desktop":
-          'text-[length:var(--interface-error-desktop)] leading-[var(--interface-error-desktop-leading)] font-charter',
+          'text-[length:var(--interface-error-mobile)] leading-[var(--interface-error-mobile-leading)] md:text-[length:var(--interface-error-desktop)] md:leading-[var(--interface-error-desktop-leading)] font-charter',
       },
       weight: {
         thin: 'font-thin',

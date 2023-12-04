@@ -10,12 +10,15 @@ export interface GridProps extends React.HTMLAttributes<HTMLElement> {
   tag?: Tags
 }
 
-const Grid = forwardRef<HTMLElement, GridProps>(
-  ({ className, children, columns, rows, gap, tag = 'div', ...props }, ref) => (
+export const Grid = forwardRef<HTMLElement, GridProps>(
+  ({ className, children, columns = 1, rows = 1, gap, tag = 'div', ...props }, ref) => (
     <DynamicTag
       ref={ref}
       tag={tag}
-      className={cn(className)}
+      className={cn(
+        `grid w-full md:grid-cols-2 grid-rows-${rows} gap-6`,
+        className
+      )}
       {...props}
     >
       {children}

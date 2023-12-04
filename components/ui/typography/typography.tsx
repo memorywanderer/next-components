@@ -7,11 +7,8 @@ const typographyVariants = cva(
   {
     variants: {
       type: {
-        "title-desktop":
-          'font-bold text-[length:var(--title-desktop)] leading-[var(--title-desktop-leading)] font-neue-montreal',
-
-        "title-mobile":
-          'font-bold text-[length:var(--title-mobile)] leading-[var(--title-mobile-leading)] font-neue-montreal',
+        "title":
+          'font-bold md:text-[length:var(--title-desktop)] md:leading-[var(--title-desktop-leading)] text-[length:var(--title-mobile)] leading-[var(--title-mobile-leading)] font-neue-montreal',
 
         "subtitle-mobile":
           'text-[length:var(--subtitle-mobile)] leading-[var(--subtitle-mobile-leading)] font-charter',

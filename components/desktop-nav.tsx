@@ -54,8 +54,6 @@ export const DesktopNav = ({ items }: DesktopNavProps) => {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               )
-
-
           ))) : (
             null
           )}

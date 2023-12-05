@@ -18,7 +18,7 @@ export const DesktopNav = ({ items }: DesktopNavProps) => {
     <div className="hidden gap-6 lg:flex">
       <Link href="/" className="items-center hidden space-x-2 lg:flex">
         <Icons.logo className="w-6 h-6" aria-hidden="true" />
-        <Typography type="interface-heading-one-desktop" tag="span"> {siteConfig.name}</Typography>
+        <Typography type="interface-heading-one" tag="span"> {siteConfig.name}</Typography>
         <span className="sr-only">Home</span>
       </Link>
       <NavigationMenu>

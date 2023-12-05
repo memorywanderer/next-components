@@ -15,7 +15,7 @@ export const Hero = ({ title, description, buttonTitle }: HeroProps) => (
   <Shell className="md:py-14">
     <Grid columns={2}>
       <div className="flex flex-col justify-center max-w-2xl md:px-5">
-        <Typography tag="h1" type="heading-one-desktop" className="mb-4 text-on-surface-primary">
+        <Typography tag="h1" type="heading-one" className="mb-4 text-on-surface-primary">
           {title}
         </Typography>
         {description && <Typography type="subtitle" className="mb-8 text-on-surface-secondary">

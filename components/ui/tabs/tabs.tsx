@@ -29,7 +29,7 @@ const TabsTrigger = forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      'bg-background-secondary hover:bg-surface-accent px-2 md:px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-on-surface-primary select-none first:rounded-tl-md last:rounded-tr-md hover:text-on-surface-accent data-[state=active]:text-on-surface-accent data-[state=active]:font-bold data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer',
+      'bg-background-secondary px-2 py-2 md:px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-on-surface-primary select-none first:rounded-tl-md last:rounded-tr-md hover:text-on-surface-accent data-[state=active]:border-b-2 data-[state=active]:border-outline-focus data-[state=active]:font-bold data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer',
       className
     )}
     {...props}
@@ -47,7 +47,7 @@ const TabsContent = forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      'grow p-5 bg-surface-primary text-on-surface-secondary border border-outline-secondary border-t-0 rounded-b-md outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+      'grow p-5 bg-surface-primary text-on-surface-secondary rounded-b-md outline-none focus-visible:ring-2 focus-visible:ring-outline-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background',
       className
     )}
     {...props}

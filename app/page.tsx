@@ -1,39 +1,9 @@
 'use client'
-
-import { Icons } from "@/components/icons"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion/accordion"
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog/alert-dialog"
-import { AspectRatio } from "@/components/ui/aspect-ratio/aspect-ratio"
-import { Button } from "@/components/ui/button/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card/card"
-import { Checkbox } from "@/components/ui/checkbox/checkbox"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog/dialog"
-import { Label } from "@/components/ui/label/label"
-import { Input } from "@/components/ui/input/input"
-// import { NavigationListItem, NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation/nav"
-import { Typography } from "@/components/ui/typography/typography"
-import Image from "next/image"
-import Link from "next/link"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select/select"
-import { SelectGroup, SelectLabel } from "@radix-ui/react-select"
-import { Separator } from "@/components/ui/separator/separator"
-import { Slider } from "@/components/ui/slider/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
 import { useEffect, useRef, useState } from "react"
-import { FormWithReactHookForm } from "@/components/ui/form/form-old"
-import { Form } from "@/components/ui/form/form"
-import { TestForm } from "@/components/forms/test-form"
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationListItem } from "@/components/ui/navigation/navigation"
-import { DesktopNav } from "@/components/desktop-nav"
-import { siteConfig } from "@/config/site"
-import { Header } from "@/components/site-header"
-import { toast } from "sonner"
-import { Toaster } from "@/components/ui/toaster/toaster"
-import { Toast } from "@/components/ui/toast/toast"
-import { Grid } from "@/components/layouts/grid/grid"
-import { Shell } from "@/components/shell/shell"
 import { FullscreenHero, FullscreenVideoHero, Hero } from "@/components/pages/hero/hero"
+import { Section } from "@/components/pages/section/section"
+import { Typography } from "@/components/ui/typography/typography"
 
 
 function oneWeekAway(date?: Date) {
@@ -85,22 +55,61 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export default function Home() {
-  const [open, setOpen] = useState(false)
-  const eventDateRef = useRef(new Date())
-  const timerRef = useRef(0)
-
-  useEffect(() => {
-    return () => clearTimeout(timerRef.current)
-  }, [])
 
   return (
     <>
       <main className="w-full">
-        <Hero
+        <FullscreenHero
           title="Создаем СИИ для блага всего человечества"
           description="Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы."
           buttonTitle="Узнать больше о AI"
         />
+        <Section title="DALL·E" subtitle="DALL·E — это система искусственного интеллекта, которая может создавать реалистичные изображения и произведения искусства на основе описания на естественном языке." link="Узнать о DALL·E" >
+          <Tabs defaultValue="generation" className="max-w-3xl p-4 bg-background rounded-2xl">
+            <TabsList>
+              <TabsTrigger value="generation">
+                <Typography type="interface-primary">
+                  Генерация изображений
+                </Typography>
+              </TabsTrigger>
+              <TabsTrigger value="outpainting">
+                <Typography type="interface-primary">
+                  Перекраска
+                </Typography>
+              </TabsTrigger>
+              <TabsTrigger value="inpainting">
+                <Typography type="interface-primary">
+                  Живопись
+                </Typography>
+              </TabsTrigger>
+              <TabsTrigger value="variations">
+                <Typography type="interface-primary">
+                  Вариации
+                </Typography>
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="generation">
+              <Typography type="body-large" className="max-w-xl">
+                DALL·E 2 может создавать оригинальные реалистичные изображения и рисунки из текстового описания. Он может сочетать концепции, атрибуты и стили.
+              </Typography>
+            </TabsContent>
+            <TabsContent value="outpainting">
+              <Typography type="body-large" className="max-w-xl">
+                DALL·E 2 может расширять изображения за пределы исходного холста, создавая новые обширные композиции.
+              </Typography>
+            </TabsContent>
+            <TabsContent value="inpainting">
+              <Typography type="body-large" className="max-w-xl">
+                DALL·E 2 can make realistic edits to existing images from a natural language caption. It can add and remove elements while taking shadows, reflections, and textures into account.
+              </Typography>
+            </TabsContent>
+            <TabsContent value="variations">
+              <Typography type="body-large" className="max-w-xl">
+                DALL·E 2 может взять изображение и создать различные его вариации, вдохновленные оригиналом.
+              </Typography>
+            </TabsContent>
+          </Tabs>
+        </Section>
       </main>
     </>
   )

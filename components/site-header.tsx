@@ -11,7 +11,7 @@ export const Header = () => {
         <DesktopNav items={siteConfig.desktopNav} />
         <MobileNav mainItems={siteConfig.desktopNav} />
         <div className="flex items-center justify-end flex-1 space-x-4">
-          <Button>Look up</Button>
+          <Button rounded="lg">Look up</Button>
           <ModeToggle />
         </div>
       </div>

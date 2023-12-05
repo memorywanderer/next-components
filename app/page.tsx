@@ -1,9 +1,10 @@
 'use client'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
 import { useEffect, useRef, useState } from "react"
-import { FullscreenHero, FullscreenVideoHero, Hero } from "@/components/pages/hero/hero"
 import { Section, SectionLink, SectionSubtitle, SectionTitle } from "@/components/pages/section/section"
 import { Typography } from "@/components/ui/typography/typography"
+import { HeroDescription, HeroFullscreenVideo, HeroHeading } from "@/components/pages/hero/hero"
+import { Button } from "@/components/ui/button/button"
 
 
 function oneWeekAway(date?: Date) {
@@ -59,14 +60,23 @@ export default function Home() {
   return (
     <>
       <main className="w-full">
-        <FullscreenHero
+        {/* <FullscreenHero
           title="Создаем СИИ для блага всего человечества"
           description="Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы."
           buttonTitle="Узнать больше о AI"
-        />
+        /> */}
+        <HeroFullscreenVideo src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4">
+          <HeroHeading>
+            Создаем безопасный СИИ для блага всего человечества
+          </HeroHeading>
+          <HeroDescription>
+            Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы.
+          </HeroDescription>
+          <Button variant="outline" rounded="lg">Узнать больше о AI</Button>
+        </HeroFullscreenVideo>
         <Section>
           <SectionTitle>
-            DALL·E
+            Cистема искусственного интеллекта DALL·E
           </SectionTitle>
           <SectionSubtitle>
             DALL·E — это система искусственного интеллекта, которая может создавать реалистичные изображения и произведения искусства на основе описания на естественном языке.

@@ -2,16 +2,14 @@ import { Shell } from "@/components/shell/shell";
 import { Button } from "@/components/ui/button/button";
 import { Typography } from "@/components/ui/typography/typography";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { Children, ComponentProps, HTMLAttributes, ReactNode } from "react";
-import { Balancer } from 'react-wrap-balancer'
+import { HTMLAttributes, ReactNode } from "react";
 
 interface SectionProps {
   children: ReactNode,
 }
 
 const Section = ({ children }: SectionProps) => (
-  <Shell variant="default" className="md:py-36">
+  <Shell className="md:py-36">
     {children}
   </Shell>
 )
@@ -22,7 +20,10 @@ interface SectionTitleProps
 }
 
 const SectionTitle = ({ children }: SectionTitleProps) => (
-  <Typography type="heading-two" className="mb-4 border-b text-on-surface-primary border-outline-tertiary">
+  <Typography
+    type="heading-two"
+    className="mb-4 border-b text-on-surface-primary border-outline-tertiary max-w-xl"
+  >
     {children}
   </Typography>
 )
@@ -33,7 +34,11 @@ interface SectionSubtitleProps
 }
 
 const SectionSubtitle = ({ className, children, ...props }: SectionSubtitleProps) => (
-  <Typography type="body-primary" className="text-on-surface-secondary" {...props}>
+  <Typography
+    type="body-primary"
+    className="text-on-surface-secondary max-w-3xl"
+    {...props}
+  >
     {children}
   </Typography>
 )

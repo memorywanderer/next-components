@@ -106,7 +106,7 @@ const DialogTitle = forwardRef<
     )}
     {...props}
   >
-    <Typography type="interface-heading-one-desktop">
+    <Typography type="interface-heading-one">
       {children}
     </Typography>
   </DialogPrimitive.Title>

@@ -3,30 +3,58 @@ import { Button } from "@/components/ui/button/button";
 import { Typography } from "@/components/ui/typography/typography";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ReactNode } from "react";
+import { Children, ComponentProps, HTMLAttributes, ReactNode } from "react";
+import { Balancer } from 'react-wrap-balancer'
 
 interface SectionProps {
-  title: string;
-  subtitle: string;
-  link?: string;
   children: ReactNode,
 }
 
-export const Section = ({ title, subtitle, link, children }: SectionProps) => (
+const Section = ({ children }: SectionProps) => (
   <Shell variant="default" className="md:py-36">
-    <div className="mb-12 bg-background p-4 rounded-2xl max-w-2xl">
-      <Typography type="heading-two" className="mb-4 border-b text-on-surface-primary border-outline-tertiary">
-        {title}
-      </Typography>
-      <Typography type="body-primary" className={cn("max-w-xl text-on-surface-secondary", link && "mb-4")}>
-        {subtitle}
-      </Typography>
-      {link &&
-        <Button href="#" variant="link" className="p-0 text-left w-fit">
-          {link}
-        </Button>
-      }
-    </div>
     {children}
   </Shell>
 )
+
+interface SectionTitleProps
+  extends HTMLAttributes<HTMLElement> {
+
+}
+
+const SectionTitle = ({ children }: SectionTitleProps) => (
+  <Typography type="heading-two" className="mb-4 border-b text-on-surface-primary border-outline-tertiary">
+    {children}
+  </Typography>
+)
+
+interface SectionSubtitleProps
+  extends HTMLAttributes<HTMLElement> {
+
+}
+
+const SectionSubtitle = ({ className, children, ...props }: SectionSubtitleProps) => (
+  <Typography type="body-primary" className="text-on-surface-secondary" {...props}>
+    {children}
+  </Typography>
+)
+
+interface SectionLink
+  extends HTMLAttributes<HTMLAnchorElement> {
+  href: string;
+}
+
+const SectionLink = ({ className, href, children }: SectionLink) => (
+  <Button href={href} variant="link" className={cn(
+    "p-0 text-left w-fit",
+    className)
+  }>
+    {children}
+  </Button>
+)
+
+export {
+  Section,
+  SectionTitle,
+  SectionSubtitle,
+  SectionLink
+}

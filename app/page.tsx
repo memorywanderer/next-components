@@ -2,7 +2,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
 import { useEffect, useRef, useState } from "react"
 import { FullscreenHero, FullscreenVideoHero, Hero } from "@/components/pages/hero/hero"
-import { Section } from "@/components/pages/section/section"
+import { Section, SectionLink, SectionSubtitle, SectionTitle } from "@/components/pages/section/section"
 import { Typography } from "@/components/ui/typography/typography"
 
 
@@ -64,7 +64,16 @@ export default function Home() {
           description="Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы."
           buttonTitle="Узнать больше о AI"
         />
-        <Section title="DALL·E" subtitle="DALL·E — это система искусственного интеллекта, которая может создавать реалистичные изображения и произведения искусства на основе описания на естественном языке." link="Узнать о DALL·E" >
+        <Section>
+          <SectionTitle>
+            DALL·E
+          </SectionTitle>
+          <SectionSubtitle>
+            DALL·E — это система искусственного интеллекта, которая может создавать реалистичные изображения и произведения искусства на основе описания на естественном языке.
+          </SectionSubtitle>
+          <SectionLink href="#">
+            Узнать о DALL·E
+          </SectionLink>
           <Tabs defaultValue="generation" className="max-w-3xl p-4 bg-background rounded-2xl">
             <TabsList>
               <TabsTrigger value="generation">

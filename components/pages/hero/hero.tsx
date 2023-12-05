@@ -3,6 +3,7 @@ import { Shell } from "@/components/shell/shell";
 import { Button } from "@/components/ui/button/button";
 import { Typography } from "@/components/ui/typography/typography";
 import Image from "next/image";
+import Balancer from "react-wrap-balancer";
 
 
 export interface HeroProps {

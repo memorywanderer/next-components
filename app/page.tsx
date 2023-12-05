@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/t
 import { useEffect, useRef, useState } from "react"
 import { Section, SectionLink, SectionSubtitle, SectionTitle } from "@/components/pages/section/section"
 import { Typography } from "@/components/ui/typography/typography"
-import { HeroDescription, HeroFullscreenVideo, HeroHeading } from "@/components/pages/hero/hero"
+import { Hero, HeroDescription, HeroFullscreen, HeroFullscreenVideo, HeroHeading } from "@/components/pages/hero/hero"
 import { Button } from "@/components/ui/button/button"
 
 
@@ -65,15 +65,18 @@ export default function Home() {
           description="Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы."
           buttonTitle="Узнать больше о AI"
         /> */}
-        <HeroFullscreenVideo src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4">
-          <HeroHeading>
+        {/*
+        src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+      */}
+        <Hero imageSrc="/nat-uN9OSpSsw4A-unsplash.jpg" alt="iamgeeeee">
+          <HeroHeading className="mb-4 md:text-6xl">
             Создаем безопасный СИИ для блага всего человечества
           </HeroHeading>
           <HeroDescription>
             Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы.
           </HeroDescription>
-          <Button variant="outline" rounded="lg">Узнать больше о AI</Button>
-        </HeroFullscreenVideo>
+          <Button className="w-fit" variant="accent" size="lg" rounded="lg">Узнать больше о AI</Button>
+        </Hero>
         <Section>
           <SectionTitle>
             Cистема искусственного интеллекта DALL·E

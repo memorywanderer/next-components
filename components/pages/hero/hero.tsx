@@ -3,33 +3,30 @@ import { Shell } from "@/components/shell/shell";
 import { Button } from "@/components/ui/button/button";
 import { Typography } from "@/components/ui/typography/typography";
 import { cn } from "@/lib/utils";
+import { VariantProps, cva } from "class-variance-authority";
 import Image from "next/image";
-import { HTMLAttributes } from "react";
+import { ComponentProps, HTMLAttributes } from "react";
 
 
-export interface HeroProps {
-  title: string;
-  buttonTitle: string;
-  description?: string;
+export interface HeroProps
+  extends HTMLAttributes<HTMLElement> {
+  imageSrc: string;
+  alt: string;
 }
 
-export const Hero = ({ title, description, buttonTitle }: HeroProps) => (
+const Hero = ({ className, children, imageSrc, alt }: HeroProps) => (
   <Shell className="md:py-14">
     <Grid columns={2}>
-      <div className="flex flex-col justify-center max-w-2xl md:px-5">
-        <Typography tag="h1" type="heading-one" className="mb-4 text-on-surface-primary">
-          {title}
-        </Typography>
-        {description && <Typography type="subtitle" className="mb-8 text-on-surface-secondary">
-          {description}
-        </Typography>}
-        <Button variant="accent" size="lg" className="mb-4 max-w-fit">
-          <Typography type="interface-secondary">
-            {buttonTitle}
-          </Typography>
-        </Button>
+      <div
+        className={cn(
+          "flex flex-col justify-center max-w-2xl md:px-5",
+          className
+        )}
+      >
+        {children}
       </div>
-      <Image
+      <HeroImage src={imageSrc} alt={alt} />
+      {/* <Image
         src="/lukas-bato-4LkjvMlVhOw-unsplash.jpg"
         alt="preparing car for winter"
         // placeholder="blur"
@@ -37,36 +34,40 @@ export const Hero = ({ title, description, buttonTitle }: HeroProps) => (
         height={500}
         className="object-cover rounded-md"
         loading="lazy"
-      />
+      /> */}
     </Grid>
   </Shell>
 )
 
-export const FullscreenHero = ({ title, description, buttonTitle }: HeroProps) => (
-  <Shell variant="fullscreen" className="bg-[url('/nat-uN9OSpSsw4A-unsplash.jpg')] bg-cover md:justify-center">
-    <div className="absolute top-0 left-0 z-10 w-full h-full bg-dark/10"></div>
-    <div className="relative z-10 pt-10">
-      <Typography tag="h1" type="title" className="mb-2 text-on-surface-contrast max-w-4xl">
-        {title}
-      </Typography>
-      {description && <Typography type="subtitle" className="mb-6 text-on-surface-contrast  max-w-4xl">
-        {description}
-      </Typography>}
-      <Button variant="outline" size="lg" rounded="lg" className="max-w-fit">
-        <Typography type="interface-secondary">
-          {buttonTitle}
-        </Typography>
-      </Button>
-    </div>
-  </Shell>
-)
+interface HeroFullscreenProps
+  extends HTMLAttributes<HTMLElement> {
+  imageSrc: string;
+}
+
+const HeroFullscreen = ({ className, children, imageSrc }: HeroFullscreenProps) => {
+  return (
+    <Shell
+      variant="fullscreen"
+      className={cn(
+        `bg-cover md:justify-center`,
+        className
+      )}
+      style={{ backgroundImage: `url(${imageSrc})` }}
+    >
+      <HeroOverlay />
+      <div className="relative z-10 pt-10">
+        {children}
+      </div>
+    </Shell>
+  )
+}
 
 interface HeroFullscreenVideoProps
   extends HTMLAttributes<HTMLElement> {
-  src: string;
+  videoSrc: string;
 }
 
-const HeroFullscreenVideo = ({ className, children, src }: HeroFullscreenVideoProps) => (
+const HeroFullscreenVideo = ({ className, children, videoSrc }: HeroFullscreenVideoProps) => (
   <Shell
     variant="fullscreen"
     className={cn(
@@ -74,42 +75,65 @@ const HeroFullscreenVideo = ({ className, children, src }: HeroFullscreenVideoPr
       className
     )}
   >
-    <HeroVideoOverlay />
-    <div className="relative z-10 pl-8 md:pl-0 pb-8">
+    <HeroOverlay />
+    <div className="relative z-10 pb-8 pl-8 md:pl-0">
       {children}
     </div>
-    <HeroVideo src={src} />
+    <HeroVideo src={videoSrc} />
   </Shell >
 )
 
 
-interface HeroHeadingProps
-  extends HTMLAttributes<HTMLHeadingElement> { }
+const heroHeadingVariants = cva(
+  "max-w-4xl", {
+  variants: {
+    variant: {
+      default: "text-on-surface-primary",
+      contrast: "text-on-surface-contrast"
+    }
+  },
+  defaultVariants: {
+    variant: "default",
+  }
+})
 
-const HeroHeading = ({ className, children }: HeroHeadingProps) => (
+interface HeroHeadingProps
+  extends HTMLAttributes<HTMLHeadingElement>,
+  VariantProps<typeof heroHeadingVariants> { }
+
+const HeroHeading = ({ className, children, variant }: HeroHeadingProps) => (
   <Typography
     tag="h1"
-    type="title"
-    className={cn(
-      "text-on-surface-contrast max-w-4xl", className
-    )}
+    type="heading-one"
+    className={cn(heroHeadingVariants({ variant, className }))}
   >
     {children}
   </Typography>
 )
 HeroHeading.displayName = "HeroHeading"
 
+const heroDescriptionVariants = cva(
+  "max-w-4xl mb-10", {
+  variants: {
+    variant: {
+      default: "text-on-surface-primary",
+      contrast: "text-on-surface-contrast"
+    }
+  },
+  defaultVariants: {
+    variant: "default",
+  }
+})
+
 
 interface HeroDescriptionProps
-  extends HTMLAttributes<HTMLHeadingElement> { }
+  extends HTMLAttributes<HTMLHeadingElement>,
+  VariantProps<typeof heroDescriptionVariants> { }
 
-const HeroDescription = ({ className, children }: HeroDescriptionProps) => (
+const HeroDescription = ({ className, children, variant }: HeroDescriptionProps) => (
   <Typography
     type="subtitle"
-    className={cn(
-      "mb-10 text-on-surface-contrast max-w-4xl",
-      className
-    )}
+    className={cn(heroDescriptionVariants({ variant, className }))}
   >
     {children}
   </Typography>
@@ -120,9 +144,7 @@ HeroDescription.displayName = "HeroDescription"
 interface HeroVideoProps {
   src: string;
 }
-/*
-"https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
-*/
+
 const HeroVideo = ({ src }: HeroVideoProps) => (
   <video
     className="absolute top-0 left-0 object-cover w-full h-full"
@@ -138,13 +160,31 @@ const HeroVideo = ({ src }: HeroVideoProps) => (
   </video>
 )
 
-const HeroVideoOverlay = () => (
+interface HeroImageProps
+  extends ComponentProps<typeof Image> { }
+
+const HeroImage = ({ className, src, alt }: HeroImageProps) => (
+  <div className="relative w-full h-full">
+    <Image
+      className={cn("", className)}
+      src={src}
+      alt={alt}
+      fill
+      objectFit="cover"
+    />
+  </div>
+)
+
+const HeroOverlay = () => (
   <div className="absolute top-0 left-0 z-10 w-full h-full bg-black/20"></div>
 )
 
 
 export {
+  Hero,
+  HeroFullscreen,
   HeroFullscreenVideo,
+  HeroImage,
   HeroHeading,
   HeroDescription
 }

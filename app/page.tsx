@@ -5,6 +5,7 @@ import { Section, SectionLink, SectionSubtitle, SectionTitle } from "@/component
 import { Typography } from "@/components/ui/typography/typography"
 import { Hero, HeroDescription, HeroFullscreen, HeroFullscreenVideo, HeroHeading } from "@/components/pages/hero/hero"
 import { Button } from "@/components/ui/button/button"
+import Image from "next/image"
 
 
 function oneWeekAway(date?: Date) {
@@ -78,6 +79,15 @@ export default function Home() {
           <Button className="w-fit" variant="accent" size="lg" rounded="lg">Узнать больше о AI</Button>
         </Hero>
         <Section>
+          <Image
+            src="/lukas-bato-4LkjvMlVhOw-unsplash.jpg"
+            alt="lukas photo of building"
+            width={5472}
+            height={3648}
+            quality={90}
+            loading="lazy"
+            sizes="(min-width: 1540px) 1504px, (min-width: 1280px) 1248px, (min-width: 1040px) 992px, (min-width: 780px) 736px, 608px"
+          />
           <SectionTitle>
             Cистема искусственного интеллекта DALL·E
           </SectionTitle>
@@ -87,7 +97,7 @@ export default function Home() {
           <SectionLink href="#">
             Узнать о DALL·E
           </SectionLink>
-          <Tabs defaultValue="generation" className="max-w-3xl p-4 bg-background rounded-2xl">
+          {/* <Tabs defaultValue="generation" className="max-w-3xl p-4 bg-background rounded-2xl">
             <TabsList>
               <TabsTrigger value="generation">
                 <Typography type="interface-primary">
@@ -130,7 +140,7 @@ export default function Home() {
                 DALL·E 2 может взять изображение и создать различные его вариации, вдохновленные оригиналом.
               </Typography>
             </TabsContent>
-          </Tabs>
+          </Tabs> */}
         </Section>
       </main>
     </>

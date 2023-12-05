@@ -25,7 +25,7 @@ const Hero = ({ className, children, imageSrc, alt }: HeroProps) => (
       >
         {children}
       </div>
-      <HeroImage src={imageSrc} alt={alt} />
+      <HeroImage className="order-first xl:order-last" src={imageSrc} alt={alt} />
       {/* <Image
         src="/lukas-bato-4LkjvMlVhOw-unsplash.jpg"
         alt="preparing car for winter"
@@ -163,16 +163,17 @@ const HeroVideo = ({ src }: HeroVideoProps) => (
 interface HeroImageProps
   extends ComponentProps<typeof Image> { }
 
-const HeroImage = ({ className, src, alt }: HeroImageProps) => (
-  <div className="relative w-full h-full">
-    <Image
-      className={cn("", className)}
-      src={src}
-      alt={alt}
-      fill
-      objectFit="cover"
-    />
-  </div>
+const HeroImage = ({ className, src, width, height, alt }: HeroImageProps) => (
+  <Image
+    className={cn("hidden sm:block", className)}
+    src={src}
+    alt={alt}
+    width={3000}
+    height={2000}
+    quality={90}
+    loading="lazy"
+    sizes="(min-width: 1540px) 740px, (min-width: 1280px) 612px, (min-width: 1040px) 484px, (min-width: 780px) 736px, (min-width: 680px) 608px, calc(94.44vw - 15px)"
+  />
 )
 
 const HeroOverlay = () => (

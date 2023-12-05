@@ -16,7 +16,7 @@ export const Grid = forwardRef<HTMLElement, GridProps>(
       ref={ref}
       tag={tag}
       className={cn(
-        `grid w-full md:grid-cols-2 grid-rows-${rows} items-center justify-center gap-6`,
+        `grid w-full xl:grid-cols-2 grid-rows-${rows} items-center justify-center gap-6`,
         className
       )}
       {...props}

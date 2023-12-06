@@ -32,28 +32,6 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "Test link 2",
-          href: "/test2",
-          description: "Buy your own product.",
-          items: [],
-        },
-        {
-          title: "Test link 2",
-          href: "/test2",
-          description: "Buy your own product.",
-          items: [],
-        }, {
-          title: "Test link 2",
-          href: "/test2",
-          description: "Buy your own product.",
-          items: [],
-        }, {
-          title: "Test link 2",
-          href: "/test2",
-          description: "Buy your own product.",
-          items: [],
-        },
-        {
           title: "Test link 3",
           href: "/test3",
           description: "Read our latest blog posts.",

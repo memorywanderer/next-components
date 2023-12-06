@@ -1,12 +1,10 @@
 'use client'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
-import { useEffect, useRef, useState } from "react"
 import { Section, SectionLink, SectionSubtitle, SectionTitle } from "@/components/pages/section/section"
 import { Typography } from "@/components/ui/typography/typography"
-import { Hero, HeroDescription, HeroFullscreen, HeroFullscreenVideo, HeroHeading } from "@/components/pages/hero/hero"
+import { Hero, HeroDescription, HeroHeading } from "@/components/pages/hero/hero"
 import { Button } from "@/components/ui/button/button"
 import Image from "next/image"
-import { ScrollArea } from "@/components/ui/scroll-area/scroll-area"
 import { Carousel } from "@/components/ui/carousel/carousel"
 
 

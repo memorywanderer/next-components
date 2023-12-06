@@ -21,8 +21,9 @@ interface SectionTitleProps
 
 const SectionTitle = ({ children }: SectionTitleProps) => (
   <Typography
+    tag="h2"
     type="heading-two"
-    className="mb-4 border-b text-on-surface-primary border-outline-tertiary max-w-xl"
+    className="max-w-xl mb-4 border-b text-on-surface-primary border-outline-tertiary"
   >
     {children}
   </Typography>
@@ -36,7 +37,7 @@ interface SectionSubtitleProps
 const SectionSubtitle = ({ className, children, ...props }: SectionSubtitleProps) => (
   <Typography
     type="body-primary"
-    className="text-on-surface-secondary max-w-3xl"
+    className="max-w-3xl text-on-surface-secondary"
     {...props}
   >
     {children}

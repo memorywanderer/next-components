@@ -66,6 +66,9 @@
     --dark: hsl(0, 0%, 10%);
 
     --header-height: 5rem;
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    --slide-height: 1rem;
   }
 
   .light {
@@ -227,6 +230,14 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .backface-visible {
+    backface-visibility: visible;
+  }
+
+  .backface-invisible {
+    backface-visibility: hidden;
   }
 }
 

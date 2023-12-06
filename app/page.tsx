@@ -7,6 +7,7 @@ import { Hero, HeroDescription, HeroFullscreen, HeroFullscreenVideo, HeroHeading
 import { Button } from "@/components/ui/button/button"
 import Image from "next/image"
 import { ScrollArea } from "@/components/ui/scroll-area/scroll-area"
+import { Carousel } from "@/components/ui/carousel/carousel"
 
 
 function oneWeekAway(date?: Date) {
@@ -98,6 +99,7 @@ export default function Home() {
           <SectionLink href="#">
             Узнать о DALL·E
           </SectionLink>
+          <Carousel />
           <div className="overflow-x-auto">
             <Tabs defaultValue="generation" className="bg-background rounded-2xl">
               <TabsList>

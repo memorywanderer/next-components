@@ -6,6 +6,7 @@ import { Typography } from "@/components/ui/typography/typography"
 import { Hero, HeroDescription, HeroFullscreen, HeroFullscreenVideo, HeroHeading } from "@/components/pages/hero/hero"
 import { Button } from "@/components/ui/button/button"
 import Image from "next/image"
+import { ScrollArea } from "@/components/ui/scroll-area/scroll-area"
 
 
 function oneWeekAway(date?: Date) {
@@ -97,50 +98,52 @@ export default function Home() {
           <SectionLink href="#">
             Узнать о DALL·E
           </SectionLink>
-          {/* <Tabs defaultValue="generation" className="max-w-3xl p-4 bg-background rounded-2xl">
-            <TabsList>
-              <TabsTrigger value="generation">
-                <Typography type="interface-primary">
-                  Генерация изображений
+          <div className="overflow-x-auto">
+            <Tabs defaultValue="generation" className="bg-background rounded-2xl">
+              <TabsList>
+                <TabsTrigger value="generation">
+                  <Typography type="interface-primary">
+                    Генерация изображений
+                  </Typography>
+                </TabsTrigger>
+                <TabsTrigger value="outpainting">
+                  <Typography type="interface-primary">
+                    Перекраска
+                  </Typography>
+                </TabsTrigger>
+                <TabsTrigger value="inpainting">
+                  <Typography type="interface-primary">
+                    Живопись
+                  </Typography>
+                </TabsTrigger>
+                <TabsTrigger value="variations">
+                  <Typography type="interface-primary">
+                    Вариации
+                  </Typography>
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent value="generation">
+                <Typography type="body-large" className="max-w-xl">
+                  DALL·E 2 может создавать оригинальные реалистичные изображения и рисунки из текстового описания. Он может сочетать концепции, атрибуты и стили.
                 </Typography>
-              </TabsTrigger>
-              <TabsTrigger value="outpainting">
-                <Typography type="interface-primary">
-                  Перекраска
+              </TabsContent>
+              <TabsContent value="outpainting">
+                <Typography type="body-large" className="max-w-xl">
+                  DALL·E 2 может расширять изображения за пределы исходного холста, создавая новые обширные композиции.
                 </Typography>
-              </TabsTrigger>
-              <TabsTrigger value="inpainting">
-                <Typography type="interface-primary">
-                  Живопись
+              </TabsContent>
+              <TabsContent value="inpainting">
+                <Typography type="body-large" className="max-w-xl">
+                  DALL·E 2 can make realistic edits to existing images from a natural language caption. It can add and remove elements while taking shadows, reflections, and textures into account.
                 </Typography>
-              </TabsTrigger>
-              <TabsTrigger value="variations">
-                <Typography type="interface-primary">
-                  Вариации
+              </TabsContent>
+              <TabsContent value="variations">
+                <Typography type="body-large" className="max-w-xl">
+                  DALL·E 2 может взять изображение и создать различные его вариации, вдохновленные оригиналом.
                 </Typography>
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value="generation">
-              <Typography type="body-large" className="max-w-xl">
-                DALL·E 2 может создавать оригинальные реалистичные изображения и рисунки из текстового описания. Он может сочетать концепции, атрибуты и стили.
-              </Typography>
-            </TabsContent>
-            <TabsContent value="outpainting">
-              <Typography type="body-large" className="max-w-xl">
-                DALL·E 2 может расширять изображения за пределы исходного холста, создавая новые обширные композиции.
-              </Typography>
-            </TabsContent>
-            <TabsContent value="inpainting">
-              <Typography type="body-large" className="max-w-xl">
-                DALL·E 2 can make realistic edits to existing images from a natural language caption. It can add and remove elements while taking shadows, reflections, and textures into account.
-              </Typography>
-            </TabsContent>
-            <TabsContent value="variations">
-              <Typography type="body-large" className="max-w-xl">
-                DALL·E 2 может взять изображение и создать различные его вариации, вдохновленные оригиналом.
-              </Typography>
-            </TabsContent>
-          </Tabs> */}
+              </TabsContent>
+            </Tabs>
+          </div>
         </Section>
       </main>
     </>

@@ -1,60 +1,11 @@
 'use client'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs/tabs"
-import { Section, SectionLink, SectionSubtitle, SectionTitle } from "@/components/pages/section/section"
+import { Section, SectionBody, SectionDescription, SectionHeader, SectionHeading, SectionLink } from "@/components/pages/section/section"
 import { Typography } from "@/components/ui/typography/typography"
 import { Hero, HeroDescription, HeroHeading } from "@/components/pages/hero/hero"
 import { Button } from "@/components/ui/button/button"
 import Image from "next/image"
 import { Carousel } from "@/components/ui/carousel/carousel"
-
-
-function oneWeekAway(date?: Date) {
-  const now = new Date();
-  const inOneWeek = now.setDate(now.getDate() + 7);
-  return new Date(inOneWeek);
-}
-
-function prettyDate(date: Date) {
-  return new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(date);
-}
-
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-]
 
 export default function Home() {
 
@@ -78,72 +29,79 @@ export default function Home() {
           </HeroDescription>
           <Button className="w-fit" variant="accent" size="lg" rounded="lg">Узнать больше о AI</Button>
         </Hero>
-        <Section>
-          <Image
-            src="/lukas-bato-4LkjvMlVhOw-unsplash.jpg"
-            alt="lukas photo of building"
-            width={5472}
-            height={3648}
-            quality={90}
-            loading="lazy"
-            sizes="(min-width: 1540px) 1504px, (min-width: 1280px) 1248px, (min-width: 1040px) 992px, (min-width: 780px) 736px, 608px"
-          />
-          <SectionTitle>
-            Cистема искусственного интеллекта DALL·E
-          </SectionTitle>
-          <SectionSubtitle>
-            DALL·E — это система искусственного интеллекта, которая может создавать реалистичные изображения и произведения искусства на основе описания на естественном языке.
-          </SectionSubtitle>
-          <SectionLink href="#">
-            Узнать о DALL·E
-          </SectionLink>
-          <Carousel />
-          <div className="overflow-x-auto">
-            <Tabs defaultValue="generation" className="bg-background rounded-2xl">
-              <TabsList>
-                <TabsTrigger value="generation">
-                  <Typography type="interface-primary">
-                    Генерация изображений
-                  </Typography>
-                </TabsTrigger>
-                <TabsTrigger value="outpainting">
-                  <Typography type="interface-primary">
-                    Перекраска
-                  </Typography>
-                </TabsTrigger>
-                <TabsTrigger value="inpainting">
-                  <Typography type="interface-primary">
-                    Живопись
-                  </Typography>
-                </TabsTrigger>
-                <TabsTrigger value="variations">
-                  <Typography type="interface-primary">
-                    Вариации
-                  </Typography>
-                </TabsTrigger>
-              </TabsList>
-              <TabsContent value="generation">
-                <Typography type="body-large" className="max-w-xl">
-                  DALL·E 2 может создавать оригинальные реалистичные изображения и рисунки из текстового описания. Он может сочетать концепции, атрибуты и стили.
-                </Typography>
-              </TabsContent>
-              <TabsContent value="outpainting">
-                <Typography type="body-large" className="max-w-xl">
-                  DALL·E 2 может расширять изображения за пределы исходного холста, создавая новые обширные композиции.
-                </Typography>
-              </TabsContent>
-              <TabsContent value="inpainting">
-                <Typography type="body-large" className="max-w-xl">
-                  DALL·E 2 can make realistic edits to existing images from a natural language caption. It can add and remove elements while taking shadows, reflections, and textures into account.
-                </Typography>
-              </TabsContent>
-              <TabsContent value="variations">
-                <Typography type="body-large" className="max-w-xl">
-                  DALL·E 2 может взять изображение и создать различные его вариации, вдохновленные оригиналом.
-                </Typography>
-              </TabsContent>
-            </Tabs>
-          </div>
+
+        <Section variant="vertical">
+          <SectionHeader variant="centered">
+            <SectionHeading>
+              Cистема искусственного интеллекта GPT
+            </SectionHeading>
+            <SectionDescription>
+              Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы.
+            </SectionDescription>
+          </SectionHeader>
+          <SectionBody variant="vertical">
+            <Typography type="body-primary">
+              You can now show ChatGPT images and start a chat. Troubleshoot why your grill won’t start, explore the contents of your fridge to plan a meal, or analyze a complex graph for work-related data.
+            </Typography>
+            <Typography type="body-primary">
+              Create images simply by describing them in ChatGPT. Invent new logos, comic strips, and photorealistic scenes right in the chat. You can bring your ideas to life with our most capable image model, DALL·E 3.
+            </Typography>
+            <Typography type="body-primary">
+              You can now use voice to engage in a back-and-forth conversation with ChatGPT. Speak with it on the go, request a bedtime story for your family, or settle a dinner table debate.
+            </Typography>
+          </SectionBody>
+        </Section>
+        <Section variant="horizontal">
+          <SectionHeader variant="vertical" order="last">
+            <SectionHeading>
+              Cистема искусственного интеллекта GPT
+            </SectionHeading>
+            <SectionDescription>
+              Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы.
+            </SectionDescription>
+          </SectionHeader>
+          <SectionBody variant="vertical">
+            <Image
+              className="rounded-xl"
+              src="/nat-uN9OSpSsw4A-unsplash.jpg"
+              alt="A lonely plaent in the dark space"
+              width={3000}
+              height={2000}
+              quality={90}
+              loading="lazy"
+              sizes="(min-width: 1540px) 740px, (min-width: 1280px) 612px, (min-width: 1040px) 484px, (min-width: 780px) 736px, (min-width: 680px) 608px, calc(94.44vw - 15px)"
+            />
+            {/* <Typography>
+              You can now show ChatGPT images and start a chat. Troubleshoot why your grill won’t start, explore the contents of your fridge to plan a meal, or analyze a complex graph for work-related data.
+            </Typography>
+            <Typography>
+              Create images simply by describing them in ChatGPT. Invent new logos, comic strips, and photorealistic scenes right in the chat. You can bring your ideas to life with our most capable image model, DALL·E 3.
+            </Typography>
+            <Typography>
+              You can now use voice to engage in a back-and-forth conversation with ChatGPT. Speak with it on the go, request a bedtime story for your family, or settle a dinner table debate.
+            </Typography> */}
+          </SectionBody>
+        </Section>
+        <Section variant="vertical">
+          <SectionHeader variant="horizontal" className="gap-8">
+            <SectionHeading>
+              Cистема искусственного интеллекта GPT может следовать сложным
+            </SectionHeading>
+            <SectionDescription>
+              Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы. Обладая обширными общими знаниями и опытом в предметной области, GPT-4 может следовать сложным инструкциям на естественном языке и точно решать сложные проблемы.
+            </SectionDescription>
+          </SectionHeader>
+          <SectionBody variant="vertical">
+            <Typography>
+              You can now show ChatGPT images and start a chat. Troubleshoot why your grill won’t start, explore the contents of your fridge to plan a meal, or analyze a complex graph for work-related data.
+            </Typography>
+            <Typography>
+              Create images simply by describing them in ChatGPT. Invent new logos, comic strips, and photorealistic scenes right in the chat. You can bring your ideas to life with our most capable image model, DALL·E 3.
+            </Typography>
+            <Typography>
+              You can now use voice to engage in a back-and-forth conversation with ChatGPT. Speak with it on the go, request a bedtime story for your family, or settle a dinner table debate.
+            </Typography>
+          </SectionBody>
         </Section>
       </main>
     </>

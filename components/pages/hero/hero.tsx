@@ -165,7 +165,7 @@ interface HeroImageProps
 
 const HeroImage = ({ className, src, width, height, alt }: HeroImageProps) => (
   <Image
-    className={cn("hidden sm:block", className)}
+    className={cn("hidden sm:block rounded-xl", className)}
     src={src}
     alt={alt}
     width={3000}

@@ -130,8 +130,6 @@ const CarouselButton = ({ className, children, disabled = false, ...props }: Car
   </Button>
 )
 
-
-
 export {
   Carousel
 }

@@ -35,7 +35,7 @@ const sectionHeaderVariants = cva(
   "flex gap-4", {
   variants: {
     variant: {
-      horizontal: "justify-between",
+      horizontal: "justify-between flex-col md:flex-row",
       vertical: "flex-col",
       centered: "flex-col items-center text-center"
     },
@@ -103,7 +103,7 @@ const SectionHeading = ({ className, children }: SectionHeadingProps) => (
     tag="h2"
     type="heading-two"
     className={cn(
-      "max-w-xl w-1/2 border-b h-fit text-on-surface-primary border-outline-tertiary",
+      "max-w-xl border-b w-fit h-fit text-on-surface-primary border-outline-tertiary",
       className
     )}
   >

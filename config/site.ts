@@ -77,12 +77,42 @@ export const siteConfig = {
   ] satisfies DesktopNavItem[],
   footerNav: [
     {
+      title: "Учебник",
+      items: [
+        {
+          title: "OneStopShop",
+          href: "https://onestopshop.jackblatch.com",
+          external: false,
+        },
+        {
+          title: "Acme Corp",
+          href: "https://acme-corp.jumr.dev",
+          external: false,
+        },
+        {
+          title: "craft.mxkaske.dev",
+          href: "https://craft.mxkaske.dev",
+          external: false,
+        },
+        {
+          title: "Taxonomy",
+          href: "https://tx.shadcn.com/",
+          external: false,
+        },
+        {
+          title: "shadcn/ui",
+          href: "https://ui.shadcn.com",
+          external: false,
+        },
+      ]
+    },
+    {
       title: "Credits",
       items: [
         {
           title: "OneStopShop",
           href: "https://onestopshop.jackblatch.com",
-          external: true,
+          external: false,
         },
         {
           title: "Acme Corp",

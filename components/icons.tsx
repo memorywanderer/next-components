@@ -35,5 +35,6 @@ export const Icons = {
         <path d="M4 6L20 6"  ></path>
       </g>
     </svg>
-  )
+  ),
+
 }

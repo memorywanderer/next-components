@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/providers'
 import { cn } from '@/lib/utils'
 import { NavigationMenuContextProvider } from '@/contexts/navigation-menu-context'
 import { Header } from '@/components/site-header'
+import { Footer } from '@/components/pages/footer/footer'
 
 const neueMachina = localFont({
   src: [
@@ -78,6 +79,7 @@ export default function RootLayout({
           <NavigationMenuContextProvider>
             <Header />
             {children}
+            <Footer />
           </NavigationMenuContextProvider>
         </ThemeProvider>
       </body>

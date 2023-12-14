@@ -23,7 +23,7 @@ const buttonVariants = cva(
           'border duration-300 hover:bg-interactive-contrast text-on-interactive-contrast hover:text-on-interactive-contrast-hover',
         ghost:
           'bg-transparent',
-        link: 'relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-interactive-accent before:hover:h-[8px]',
+        link: 'justify-start p-0 relative z-10 before:absolute before:-z-10 before:bottom-0 before:h-[2px] before:w-full before:bg-interactive-accent before:hover:h-[8px]',
       },
       size: {
         default: 'px-4 py-2',
@@ -58,9 +58,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, href, variant, size, rounded, ...props }, ref) => {
     if (href) {
       return (
-        // 15 25
-        // 10 20
-        // 5 15
         <Link
           href={href}
           className={cn(buttonVariants({ variant, size, rounded, className }))}>

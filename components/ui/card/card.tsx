@@ -4,17 +4,17 @@ import { cn } from "@/lib/utils"
 import Link from "next/link";
 
 const cardVariants = cva(
-  '',
+  'flex-1 flex flex-col',
   {
     variants: {
       variant: {
         default:
-          'border border-outline-secondary bg-surface-secondary text-on-surface-primary',
+          'border border-outline-tertiary bg-background text-on-surface-primary',
       },
       size: {
-        default: 'w-fit h-fit',
+        default: 'w-fit',
       },
-      border: {
+      rounded: {
         default: 'rounded-lg',
         sm: 'rounded-sm',
         md: 'rounded-md',
@@ -41,22 +41,21 @@ export interface CardProps
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, children, variant, border, size, hover, href, ...props }, ref) => {
+  ({ className, children, variant, rounded, size, hover, href, ...props }, ref) => {
     if (href) {
-
       return (
         <Link
           href={href}
-          className={cn(cardVariants({ variant, size, border, hover, className }))}
+          className={cn(cardVariants({ variant, size, rounded, hover, className }))}
         >
           {children}
-        </Link >
+        </Link>
       )
     }
     return (
       <article
         ref={ref}
-        className={cn(cardVariants({ variant, size, border, hover, className }))}
+        className={cn(cardVariants({ variant, size, rounded, hover, className }))}
         {...props}
       >
         {children}
@@ -66,26 +65,42 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
 Card.displayName = 'Card'
 
-const CardContent = React.forwardRef<
+export interface CardAsLinkProps
+  extends React.HTMLAttributes<HTMLAnchorElement>,
+  VariantProps<typeof cardVariants> {
+  href: string;
+}
+
+const CardAsLink = React.forwardRef<HTMLAnchorElement, CardAsLinkProps>(
+  ({ className, children, variant, rounded, size, hover, href, ...props }, ref) => (
+    <Link
+      href={href}
+      className={cn(cardVariants({ variant, size, rounded, hover, className }))}
+    >
+      {children}
+    </Link>
+  ))
+
+const CardBody = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('p-2', className)}
+      className={cn('flex-1 ', className)}
       {...props}
     />
   ))
-CardContent.displayName = 'CardContent'
+CardBody.displayName = 'CardBody'
 
 
 const CardHeader = React.forwardRef<
-  HTMLElement,
-  React.HTMLAttributes<HTMLElement>
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(
   ({ className, ...props }, ref) => (
-    <header
+    <div
       ref={ref}
       className={cn('m-0 p-0 flex flex-col', className)}
       {...props}
@@ -99,7 +114,7 @@ const CardFooter = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(
   ({ className, ...props }, ref) => (
-    <footer
+    <div
       ref={ref}
       className={cn('flex items-center px-2 pb-2', className)}
       {...props}
@@ -110,7 +125,8 @@ CardFooter.displayName = 'CardFooter'
 
 export {
   Card,
-  CardContent,
+  CardAsLink,
+  CardBody,
   CardHeader,
   CardFooter
 }
